@@ -1,4 +1,4 @@
-
+muutos epäsynkka
 commit ccbacd01bf98f4377695a826363061f55b8333f7
 Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
 Date:   Fri Oct 25 12:21:52 2019 +0300
