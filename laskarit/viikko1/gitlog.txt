@@ -1,0 +1,140 @@
+pjtoropa@lx9-fuxi248:~/ot_viikko1/tiedostoja$ git log --stat | cat
+commit ccbacd01bf98f4377695a826363061f55b8333f7
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 12:21:52 2019 +0300
+
+    file2.txt vielä säädön jälkeen lopullisesti...
+
+ tiedostoja/file2.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f7c3e5f5fbb198733d332344feff58d8a1b90ff6
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 12:21:07 2019 +0300
+
+    poistettu file1.txt ja renamed file2.txt -->file22
+
+ tiedostoja/{file1.txt => file22} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a18e85ebdd0bcda18eaf8c576bac7434e05bee8c
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 12:17:29 2019 +0300
+
+    Aluksi ei pitänyt commitoida, mutta...
+
+ tiedostoja/file3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 360db180bdecd64aeb37564c87133c7e58d33b0b
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 12:08:53 2019 +0300
+
+    muutos file3.txt
+
+ tiedostoja/file3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 966ef46279ddce0e221ebc3ab5be4509ba0b0861
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:56:00 2019 +0300
+
+    lisätty alikansio tiedostoja tiedostoineen
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b44292d5e8f64960ee88f7048a4981ae17a6bb0a
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:43:42 2019 +0300
+
+    muutoksia part ii eka.txt kolmas.txt
+
+ eka.txt    | 1 +
+ kolmas.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 81845dd416f491e0288cdd905619e9ee87993cba
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:38:31 2019 +0300
+
+    eka.txt lisätty
+
+ eka.txt | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 56dba414eb3a93ef89419ea1d2dfebb73ae3f810
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:37:56 2019 +0300
+
+    tiedosto.txt nimetty eka.txt part ii
+
+ tiedosto.txt | 13 -------------
+ 1 file changed, 13 deletions(-)
+
+commit 1c8fe3b3bd3ee117dd9800eeb0724e3e0af0df42
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:34:31 2019 +0300
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit d2c53a5a80153da96940cc3d52dd229158ddba84
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:30:14 2019 +0300
+
+    lisätty tiedosto.txt tekstiä
+
+ tiedosto.txt | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit 83ef681105c2835438c745c49b104ed1d323cf7f
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:20:38 2019 +0300
+
+    lisätään alikansio ja tiedosto sen sisällä
+
+ stuff/stuffed.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f5d2a5a63eefe04ded5b10344ddc7c34931b42ab
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:18:09 2019 +0300
+
+    toinen ja kolmas muutettu
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit af2290c25a0a65bf3b4d6402e742c0e2fcdc6a62
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:11:43 2019 +0300
+
+    kolmas on luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a7cf9e567edf53c638603db49386ca6af3020125
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 10:01:24 2019 +0300
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit c61fd964bc711692993f5076e7a22b36bedf7902
+Author: IngloriousObjects <petri.toropainen.helsinki@gmail.com>
+Date:   Fri Oct 25 09:57:35 2019 +0300
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
