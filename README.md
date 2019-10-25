@@ -7,3 +7,4 @@ Tänne lisätään vielä *paljon* tekstiä.
 [komentorivi.txt](https://github.com/IngloriousObjects/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 *Testataan* vielä muutos **paikallisesti**.
+muutos epäsynkka
