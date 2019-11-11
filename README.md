@@ -1,5 +1,11 @@
 # **Ohjelmistotekniikka, harjoitustyö**
 
+## **Dokumentaatio**
+
+[Vaatimuusmäärittely](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
+
+[Työaikakirjanpito](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/tuntikirjanpito.md)
+
 ## **Tehtävät**
 
 ### **Viikko 1**
