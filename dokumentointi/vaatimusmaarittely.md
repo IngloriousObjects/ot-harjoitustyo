@@ -31,6 +31,7 @@ Järjestelmän päänäkymässä käyttäjä voi:
  * Tarkastella tuloja ja menoja kuukausitasolla
     * päänäkymästä siirrytään kuukausitason tarkastelunäkymään, jossa valitaan ajanjakso, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa aikaa ja y-akseli euromäärää. Kaavionäkymä suljetaan painikkeella
     * paluu päänäkymään
+ * Käyttäjä voi kirjautua ulos järjestelmästä
     
  ## Jatkokehitysmahdollisuudet
     
