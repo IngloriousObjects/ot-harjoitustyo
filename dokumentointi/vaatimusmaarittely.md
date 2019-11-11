@@ -25,13 +25,13 @@ Järjestelmän päänäkymässä käyttäjä voi:
   * listata tapahtumat
     * päänäkymästä siirrytään listausnäkymään, jossa valitaan ajanjakso, jonka perusteella listataan tulot ja menot vanhimmasta uusimpaan sekä ilmoitetaan niiden erotus erillisessä tulosnäkymässä, joka suljetaan painikkeella
     * paluu päänäkymään
-  * Tarkastella tuloja ja menoja kategorioittain
+  * tarkastella tuloja ja menoja kategorioittain
     * päänäkymästä siirrytään kategorian tarkastelunäkymään, jossa valitaan ajanjakso, jonka perusteella uuteen näkymään piirretään pylväskaavio, jossa x-akselilla on kategoriat ja y-akselilla euromäärät. Kaavionäkymä suljetaan painikkeella.
     * paluu päänäkymään
- * Tarkastella tuloja ja menoja kuukausitasolla
+ * tarkastella tuloja ja menoja kuukausitasolla
     * päänäkymästä siirrytään kuukausitason tarkastelunäkymään, jossa valitaan ajanjakso, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa aikaa ja y-akseli euromäärää. Kaavionäkymä suljetaan painikkeella
     * paluu päänäkymään
- * Käyttäjä voi kirjautua ulos järjestelmästä
+ * kirjautua ulos järjestelmästä
     
  ## Jatkokehitysmahdollisuudet
     
