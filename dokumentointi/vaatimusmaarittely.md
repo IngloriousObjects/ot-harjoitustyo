@@ -21,9 +21,9 @@ Järjestelmän päänäkymässä käyttäjä voi:
   * lisätä uuden tapahtuman
     * päänäkymästä siirrytään tapahtumanäkymään ja lisäyksen ((pvm, tyyppi(meno/tulo), summa, kategoria, kuvaus) jälkeen takaisin           päänäkymään
   * lisätä uuden kategorian
-    * päänäkymästä siirrytään kategorianäkymään (kategoria nimi) ja lisäyksen jälkeen takaisin päänäkymään
+    * päänäkymästä siirrytään kategorianäkymään (lisätään kategoria) ja lisäyksen jälkeen takaisin päänäkymään
   * listata tapahtumat
-    * päänäkymästä siirrytään listausnäkymään, jossa valitaan ajanjakso, jonka perusteella listataan tulot ja menot vanhimmasta uusimpaan  sekä ilmoitetaan niiden erotus erillisessä tulosnäkymässä, joka suljetaan painikkeella
+    * päänäkymästä siirrytään listausnäkymään, jossa valitaan ajanjakso, jonka perusteella listataan tulot ja menot vanhimmasta uusimpaan sekä ilmoitetaan niiden erotus erillisessä tulosnäkymässä, joka suljetaan painikkeella
     * paluu päänäkymään
   * Tarkastella tuloja ja menoja kategorioittain
     * päänäkymästä siirrytään kategorian tarkastelunäkymään, jossa valitaan ajanjakso, jonka perusteella uuteen näkymään piirretään pylväskaavio, jossa x-akselilla on kategoriat ja y-akselilla euromäärät. Kaavionäkymä suljetaan painikkeella.
