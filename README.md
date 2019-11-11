@@ -2,7 +2,7 @@
 
 ## **Dokumentaatio**
 
-[Vaatimuusmäärittely](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/tuntikirjanpito.md)
 
