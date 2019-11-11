@@ -39,4 +39,4 @@ Järjestelmän päänäkymässä käyttäjä voi:
    * Sisäänkirjautumisen tietoturvan parantaminen. Nyt kirjautuminen on tarkoitus toteuttaa vain kosmeettisesti
    * Dataa voidaan esittää monipuolisemmin
    * Käyttäjälle mahdollisuus asettaa sovellukseen taloudellisia tavoitteita, jolloin sovellus on muokattavissa enemmän budjettisovellusta vastaavaksi pelkän taloudellisen seurannan sijaan.
-   * Tietokannan skeeman laajentaminen, sillä nyt esim. käyttäjät lisäävät ja käyttävät yhteisiä kategorioita
+   * Tietokannan monipuolistaminen, sillä nyt esim. käyttäjät lisäävät ja käyttävät yhteisiä kategorioita
