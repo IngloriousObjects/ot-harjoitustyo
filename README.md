@@ -16,7 +16,7 @@
 
 ### **Viikko 2**
 
-![testikattavuus.png](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png)
+[testikattavuus.png](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png)
 
 
 ...
