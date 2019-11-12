@@ -28,8 +28,8 @@ Järjestelmän päänäkymässä käyttäjä voi:
   * tarkastella tuloja ja menoja kategorioittain
     * päänäkymästä siirrytään kategorian tarkastelunäkymään, jossa valitaan ajanjakso, jonka perusteella uuteen näkymään piirretään pylväskaavio, jossa x-akselilla on kategoriat ja y-akselilla euromäärät. Kaavionäkymä suljetaan painikkeella.
     * paluu päänäkymään
- * tarkastella tuloja ja menoja kuukausitasolla
-    * päänäkymästä siirrytään kuukausitason tarkastelunäkymään, jossa valitaan ajanjakso, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa aikaa ja y-akseli euromäärää. Kaavionäkymä suljetaan painikkeella
+ * tarkastella tuloja ja menoja päivä-, kuukausi- tai vuositasolla
+    * päänäkymästä siirrytään aikatason tarkastelunäkymään, jossa valitaan ajanjakso, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa aikaa ja y-akseli euromäärää. Kaavionäkymä suljetaan painikkeella
     * paluu päänäkymään
  * kirjautua ulos järjestelmästä
     
