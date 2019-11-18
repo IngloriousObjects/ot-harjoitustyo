@@ -5,6 +5,8 @@
  */
 package massimatti;
 
+import massimatti.ui.MassiMattiUi;
+
 /**
  *
  * @author pjtoropa
@@ -15,7 +17,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MassiMattiUi.main(args);
     }
     
 }
