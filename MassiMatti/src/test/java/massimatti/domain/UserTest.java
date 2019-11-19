@@ -48,4 +48,11 @@ public class UserTest {
         User user2 = new User("Bill", "Belichick");
         assertFalse(user.equals(user2));
     }
+    @Test
+    public void nonEqualWhenDifferentType() {
+        
+        Object o = new Object();
+        assertFalse(user.equals(o));
+    }
 }
+
