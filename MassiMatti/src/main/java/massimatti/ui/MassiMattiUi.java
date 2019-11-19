@@ -41,6 +41,7 @@ public class MassiMattiUi extends Application {
 
         stage.setTitle("MassiMatti");
         stage.setScene(loginScene);
+        stage.centerOnScreen();
         stage.show();
         
     }
