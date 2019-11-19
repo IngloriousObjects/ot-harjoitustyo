@@ -6,4 +6,6 @@
 | 11.11. | 6    | Sovelluksen luonnostelu alustavaan muotoonsa sekä vaatimusmäärittelyn tekeminen| 
 | 15.11. | 4    | Tarkempaa syventymistä tietokantoihin ja valittu käytettäväksi H2-tietokannanhallintajärjestelmä|
 | 17.11. | 3    | Käyty läpi DAO-suunnittelumallia ja ohkaisesti hahmoteltu, kuinka käyttää sitä harjoitustyössä|
-| yht    |16    | | 
+| 18.11. | 4    | Jatkettu JavaFX:än syventymistä ja luotu kirjautumisnäkymä|
+| 19.11. | 4    | Muokattu domain-pakkauksessa User-luokkaa ja tehty luokalle testejä|
+| yht    |24    | | 
