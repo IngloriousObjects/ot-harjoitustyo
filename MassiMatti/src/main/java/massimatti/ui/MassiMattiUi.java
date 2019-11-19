@@ -46,7 +46,7 @@ public class MassiMattiUi extends Application {
     }
 
     public static void main(String[] args) {
-        launch(MassiMattiUi.class);
+        launch(args);
     }
 
 }
