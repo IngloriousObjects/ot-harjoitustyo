@@ -20,7 +20,7 @@ public class MassiMattiUi extends Application {
     @Override
     public void start(Stage stage) {
         //loginview
-        VBox loginPane = new VBox(12);
+        VBox loginPane = new VBox(10);
         VBox inputPane = new VBox(10);
         loginPane.setPadding(new Insets(10));
         
