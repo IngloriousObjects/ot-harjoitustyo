@@ -1,7 +1,7 @@
 package massimatti.domain;
 
 /**
- * Luokka edustaa järjestelmän käyttäjää
+ * Luokka edustaa järjestelmän käyttäjää.
  *
  */
 public class User {
