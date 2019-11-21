@@ -8,4 +8,5 @@
 | 17.11. | 3    | Käyty läpi DAO-suunnittelumallia ja ohkaisesti hahmoteltu, kuinka käyttää sitä harjoitustyössä|
 | 18.11. | 4    | Jatkettu JavaFX:än syventymistä ja luotu kirjautumisnäkymä|
 | 19.11. | 4    | Muokattu domain-pakkauksessa User-luokkaa ja tehty luokalle testejä|
-| yht    |24    | | 
+| 21.11. | 1    | Pientä säätöä|
+| yht    |25    | | 
