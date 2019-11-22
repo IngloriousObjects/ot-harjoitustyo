@@ -9,4 +9,5 @@
 | 18.11. | 4    | Jatkettu JavaFX:än syventymistä ja luotu kirjautumisnäkymä|
 | 19.11. | 4    | Muokattu domain-pakkauksessa User-luokkaa ja tehty luokalle testejä|
 | 21.11. | 1    | Pientä säätöä|
-| yht    |25    | | 
+| 22.11. | 2    | Lisätty checkstylesiin liittyvää sälää ja luotu arkkitehtuuridokumentaatiota|
+| yht    |27    | | 
