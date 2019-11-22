@@ -23,15 +23,12 @@ public class User {
         return username;
     }
 
-
-
     /**
      * @return the password
      */
     public String getPassword() {
         return password;
     }
-
 
     @Override
     public boolean equals(Object obj) {
