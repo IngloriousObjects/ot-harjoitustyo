@@ -1,3 +1,3 @@
-![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.png)
+![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/arkkitehtuuri.png)
 
 
