@@ -10,4 +10,5 @@
 | 19.11. | 4    | Muokattu domain-pakkauksessa User-luokkaa ja tehty luokalle testejä|
 | 21.11. | 1    | Pientä säätöä|
 | 22.11. | 2    | Lisätty checkstylesiin liittyvää sälää ja luotu arkkitehtuuridokumentaatiota|
-| yht    |27    | | 
+| 24.11. | 3    | Säädettu käyttölittymää sekä hahmoteltu kokonaisuutta|
+| yht    |30    | | 
