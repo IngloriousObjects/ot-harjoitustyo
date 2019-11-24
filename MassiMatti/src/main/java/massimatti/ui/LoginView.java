@@ -18,9 +18,10 @@ public class LoginView {
         this.appScene = null;
     }
 
-    public Scene getLoginScene(Stage stage) {
+    public Scene getLoginScene(Stage primaryStage) {
         
         //Eriytetty kirjautumis/luokäyttäjä -näkymä
+        // Koodi on vielä erittäin vajavainen...DAO..
 
         VBox loginPane = new VBox(10);
         VBox inputPane = new VBox(10);
@@ -40,9 +41,21 @@ public class LoginView {
         loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton);
 
         Scene loginScene = new Scene(loginPane, 280, 260);
+        Scene create = new Scene(loginPane, 280, 260);
+        
 
         return loginScene;
 
     }
 
+        
+    public Scene getCreateUserScene(Scene create){
+        
+        
+        
+        
+        
+        
+        
+    }
 }
