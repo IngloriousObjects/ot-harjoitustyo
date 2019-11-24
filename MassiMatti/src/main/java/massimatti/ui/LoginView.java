@@ -50,19 +50,32 @@ public class LoginView {
 
         Scene loginScene = new Scene(loginPane, 280, 260);
 
+        loginButton.setOnAction((event) -> {
+
+           //Tähän kirjautuminen ehtoineen
+
+        });
+
         changeToRegisterViewButton.setOnAction((event) -> {
 
             changeToRegisterView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);
 
         });
-        
+
+        registerUserButton.setOnAction((event) -> {
+            
+            //Tähän rekisteröitymisprosessi ehtoineen
+            
+            backToLoginView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);
+
+        });
+
         backToLoginButton.setOnAction((event) -> {
 
             backToLoginView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);
 
         });
-        
-        
+
         return loginScene;
 
     }
