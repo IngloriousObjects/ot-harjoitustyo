@@ -42,23 +42,23 @@ public class LoginView {
         registerMessage.setStyle("-fx-font-weight: bold");
         flow.getChildren().addAll(loginMessage, registerMessage);
         Button loginButton = new Button("Kirjaudu");
-        Button registerButton = new Button("Rekisteröidy");
+        Button changeToRegisterViewButton = new Button("Rekisteröidy");
         Button registerUserButton = new Button("Rekisteröidy");
         Button backToLoginButton = new Button("Palaa");
 
-        loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, registerButton);
+        loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, changeToRegisterViewButton);
 
         Scene loginScene = new Scene(loginPane, 280, 260);
 
-        registerButton.setOnAction((event) -> {
+        changeToRegisterViewButton.setOnAction((event) -> {
 
-            changeToRegisterView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, registerButton);
+            changeToRegisterView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);
 
         });
         
         backToLoginButton.setOnAction((event) -> {
 
-            backToLoginView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, registerButton);
+            backToLoginView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);
 
         });
         
