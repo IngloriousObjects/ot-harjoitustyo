@@ -13,36 +13,19 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author pjtoropa
+ * 
  */
 public class MassiMattiUi extends Application {
 
     @Override
-    public void start(Stage stage) {
-        //loginview
-        VBox loginPane = new VBox(10);
-        VBox inputPane = new VBox(10);
-        loginPane.setPadding(new Insets(10));
-        
-        Label loginLabel = new Label("käyttäjätunnus");
-        TextField usernameInput = new TextField();
-        Label loginLabelSecond = new Label("salasana");
-        PasswordField password = new PasswordField();
+    public void start(Stage primaryStage) {
+        LoginView loginView = new LoginView();
+     
 
-        inputPane.getChildren().addAll(loginLabel, usernameInput, loginLabelSecond, password);
-        Label loginMessage = new Label();
-
-        Button loginButton = new Button("kirjaudu");
-        Button createButton = new Button("rekisteröidy");
-
-        loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton);
-
-        Scene loginScene = new Scene(loginPane, 280, 260);
-
-        stage.setTitle("MassiMatti");
-        stage.setScene(loginScene);
-        stage.centerOnScreen();
-        stage.show();
+        primaryStage.setTitle("MassiMatti");
+        primaryStage.setScene(loginView.getLoginScene(primaryStage));
+        primaryStage.centerOnScreen();
+        primaryStage.show();
         
     }
 
