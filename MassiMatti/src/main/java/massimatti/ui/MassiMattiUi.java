@@ -10,12 +10,23 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import massimatti.dao.DatabaseDao;
 
 /**
  *
  * 
  */
 public class MassiMattiUi extends Application {
+    
+    
+    
+    public void init() throws Exception{
+        
+        //Tämä kohta tulee täydentää config-säädöillä yms. Jätetään vajaaksi vain alkutestauksia varten.
+        DatabaseDao database = new DatabaseDao();
+        database.createDatabase();
+        
+    }
 
     @Override
     public void start(Stage primaryStage) {
