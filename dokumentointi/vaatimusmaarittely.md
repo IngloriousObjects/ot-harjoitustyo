@@ -12,8 +12,8 @@ Sovelluksessa on alkuvaiheessa ainoastaan yksi käyttäjätyyppi eli normaali k�
 
 ### Kirjautuminen / Rekisteröityminen
 
-* Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi kirjautua sisään järjestelmään käyttäjänimellään ja salasanallaan. Mikäli käyttäjällä ei vielä ole luotuna tunnuksia, kirjautumisnäkymästä siirrytään painikkeella rekisteröintinäkymään 
-  * Rekisteröintinäkymässä käyttäjä luo tunnukset antamalla uniikin käyttäjänimen (vähintään 4 merkkiä) ja salasanan (vähintään 8 merkkiä). Painikkeella tiedot talletetaan ja siirrytään takaisin kirjautumisnäkymään
+* TEHTYSovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi TEHTYkirjautua sisään järjestelmään käyttäjänimellään ja salasanallaan. Mikäli käyttäjällä ei vielä ole luotuna tunnuksia, kirjautumisnäkymästä siirrytään painikkeella rekisteröintinäkymään 
+  * TEHTYRekisteröintinäkymässä käyttäjä luo tunnukset antamalla uniikin käyttäjänimen (vähintään 4 merkkiä) ja salasanan (vähintään 8 merkkiä). Painikkeella tiedot talletetaan ja siirrytään takaisin kirjautumisnäkymään
   
 ### Järjestelmässä
 
