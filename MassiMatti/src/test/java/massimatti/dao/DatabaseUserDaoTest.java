@@ -27,11 +27,12 @@ public class DatabaseUserDaoTest {
 
     DatabaseUserDao user;
 // pitää tutkia paremmalla ajalla miten tietokannan saa luotua järkevästi väliaikaiskansioon tms., jotta ei valita file ptahista. Config...temp..
+// korjattu työkansion polku in-memory databasella    
 
     @Before
     public void setUp() throws Exception {
 
-        DatabaseDao database = new DatabaseDao(".~/testi", "sa", "");
+        DatabaseDao database = new DatabaseDao("mem:", "sa", "");
         database.createDatabase();
 
         user = new DatabaseUserDao();
