@@ -16,7 +16,7 @@ public class DatabaseDao {
     // Luodaan h2-testitietokanta ja vain User-taulu tässä vaiheessa työkansioon, jos tietokantaa ei ole jo olemassa.
 
     public DatabaseDao() {
-        this.path = "./testi";
+        this.path = "./testi;DB_CLOSE_DELAY=10";
         this.password = "sa";
         this.user = "";
     }
@@ -32,7 +32,7 @@ public class DatabaseDao {
 
         try {
             Connection conn = DriverManager.
-                    getConnection("jdbc:h2:" + this.path, this.password, this.user);
+                    getConnection("jdbc:h2:" + this.path+";DB_CLOSE_DELAY=10", this.password, this.user);
 
             conn.createStatement();
 
