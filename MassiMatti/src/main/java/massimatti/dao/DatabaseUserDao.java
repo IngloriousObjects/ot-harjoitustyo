@@ -37,30 +37,27 @@ public class DatabaseUserDao implements UserDao<User, String> {
         //käytetään tikape-kikkoja ja hiotaan myöhemmin
         Connection conn = DriverManager.
                 getConnection("jdbc:h2:./testi", "sa", "");
-        
-          PreparedStatement stmt = conn.prepareStatement(
+
+        PreparedStatement stmt = conn.prepareStatement(
                 "SELECT username, password FROM User WHERE username = ?");
-        
+
         stmt.setString(1, key);
         ResultSet result = stmt.executeQuery();
-        
+
         if (!result.next()) {
             return null;
         }
-        
+
         User user = new User(
                 result.getString("username"),
                 result.getString("password"));
-               
-        
+
         result.close();
         stmt.close();
         conn.close();
-        
+
         return user;
-        
-        
-      
+
     }
 
     @Override

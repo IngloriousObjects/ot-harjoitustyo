@@ -59,11 +59,11 @@ public class LoginView {
             //Tämä vielä yksinkertaistettu versio eli ei vielä mm. muototarkistuksia eikä muita poikkeamailmoituksia
             String user = usernameInput.getText();
             String password = passwordInput.getText();
-            
-            if(userController.loginUser(user, password) == false){
-            primaryStage.setScene(loginScene);    
-            }else{
-            primaryStage.setScene(appScene);
+
+            if (userController.loginUser(user, password) == false) {
+                primaryStage.setScene(loginScene);
+            } else {
+                primaryStage.setScene(appScene);
             }
             usernameInput.clear();
             passwordInput.clear();

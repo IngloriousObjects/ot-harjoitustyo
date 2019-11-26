@@ -10,5 +10,5 @@ package massimatti.dao;
  * @author pjtoropa
  */
 public interface MassiMattiDao {
-    
+
 }

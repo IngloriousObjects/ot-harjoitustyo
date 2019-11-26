@@ -1,51 +1,48 @@
-
 package massimatti.domain;
 
 import java.sql.SQLException;
 import massimatti.dao.UserDao;
 
-
 /**
  *
- * 
+ *
  */
 public class UserController {
-    
+
     private UserDao userDao;
     private User user;
-    
-    public UserController (UserDao userDao){
-        
+
+    public UserController(UserDao userDao) {
+
         this.userDao = userDao;
     }
-    
-    public User getUser(){
-        
+
+    public User getUser() {
+
         return this.user;
     }
-    
-    public void logOutUser(){
-        
+
+    public void logOutUser() {
+
         this.user = null;
     }
-    
-    public boolean createUser (String username, String password){
-        
-         try {
+
+    public boolean createUser(String username, String password) {
+
+        try {
             if (userDao.read(username) == null) {
                 userDao.create(new User(username, password));
                 return true;
             }
             return false;
-        
+
         } catch (SQLException e) {
             return false;
         }
     }
-    
-    public boolean loginUser (String username, String password){
-        
-           
+
+    public boolean loginUser(String username, String password) {
+
         try {
             User log = (User) userDao.read(username);
             if (log != null && log.getPassword().equals(password)) {
@@ -53,12 +50,11 @@ public class UserController {
                 return true;
             }
             return false;
-        
+
         } catch (SQLException e) {
             return false;
         }
     }
-        
-    //Tänne lisätään myöhemmin ainakin salasanan ja käyttäjätunnuksen muotovaatimukset tarkastava metodi
-    }
 
+    //Tänne lisätään myöhemmin ainakin salasanan ja käyttäjätunnuksen muotovaatimukset tarkastava metodi
+}
