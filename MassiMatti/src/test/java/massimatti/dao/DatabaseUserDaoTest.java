@@ -27,6 +27,7 @@ public class DatabaseUserDaoTest {
 
     DatabaseUserDao user;
 // pitää tutkia paremmalla ajalla miten tietokannan saa luotua järkevästi väliaikaiskansioon tms., jotta ei valita file ptahista. Config...temp..
+
     @Before
     public void setUp() throws Exception {
 
@@ -40,6 +41,13 @@ public class DatabaseUserDaoTest {
     @Test
     public void readUserWorks() throws SQLException {
         assertTrue(user.read("Wayne") != null);
+    }
+
+    @Test
+
+    public void readUnknownUser() throws Exception {
+
+        assertFalse(user.read("Bobby") != null);
     }
 
     @Test
