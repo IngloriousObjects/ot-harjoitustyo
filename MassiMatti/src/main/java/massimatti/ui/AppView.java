@@ -27,7 +27,7 @@ public class AppView {
     public Scene getAppScene(Stage primaryStage){
         
         VBox appPane = new VBox(10);
-        Label tervetuloa = new Label ("TERVETULOA");
+        Label tervetuloa = new Label ("PÄÄNÄKYMÄ");
         
         appPane.getChildren().addAll(tervetuloa);
         
