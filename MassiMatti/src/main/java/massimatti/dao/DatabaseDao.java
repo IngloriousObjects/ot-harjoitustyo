@@ -10,12 +10,29 @@ import java.sql.SQLException;
  */
 public class DatabaseDao {
 
+    private String path;
+    private String user;
+    private String password;
     // Luodaan h2-testitietokanta ja vain User-taulu tässä vaiheessa työkansioon, jos tietokantaa ei ole jo olemassa.
+
+    public DatabaseDao() {
+        this.path = "./testi";
+        this.password = "sa";
+        this.user = "";
+    }
+
+    public DatabaseDao(String path, String password, String user) {
+
+        this.path = path;
+        this.password = password;
+        this.user = user;
+    }
+
     public void createDatabase() throws SQLException {
 
         try {
             Connection conn = DriverManager.
-                    getConnection("jdbc:h2:./testi", "sa", "");
+                    getConnection("jdbc:h2:" + this.path, this.password, this.user);
 
             conn.createStatement();
 
