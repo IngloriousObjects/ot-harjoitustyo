@@ -1,5 +1,6 @@
 package massimatti.ui;
 
+import massimatti.domain.UserController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,16 +14,19 @@ import javafx.stage.Stage;
 public class LoginView {
 
     private Scene appScene;
+    private UserController userController;
 
-    public LoginView() {
-
+    public LoginView(UserController userController) {
+        this.userController = userController;
         this.appScene = null;
+    }
+
+    public void setAppScene(Scene appScene) {
+        this.appScene = appScene;
     }
 
     public Scene getLoginScene(Stage primaryStage) {
 
-        //Eriytetty kirjautumis/luokäyttäjä -näkymä
-        // Koodi on vielä erittäin vajavainen...DAO..
         VBox loginPane = new VBox(10);
 
         VBox inputPane = new VBox(10);
@@ -31,9 +35,9 @@ public class LoginView {
         Label loginLabel = new Label("Käyttäjätunnus");
         TextField usernameInput = new TextField();
         Label loginLabelSecond = new Label("Salasana");
-        PasswordField password = new PasswordField();
+        PasswordField passwordInput = new PasswordField();
 
-        inputPane.getChildren().addAll(loginLabel, usernameInput, loginLabelSecond, password);
+        inputPane.getChildren().addAll(loginLabel, usernameInput, loginLabelSecond, passwordInput);
 
         Label loginMessage = new Label("KIRJAUDU");
         Label registerMessage = new Label("REKISTERÖIDY");
@@ -52,7 +56,17 @@ public class LoginView {
 
         loginButton.setOnAction((event) -> {
 
-           //Tähän kirjautuminen ehtoineen
+            //Tämä vielä yksinkertaistettu versio eli ei vielä mm. muototarkistuksia eikä muita poikkeamailmoituksia
+            String user = usernameInput.getText();
+            String password = passwordInput.getText();
+            
+            if(userController.loginUser(user, password) == false){
+            primaryStage.setScene(loginScene);    
+            }else{
+            primaryStage.setScene(appScene);
+            }
+            usernameInput.clear();
+            passwordInput.clear();
 
         });
 
@@ -63,9 +77,15 @@ public class LoginView {
         });
 
         registerUserButton.setOnAction((event) -> {
-            
-            //Tähän rekisteröitymisprosessi ehtoineen
-            
+
+            //Tämä vielä yksinkertaistettu versio eli ei vielä mm. muototarkistuksia eikä muita poikkeamailmoituksia
+            String user = usernameInput.getText().trim();
+            String password = passwordInput.getText();
+
+            userController.createUser(user, password);
+            usernameInput.clear();
+            passwordInput.clear();
+
             backToLoginView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);
 
         });

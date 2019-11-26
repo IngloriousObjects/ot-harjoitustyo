@@ -11,6 +11,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import massimatti.dao.DatabaseDao;
+import massimatti.domain.UserController;
+import massimatti.dao.DatabaseUserDao;
+
 
 /**
  *
@@ -18,23 +21,33 @@ import massimatti.dao.DatabaseDao;
  */
 public class MassiMattiUi extends Application {
     
+    private UserController userController;
     
     
     public void init() throws Exception{
         
-        //Tämä kohta tulee täydentää config-säädöillä yms. Jätetään vajaaksi vain alkutestauksia varten.
+        
+        DatabaseUserDao userDao = new DatabaseUserDao();
+        //Tämä kohta tulee täydentää config-säädöillä yms. Jätetään vajaaksi vain alkutestauksia varten. Alussa vain User käytössä.
         DatabaseDao database = new DatabaseDao();
         database.createDatabase();
+        this.userController = new UserController(userDao);
         
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        LoginView loginView = new LoginView();
+    public void start(Stage primaryStage) throws Exception {
      
+        LoginView loginView = new LoginView(userController);
+        Scene loginScene = loginView.getLoginScene(primaryStage);
+        
+        AppView appView = new AppView(userController, loginScene);
+        Scene appScene = appView.getAppScene(primaryStage);
+        
+        loginView.setAppScene(appScene);
 
         primaryStage.setTitle("MassiMatti");
-        primaryStage.setScene(loginView.getLoginScene(primaryStage));
+        primaryStage.setScene(loginScene);
         primaryStage.centerOnScreen();
         primaryStage.show();
         

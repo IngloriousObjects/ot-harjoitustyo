@@ -1,16 +1,23 @@
 
 package massimatti.dao;
 
+import java.sql.SQLException;
 import massimatti.domain.User;
 
 /**
  *
  * 
  */
-public interface UserDao {
-    
-    User create(User user) throws Exception;
+public interface UserDao<T, K> {
 
-    User findByUsernameAndPassword(String username, String password);
+    //Aloitetaan ihan perus-CRUDILLA ja geneerisellä rajapinnalla
     
+    T create(T object) throws SQLException;
+
+    T read(K key) throws SQLException;
+
+    T update(T object) throws SQLException;
+
+    void delete(K key) throws SQLException;
+
 }
