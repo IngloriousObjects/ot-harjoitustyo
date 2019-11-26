@@ -11,4 +11,6 @@
 | 21.11. | 1    | Pientä säätöä|
 | 22.11. | 2    | Lisätty checkstylesiin liittyvää sälää ja luotu arkkitehtuuridokumentaatiota|
 | 24.11. | 3    | Säädettu käyttölittymää sekä hahmoteltu kokonaisuutta|
-| yht    |30    | | 
+| 25.11. | 2    | Luotu sovelluslogiikkaa |
+| 26.11. | 6    | Luotu koodia sovelluksen eri luokkiin, tehty pakkaus-/luokkarakennetta ja testejä|
+| yht    |38    | | 
