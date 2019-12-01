@@ -13,4 +13,7 @@
 | 24.11. | 3    | Säädettu käyttölittymää sekä hahmoteltu kokonaisuutta|
 | 25.11. | 2    | Luotu sovelluslogiikkaa |
 | 26.11. | 6    | Luotu koodia sovelluksen eri luokkiin, tehty pakkaus-/luokkarakennetta ja testejä|
-| yht    |38    | | 
+| 29.11. | 1    | Vähäistä olemassa olevan koodin hiomista|
+| 30.11. | 4    | UI:n luomista samalla lisää JavaFX:iin tutustuen|
+| 1.12.  | 7    | Tuunattu checkstyle, luotu congfig-filet sekä apille että testeille, koodattu yleisesti luokkia|
+| yht    |49    | | 
