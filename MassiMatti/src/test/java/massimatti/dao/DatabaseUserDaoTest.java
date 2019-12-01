@@ -5,6 +5,7 @@
  */
 package massimatti.dao;
 
+import java.io.FileInputStream;
 import massimatti.domain.User;
 
 import java.sql.Date;
@@ -24,18 +25,28 @@ import org.junit.rules.TemporaryFolder;
  * @author pjtoropa
  */
 public class DatabaseUserDaoTest {
+    
+    @Rule
+    public TemporaryFolder temp = new TemporaryFolder();
 
+    String path;
+    String dbUser;
+    String password;
+    
+    
     DatabaseUserDao user;
-// pitää tutkia paremmalla ajalla miten tietokannan saa luotua järkevästi väliaikaiskansioon tms., jotta ei valita file ptahista. Config...temp..
-// korjattu työkansion polku in-memory databasella__ei onnistunutkaan. Palattu alkuperäiseen ratkaisuun   
-
+    
+    
     @Before
     public void setUp() throws Exception {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("TEST_config.properties"));
 
-        DatabaseDao database = new DatabaseDao();
-        database.createDatabase();
+        path = properties.getProperty("path") + temp.getRoot().getAbsolutePath() + "/test";
+        dbUser = properties.getProperty("user");
+        password = properties.getProperty("password");
 
-        user = new DatabaseUserDao();
+        user = new DatabaseUserDao(path,dbUser,password);
         user.create(new User("Wayne", "ysiysi"));
     }
 
