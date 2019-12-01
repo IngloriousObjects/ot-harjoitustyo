@@ -45,7 +45,9 @@ public class DatabaseUserDaoTest {
         path = properties.getProperty("path") + temp.getRoot().getAbsolutePath() + "/test";
         dbUser = properties.getProperty("user");
         password = properties.getProperty("password");
-
+        
+        DatabaseDao testDatabase = new DatabaseDao(path,dbUser,password);
+        testDatabase.createDatabase();
         user = new DatabaseUserDao(path,dbUser,password);
         user.create(new User("Wayne", "ysiysi"));
     }
