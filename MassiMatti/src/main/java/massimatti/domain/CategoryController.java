@@ -22,7 +22,7 @@ public class CategoryController {
         this.categoryDao = categoryDao;
     }
 
-    public boolean addCategory(String categoryName) throws Exception {
+    public boolean addCategory(String categoryName) throws Exception {   // tee tähän read-tarkistus...lisää daoon?
         try {
             categoryDao.create(new Category(categoryName));
             return true;

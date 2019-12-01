@@ -51,7 +51,7 @@ public class MassiMattiUi extends Application {
         this.userController = new UserController(userDao);
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
-       
+        
 
     }
 

@@ -42,7 +42,7 @@ public class DatabaseDao {
                     + "category VARCHAR(36),"
                     + "userID VARCHAR(36),"
                     + "FOREIGN KEY (userId) REFERENCES User(Username),"
-                   + "FOREIGN KEY (category) REFERENCES Category(name));";
+                   + "FOREIGN KEY (category) REFERENCES Category(category));";
             
             String createCategory = "CREATE TABLE IF NOT EXISTS Category ("
                     +"id int AUTO_INCREMENT primary key,"
