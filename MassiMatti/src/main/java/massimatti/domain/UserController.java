@@ -56,5 +56,13 @@ public class UserController {
         }
     }
 
-    //Tänne lisätään myöhemmin ainakin salasanan ja käyttäjätunnuksen muotovaatimukset tarkastava metodi
+    public boolean checkUsername(String string) {
+        return (string.length() > 3 && string.length() < 37);
+    }
+
+    public boolean checkPassword(String string) {
+        return (string.length() > 7 && string.length() < 37);
+    }
+
+    
 }

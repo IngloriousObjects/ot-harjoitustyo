@@ -3,6 +3,8 @@ package massimatti.ui;
 import massimatti.domain.UserController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -61,6 +63,7 @@ public class LoginView {
             String password = passwordInput.getText();
 
             if (userController.loginUser(user, password) == false) {
+                loginAlert();
                 primaryStage.setScene(loginScene);
             } else {
                 primaryStage.setScene(appScene);
@@ -81,12 +84,18 @@ public class LoginView {
             //Tämä vielä yksinkertaistettu versio eli ei vielä mm. muototarkistuksia eikä muita poikkeamailmoituksia
             String user = usernameInput.getText().trim();
             String password = passwordInput.getText();
+            if (userController.checkUsername(user) == true && userController.checkPassword(password) == true) {
 
-            userController.createUser(user, password);
-            usernameInput.clear();
-            passwordInput.clear();
+                userController.createUser(user, password);
+                usernameInput.clear();
+                passwordInput.clear();
+                backToLoginView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);
+            } else {
 
-            backToLoginView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);
+                createAlert();
+                usernameInput.clear();
+                passwordInput.clear();
+            }
 
         });
 
@@ -117,6 +126,34 @@ public class LoginView {
         login.getChildren().add(loginButton);
         login.getChildren().add(registerButton);
         loginMessage.setText("KIRJAUDU");
+
+    }
+
+    public void loginAlert() {
+
+        Alert loginError = new Alert(AlertType.ERROR);
+        loginError.setTitle("MassiMatti");
+        loginError.setHeaderText("Käyttäjätunnus tai salasana virheellinen!");
+        loginError.setContentText("Käyttäjätunnuksen pituus voi olla 4-36 merkkiä ja salasanan 8-36 merkkiä.\n\nYritä uudelleen.");
+        loginError.getDialogPane().setPrefSize(320, 200);
+
+        loginError.showAndWait();
+
+    }
+
+    public void createAlert() {
+        Alert createError = new Alert(AlertType.ERROR);
+
+        createError.setTitle(
+                "MassiMatti");
+        createError.setHeaderText(
+                "Käyttäjätunnus tai salasana virheellinen!");
+        createError.setContentText(
+                "Käyttäjätunnuksen pituus voi olla 4-36 merkkiä ja salasanan 8-36 merkkiä.");
+        createError.getDialogPane()
+                .setPrefSize(320, 200);
+
+        createError.showAndWait();
 
     }
 

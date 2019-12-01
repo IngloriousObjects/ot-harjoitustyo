@@ -1,5 +1,7 @@
 package massimatti.ui;
 
+import java.io.FileInputStream;
+import java.util.Properties;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -24,9 +26,19 @@ public class MassiMattiUi extends Application {
 
     public void init() throws Exception {
 
-        DatabaseUserDao userDao = new DatabaseUserDao();
-        //Tämä kohta tulee täydentää config-säädöillä yms. Jätetään vajaaksi vain alkutestauksia varten. Alussa vain User käytössä.
-        DatabaseDao database = new DatabaseDao();
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("config.properties"));
+
+        String path = properties.getProperty("path");
+        System.out.println(path);
+        String user = properties.getProperty("user");
+        System.out.println(user);
+        String password = properties.getProperty("password");
+        System.out.println(password);
+
+        DatabaseUserDao userDao = new DatabaseUserDao(path, user, password);
+
+        DatabaseDao database = new DatabaseDao(path, user, password);
         database.createDatabase();
         this.userController = new UserController(userDao);
 
