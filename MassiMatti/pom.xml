@@ -38,7 +38,10 @@
             <configuration>
                 <excludes>
                     <exclude>massimatti/ui/*</exclude>
+                    <exclude>massimatti/*</exclude>
+
                 </excludes>
+               
             </configuration>
             <executions>
                 <execution>
