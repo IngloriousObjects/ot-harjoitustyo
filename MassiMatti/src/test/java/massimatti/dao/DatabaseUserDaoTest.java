@@ -59,7 +59,7 @@ public class DatabaseUserDaoTest {
 
     @Test
 
-    public void readUnknownUser() throws Exception {
+    public void readUnknownUser() throws SQLException {
 
         assertFalse(user.read("Bobby") != null);
     }
