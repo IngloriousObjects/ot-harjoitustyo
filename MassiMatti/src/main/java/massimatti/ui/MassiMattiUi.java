@@ -14,6 +14,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import massimatti.dao.DatabaseDao;
 import massimatti.domain.UserController;
+import massimatti.domain.EntryController;
+import massimatti.domain.CategoryController;
+import massimatti.dao.DatabaseEntryDao;
+import massimatti.dao.DatabaseCategoryDao;
 import massimatti.dao.DatabaseUserDao;
 
 /**
@@ -23,6 +27,8 @@ import massimatti.dao.DatabaseUserDao;
 public class MassiMattiUi extends Application {
 
     private UserController userController;
+    private EntryController entryController;
+    private CategoryController categoryController;
 
     public void init() throws Exception {
 
@@ -37,10 +43,15 @@ public class MassiMattiUi extends Application {
         System.out.println(password);
 
         DatabaseUserDao userDao = new DatabaseUserDao(path, user, password);
+        DatabaseEntryDao entryDao = new DatabaseEntryDao(path, user, password);
+        DatabaseCategoryDao categoryDao = new DatabaseCategoryDao(path, user, password);
 
         DatabaseDao database = new DatabaseDao(path, user, password);
         database.createDatabase();
         this.userController = new UserController(userDao);
+        this.entryController = new EntryController(entryDao);
+        this.categoryController = new CategoryController(categoryDao);
+       
 
     }
 

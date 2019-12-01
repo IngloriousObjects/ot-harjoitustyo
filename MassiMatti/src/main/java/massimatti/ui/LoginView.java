@@ -1,6 +1,8 @@
 package massimatti.ui;
 
 import massimatti.domain.UserController;
+import massimatti.domain.EntryController;
+import massimatti.domain.CategoryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -17,9 +19,12 @@ public class LoginView {
 
     private Scene appScene;
     private UserController userController;
+    private EntryController entryController;
+    private CategoryController categoryController;
 
     public LoginView(UserController userController) {
         this.userController = userController;
+        
         this.appScene = null;
     }
 

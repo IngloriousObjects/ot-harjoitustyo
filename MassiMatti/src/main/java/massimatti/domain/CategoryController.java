@@ -5,10 +5,31 @@
  */
 package massimatti.domain;
 
+import java.sql.SQLException;
+
+import massimatti.dao.CategoryDao;
+
 /**
  *
  * @author pjtoropa
  */
 public class CategoryController {
-    
+
+    private CategoryDao categoryDao;
+
+    public CategoryController(CategoryDao categoryDao) {
+
+        this.categoryDao = categoryDao;
+    }
+
+    public boolean addCategory(String categoryName) throws Exception {
+        try {
+            categoryDao.create(new Category(categoryName));
+            return true;
+
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
 }

@@ -4,11 +4,17 @@
  * and open the template in the editor.
  */
 package massimatti.dao;
+import massimatti.domain.Category;
+import java.util.List;
 
 /**
  *
  * @author pjtoropa
  */
 public interface CategoryDao {
-    
+
+    Category create(Category category) throws Exception;
+
+    List<Category> getAll();
+
 }

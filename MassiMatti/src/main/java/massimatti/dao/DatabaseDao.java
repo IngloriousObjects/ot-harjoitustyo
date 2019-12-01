@@ -33,12 +33,24 @@ public class DatabaseDao {
                     + "id int AUTO_INCREMENT primary key,"
                     + "username VARCHAR(36),"
                     + "password VARCHAR(36))";
-            
-         /*   String createEntry = "CREATE TABLE IF NOT EXISTS Entry ("
+
+            String createEntry = "CREATE TABLE IF NOT EXISTS Entry ("
                     + "id int AUTO_INCREMENT primary key,"
-                    + ""
-*/
+                    + "date TEXT,"
+                    + "type BOOLEAN,"
+                    + "sum DECIMAL(19,2),"
+                    + "category VARCHAR(36),"
+                    + "userID VARCHAR(36),"
+                    + "FOREIGN KEY (userId) REFERENCES User(Username),"
+                   + "FOREIGN KEY (category) REFERENCES Category(name));";
+            
+            String createCategory = "CREATE TABLE IF NOT EXISTS Category ("
+                    +"id int AUTO_INCREMENT primary key,"
+                    +"category VARCHAR(36))"; 
+
             conn.prepareStatement(createUser).execute();
+           conn.prepareStatement(createCategory).execute();
+           conn.prepareStatement(createEntry).execute();
 
         } catch (SQLException e) {
             System.out.println(e.getLocalizedMessage());
