@@ -1,5 +1,4 @@
-package massimatti.ui; 
-
+package massimatti.ui;
 
 import massimatti.domain.UserController;
 import massimatti.domain.EntryController;
@@ -27,7 +26,7 @@ public class LoginView {
         this.userController = userController;
         this.entryController = entryController;
         this.categoryController = categoryController;
-        
+
         this.appScene = null;
     }
 
@@ -36,8 +35,6 @@ public class LoginView {
     }
 
     public Scene getLoginScene(Stage primaryStage) {
-        
-    
 
         VBox loginPane = new VBox(10);
 
@@ -97,8 +94,7 @@ public class LoginView {
             if (userController.checkUsername(user) == true && userController.checkPassword(password) == true) {
 
                 userController.createUser(user, password);
-               
-                
+
                 usernameInput.clear();
                 passwordInput.clear();
                 backToLoginView(loginPane, loginMessage, registerUserButton, backToLoginButton, loginButton, changeToRegisterViewButton);

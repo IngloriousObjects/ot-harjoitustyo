@@ -18,13 +18,12 @@ import massimatti.dao.EntryDao;
 public class EntryController {
 
     private EntryDao entryDao;
-    
+
     /**
      * Luokan konstruktori.
      *
      * @param EntryDao Tapahtumien Dao-toiminnallisuudet tarjoava luokka
      */
-
     public EntryController(EntryDao entryDao) {
 
         this.entryDao = entryDao;
@@ -41,7 +40,6 @@ public class EntryController {
      * @return totuusarvo, joka luokittelee tapahtuman lisäämisen onnistumisen:
      * true onnistuneen tapahtuman palautus, false virhe tapahtumaa lisätessä
      */
-
     public boolean addEntry(LocalDate date, Boolean type, Double sum, String category, String user) {
         try {
             entryDao.create(new Entry(date, type, sum, category, user));
@@ -51,7 +49,7 @@ public class EntryController {
             return false;
         }
     }
-    
+
     /**
      * Hakee käyttäjän tapahtumat tietokannasta
      *
@@ -67,6 +65,5 @@ public class EntryController {
             return new ArrayList<>();
         }
     }
-    
 
 }

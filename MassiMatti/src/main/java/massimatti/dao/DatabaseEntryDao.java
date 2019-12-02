@@ -89,7 +89,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
                         result.getDouble("sum"),
                         result.getString("category"),
                         result.getString("userId")));
-                
+
             }
             result.close();
             stmt.close();
@@ -97,7 +97,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
 
             cacheMemory.put(key, entries);
         }
-        
+
         return cacheMemory.get(key);
 
     }

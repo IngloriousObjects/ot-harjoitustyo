@@ -8,7 +8,7 @@ import massimatti.dao.UserDao;
  *
  */
 public class UserController {
-
+ 
     private UserDao userDao;
     private User user;
 
@@ -64,5 +64,4 @@ public class UserController {
         return (string.length() > 7 && string.length() < 37);
     }
 
-    
 }

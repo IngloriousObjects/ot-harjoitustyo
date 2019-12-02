@@ -19,23 +19,25 @@ public class AppView {
     private EntryController entryController;
     private CategoryController categoryController;
     private Scene loginScene;
-    private Scene listViewScene;
+    private Scene entryListViewScene;
     private Stage secondStage;
 
-    public AppView(UserController userController, EntryController entryController, CategoryController categoryController, Scene loginScene, Scene listViewScene, Stage secondStage) {
+    public AppView(UserController userController, EntryController entryController, CategoryController categoryController, Scene loginScene, Scene entryListViewScene, Stage secondStage) {
 
         this.userController = userController;
         this.entryController = entryController;
         this.categoryController = categoryController;
         this.loginScene = loginScene;
-        this.listViewScene = listViewScene;
+        this.entryListViewScene = entryListViewScene;
         this.secondStage = secondStage;
 
     }
 
     public Scene getAppScene(Stage primaryStage) {
 
-        // Tämä osa vielä täysin raakile, mutta toteuttaa toiminnot 'Kirjaudu ulos' ja 'Listaa tapahtumat'
+        /* Tämä osa vielä täysin raakile ilman järkevää muotoilua, mutta toteuttaa toiminnot 'Kirjaudu ulos' ja 'Listaa tapahtumat'
+         * Vaikkakaan listaa tapahtumat eivät luonnollisesti vielä listaa kuin tyhjää, sillä 'Lisää tapahtuma' -toimintoa ei ole vielä
+         */
         VBox appPane = new VBox(10);
         Button logOut = new Button("Kirjaudu ulos");
         Button addEntry = new Button("Lisää tapahtuma");
@@ -56,7 +58,7 @@ public class AppView {
 
         listEntries.setOnAction((event) -> {
 
-            secondStage.setScene(listViewScene);
+            secondStage.setScene(entryListViewScene);
             secondStage.show();
 
         });

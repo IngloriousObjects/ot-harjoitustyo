@@ -52,39 +52,39 @@ public class MassiMattiUi extends Application {
         this.userController = new UserController(userDao);
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
-    
-     
-        
+
+        // Testataan toimintoja tietokannan suhteen suoraan ohjelman sisällä
+        categoryController.addCategory("Ravintola");
+        categoryController.addCategory("Elintarvikkeet");
+        categoryController.addCategory("Alkoholi");
+        categoryController.addCategory("Liikunta ja terveys");
+
+        userController.createUser("petri", "salasana");
+        entryController.addEntry(LocalDate.of(2019, 1, 2), false, 19.20, "Ravintola", "petri");
+
+        System.out.println(entryController.getEntries("petri"));
 
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-         
-        
-        Stage secondStage = new Stage();
-        EntryListView listView = new EntryListView(userController, entryController, categoryController, secondStage);
-        Scene listViewScene = listView.getListViewScene(secondStage);
-        
-        
+
         LoginView loginView = new LoginView(userController, entryController, categoryController);
         Scene loginScene = loginView.getLoginScene(primaryStage);
 
-        AppView appView = new AppView(userController, entryController, categoryController, loginScene, listViewScene, secondStage );
+        Stage secondStage = new Stage();
+        EntryListView entrylistView = new EntryListView(userController, entryController, categoryController, secondStage);
+        Scene entryListViewScene = entrylistView.getListViewScene(secondStage);
+
+        AppView appView = new AppView(userController, entryController, categoryController, loginScene, entryListViewScene, secondStage);
         Scene appScene = appView.getAppScene(primaryStage);
-        
-             
-       
 
         loginView.setAppScene(appScene);
-       
 
         primaryStage.setTitle("MassiMatti");
         primaryStage.setScene(loginScene);
         primaryStage.centerOnScreen();
         primaryStage.show();
-        
-       
 
     }
 

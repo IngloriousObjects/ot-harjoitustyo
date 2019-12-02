@@ -12,9 +12,8 @@ import java.util.List;
  *
  * @author pjtoropa
  */
-public interface EntryDao <T,K> {
-    
-    
+public interface EntryDao<T, K> {
+
     T create(T object) throws SQLException;
 
     void remove(K key) throws SQLException;
@@ -22,5 +21,5 @@ public interface EntryDao <T,K> {
     void removeByUser(String key);
 
     List<T> listByUser(String key) throws SQLException;
-    
+
 }

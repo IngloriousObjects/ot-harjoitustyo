@@ -42,15 +42,15 @@ public class DatabaseDao {
                     + "category VARCHAR(36),"
                     + "userID VARCHAR(36),"
                     + "FOREIGN KEY (userId) REFERENCES User(Username),"
-                   + "FOREIGN KEY (category) REFERENCES Category(category));";
-            
+                    + "FOREIGN KEY (category) REFERENCES Category(category));";
+
             String createCategory = "CREATE TABLE IF NOT EXISTS Category ("
-                    +"id int AUTO_INCREMENT primary key,"
-                    +"category VARCHAR(36))"; 
+                    + "id int AUTO_INCREMENT primary key,"
+                    + "category VARCHAR(36))";
 
             conn.prepareStatement(createUser).execute();
-           conn.prepareStatement(createCategory).execute();
-           conn.prepareStatement(createEntry).execute();
+            conn.prepareStatement(createCategory).execute();
+            conn.prepareStatement(createEntry).execute();
 
         } catch (SQLException e) {
             System.out.println(e.getLocalizedMessage());

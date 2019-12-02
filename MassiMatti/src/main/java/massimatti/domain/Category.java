@@ -10,14 +10,14 @@ package massimatti.domain;
  * @author pjtoropa
  */
 public class Category {
-    
+
     //private Integer categoryId;
     private String categoryName;
-    
-    public Category (String categoryName){
-        
+
+    public Category(String categoryName) {
+
         this.categoryName = categoryName;
-    } 
+    }
 
     public String getCategoryName() {
         return this.categoryName;
@@ -26,12 +26,10 @@ public class Category {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
-    
-    
-    
+
     @Override
-    public String toString(){
-        
+    public String toString() {
+
         return this.categoryName;
     }
 }
