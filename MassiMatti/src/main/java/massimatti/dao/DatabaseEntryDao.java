@@ -26,7 +26,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
     private String path;
     private String user;
     private String password;
-    private Map<String, List< Entry>> cacheMemory; //käytetään tikapesta tuttua välimuistimenetelmää
+    private Map<String, List<Entry>> cacheMemory;                                  //käytetään tikapesta tuttua välimuistimenetelmää
 
     public DatabaseEntryDao(String path, String user, String password) {
 
@@ -60,7 +60,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
 
     @Override
     public void remove(Integer key) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //käytetään, jos ehditään
+        throw new UnsupportedOperationException("Not supported yet.");              //käytetään, jos ehditään
     }
 
     @Override

@@ -73,7 +73,7 @@ public class MassiMattiUi extends Application {
         Scene loginScene = loginView.getLoginScene(primaryStage);
 
         Stage secondStage = new Stage();
-        EntryListView entrylistView = new EntryListView(userController, entryController, categoryController, secondStage);
+        EntryListView entrylistView = new EntryListView(userController, entryController, categoryController);
         Scene entryListViewScene = entrylistView.getListViewScene(secondStage);
 
         AppView appView = new AppView(userController, entryController, categoryController, loginScene, entryListViewScene, secondStage);

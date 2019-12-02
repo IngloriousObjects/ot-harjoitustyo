@@ -30,13 +30,13 @@ public class EntryListView {
     private EntryController entryController;
     private CategoryController categoryController;
     private Stage secondStage;
-
-    public EntryListView(UserController userController, EntryController entryController, CategoryController categoryController, Stage secondStage) {
+                                            //poistettu konstruktorista Stage secondStage
+    public EntryListView(UserController userController, EntryController entryController, CategoryController categoryController) {
 
         this.userController = userController;
         this.entryController = entryController;
         this.categoryController = categoryController;
-        this.secondStage = secondStage;
+        //this.secondStage = secondStage;
 
     }
 

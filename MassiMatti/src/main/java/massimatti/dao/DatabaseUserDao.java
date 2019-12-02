@@ -12,13 +12,13 @@ import massimatti.domain.User;
  *
  */
 public class DatabaseUserDao implements UserDao<User, String> {
-    
+
     private String path;
     private String user;
     private String password;
-    
-    public DatabaseUserDao (String path, String user, String password){
-        
+
+    public DatabaseUserDao(String path, String user, String password) {
+
         this.path = path;
         this.user = user;
         this.password = password;
@@ -26,7 +26,7 @@ public class DatabaseUserDao implements UserDao<User, String> {
 
     @Override
     public User create(User object) throws SQLException {
-     
+
         Connection conn = DriverManager.
                 getConnection(path, user, password);
 
@@ -47,7 +47,7 @@ public class DatabaseUserDao implements UserDao<User, String> {
     public User read(String key) throws SQLException {
         //käytetään tikape-kikkoja ja hiotaan myöhemmin
         Connection conn = DriverManager.
-                getConnection(path,user,password);
+                getConnection(path, user, password);
 
         PreparedStatement stmt = conn.prepareStatement(
                 "SELECT username, password FROM User WHERE username = ?");
