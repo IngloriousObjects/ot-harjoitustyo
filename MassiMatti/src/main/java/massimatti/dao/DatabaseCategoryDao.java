@@ -8,6 +8,7 @@ package massimatti.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 import massimatti.domain.Category;
 
@@ -29,11 +30,11 @@ public class DatabaseCategoryDao implements CategoryDao {
     }
 
     @Override
-    public Category create(Category category) throws Exception {
+    public Category create(Category category) throws SQLException {
         
           Connection conn = DriverManager.getConnection(path, user, password);
         PreparedStatement stmt = conn.prepareStatement(
-                "INSERT INTO Category (category) VALUES (?");
+                "INSERT INTO Category (category) VALUES (?)");
         
         stmt.setString(1, category.getCategoryName());
   

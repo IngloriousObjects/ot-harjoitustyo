@@ -1,6 +1,7 @@
 package massimatti.ui;
 
 import java.io.FileInputStream;
+import java.time.LocalDate;
 import java.util.Properties;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -51,25 +52,39 @@ public class MassiMattiUi extends Application {
         this.userController = new UserController(userDao);
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
+    
+     
         
 
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-        LoginView loginView = new LoginView(userController);
+         
+        
+        Stage secondStage = new Stage();
+        EntryListView listView = new EntryListView(userController, entryController, categoryController, secondStage);
+        Scene listViewScene = listView.getListViewScene(secondStage);
+        
+        
+        LoginView loginView = new LoginView(userController, entryController, categoryController);
         Scene loginScene = loginView.getLoginScene(primaryStage);
 
-        AppView appView = new AppView(userController, loginScene);
+        AppView appView = new AppView(userController, entryController, categoryController, loginScene, listViewScene, secondStage );
         Scene appScene = appView.getAppScene(primaryStage);
+        
+             
+       
 
         loginView.setAppScene(appScene);
+       
 
         primaryStage.setTitle("MassiMatti");
         primaryStage.setScene(loginScene);
         primaryStage.centerOnScreen();
         primaryStage.show();
+        
+       
 
     }
 

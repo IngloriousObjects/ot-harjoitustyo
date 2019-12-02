@@ -1,7 +1,6 @@
-package massimatti.ui;
+package massimatti.ui; 
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import massimatti.domain.UserController;
 import massimatti.domain.EntryController;
 import massimatti.domain.CategoryController;
@@ -24,8 +23,10 @@ public class LoginView {
     private EntryController entryController;
     private CategoryController categoryController;
 
-    public LoginView(UserController userController) {
+    public LoginView(UserController userController, EntryController entryController, CategoryController categoryController) {
         this.userController = userController;
+        this.entryController = entryController;
+        this.categoryController = categoryController;
         
         this.appScene = null;
     }
@@ -96,6 +97,7 @@ public class LoginView {
             if (userController.checkUsername(user) == true && userController.checkPassword(password) == true) {
 
                 userController.createUser(user, password);
+               
                 
                 usernameInput.clear();
                 passwordInput.clear();
