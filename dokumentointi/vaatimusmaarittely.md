@@ -22,7 +22,7 @@ Järjestelmän päänäkymässä käyttäjä voi:
     * päänäkymästä siirrytään tapahtumanäkymään ja lisäyksen ((pvm, tyyppi(meno/tulo), summa, kategoria, kuvaus) jälkeen takaisin           päänäkymään
   * lisätä uuden kategorian
     * päänäkymästä siirrytään kategorianäkymään (lisätään kategoria) ja lisäyksen jälkeen takaisin päänäkymään
-  * listata tapahtumat
+  * TEHTY(ilman täyttä toiminnalisuutta, sillä riippuvainen vielä tekemättömistä)listata tapahtumat
     * päänäkymästä siirrytään listausnäkymään, jossa valitaan ajanjakso, jonka perusteella listataan tapahtumat sekä niiden erotus erillisessä tulosnäkymässä, joka suljetaan painikkeella
     * paluu päänäkymään
   * tarkastella tapahtumia kategorioittain
@@ -31,7 +31,7 @@ Järjestelmän päänäkymässä käyttäjä voi:
  * tarkastella tapahtumia päivä-, kuukausi- tai vuositasolla
     * päänäkymästä siirrytään aikatason tarkastelunäkymään, jossa valitaan ajanjakso, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa aikaa ja y-akseli euromäärää. Kaavionäkymä suljetaan painikkeella
     * paluu päänäkymään
- * kirjautua ulos järjestelmästä
+ * TEHTYkirjautua ulos järjestelmästä
     
  ## Jatkokehitysmahdollisuudet
     
