@@ -12,8 +12,8 @@ Sovelluksessa on alkuvaiheessa ainoastaan yksi käyttäjätyyppi eli normaali k�
 
 ### Kirjautuminen / Rekisteröityminen
 
-* TEHTYSovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi TEHTYkirjautua sisään järjestelmään käyttäjänimellään ja salasanallaan. Mikäli käyttäjällä ei vielä ole luotuna tunnuksia, kirjautumisnäkymästä siirrytään painikkeella rekisteröintinäkymään 
-  * TEHTYRekisteröintinäkymässä käyttäjä luo tunnukset antamalla uniikin käyttäjänimen (vähintään 4 merkkiä) ja salasanan (vähintään 8 merkkiä). Painikkeella tiedot talletetaan ja siirrytään takaisin kirjautumisnäkymään
+* TEHTY Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi TEHTY kirjautua sisään järjestelmään käyttäjänimellään ja salasanallaan. TEHTY Mikäli käyttäjällä ei vielä ole luotuna tunnuksia, kirjautumisnäkymästä siirrytään painikkeella rekisteröintinäkymään 
+  * TEHTY Rekisteröintinäkymässä käyttäjä luo tunnukset antamalla uniikin käyttäjänimen (vähintään 4 merkkiä) ja salasanan (vähintään 8 merkkiä). TEHTY Painikkeella tiedot talletetaan ja siirrytään takaisin kirjautumisnäkymään
   
 ### Järjestelmässä
 
@@ -22,7 +22,7 @@ Järjestelmän päänäkymässä käyttäjä voi:
     * päänäkymästä siirrytään tapahtumanäkymään ja lisäyksen ((pvm, tyyppi(meno/tulo), summa, kategoria, kuvaus) jälkeen takaisin           päänäkymään
   * lisätä uuden kategorian
     * päänäkymästä siirrytään kategorianäkymään (lisätään kategoria) ja lisäyksen jälkeen takaisin päänäkymään
-  * TEHTY(ilman täyttä toiminnalisuutta, sillä riippuvainen vielä tekemättömistä)listata tapahtumat
+  * TEHTY(ilman täyttä toiminnalisuutta, sillä riippuvainen vielä tekemättömistä) listata tapahtumat
     * päänäkymästä siirrytään listausnäkymään, jossa valitaan ajanjakso, jonka perusteella listataan tapahtumat sekä niiden erotus erillisessä tulosnäkymässä, joka suljetaan painikkeella
     * paluu päänäkymään
   * tarkastella tapahtumia kategorioittain
