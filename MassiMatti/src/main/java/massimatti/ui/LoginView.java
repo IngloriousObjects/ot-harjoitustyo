@@ -65,7 +65,7 @@ public class LoginView {
 
         loginButton.setOnAction((event) -> {
 
-            //Tämä vielä yksinkertaistettu versio eli ei vielä mm. muototarkistuksia eikä muita poikkeamailmoituksia
+          
             String user = usernameInput.getText();
             String password = passwordInput.getText();
 
