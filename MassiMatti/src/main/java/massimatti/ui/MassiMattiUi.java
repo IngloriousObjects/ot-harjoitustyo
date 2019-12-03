@@ -63,6 +63,7 @@ public class MassiMattiUi extends Application {
         entryController.addEntry(LocalDate.of(2019, 1, 2), false, 19.20, "Ravintola", "petri");
 
         System.out.println(entryController.getEntries("petri"));
+        System.out.println("BOUSUUB!");
 
     }
 
@@ -73,10 +74,8 @@ public class MassiMattiUi extends Application {
         Scene loginScene = loginView.getLoginScene(primaryStage);
 
         Stage secondStage = new Stage();
-        EntryListView entrylistView = new EntryListView(userController, entryController, categoryController);
-        Scene entryListViewScene = entrylistView.getListViewScene(secondStage);
 
-        AppView appView = new AppView(userController, entryController, categoryController, loginScene, entryListViewScene, secondStage);
+        AppView appView = new AppView(userController, entryController, categoryController, loginScene, secondStage);
         Scene appScene = appView.getAppScene(primaryStage);
 
         loginView.setAppScene(appScene);

@@ -30,35 +30,23 @@ public class EntryListView {
     private EntryController entryController;
     private CategoryController categoryController;
     private Stage secondStage;
-                                            //poistettu konstruktorista Stage secondStage
+
+    //Tämäkin osio on vielä raakile -- muokkausta ilmeeseen ja funktionaalisuuteen 
     public EntryListView(UserController userController, EntryController entryController, CategoryController categoryController) {
 
         this.userController = userController;
         this.entryController = entryController;
         this.categoryController = categoryController;
-        //this.secondStage = secondStage;
 
     }
 
     public Scene getListViewScene(Stage secondStage) {
-        
-        
-        /*Pitää vielä jatkaa selvittelyä miten saan ilman erroria tuotua arraylistin javafx:issä ->tämä antaa heti ajettaessa herjan
+
         List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
         ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
 
         ListView<Entry> byUser = new ListView<Entry>();
         byUser.getItems().addAll(entries);
-
-        */
-        
-        ListView byUser = new ListView();
-        
-        byUser.getItems().add("Tämä on testi 1");
-        byUser.getItems().add("Tämä on testi 2");
-        byUser.getItems().add("Tämä on testi 3");
-
-        
 
         HBox hbox = new HBox(byUser);
 
