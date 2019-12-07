@@ -18,6 +18,7 @@ public class AppView {
     private UserController userController;
     private EntryController entryController;
     private CategoryController categoryController;
+   
     private Scene loginScene;
     //  private Scene entryListViewScene;
     private Stage secondStage;
@@ -27,6 +28,7 @@ public class AppView {
         this.userController = userController;
         this.entryController = entryController;
         this.categoryController = categoryController;
+        
         this.loginScene = loginScene;
         //     this.entryListViewScene = entryListViewScene;
         this.secondStage = secondStage;
@@ -38,7 +40,8 @@ public class AppView {
         /* Tämä osa vielä täysin raakile ilman järkevää muotoilua, mutta toteuttaa toiminnot 'Kirjaudu ulos' ja 'Listaa tapahtumat'
          * Vaikkakaan listaa tapahtumat eivät luonnollisesti vielä listaa kuin tyhjää, sillä 'Lisää tapahtuma' -toimintoa ei ole vielä
          */
-        EntryListView entryListView = new EntryListView(userController, entryController, categoryController);
+     
+        
         
         VBox appPane = new VBox(10);
         Button logOut = new Button("Kirjaudu ulos");
@@ -59,9 +62,19 @@ public class AppView {
         });
         
         listEntries.setOnAction((event) -> {
-            
+            EntryListView entryListView = new EntryListView(userController, entryController, categoryController);
             secondStage.setScene(entryListView.getListViewScene(secondStage));
             secondStage.show();
+            
+        });
+        
+        addCategory.setOnAction((event)->{
+          
+            AddCategoryView addCategoryView = new AddCategoryView(categoryController);
+            secondStage.setScene(addCategoryView.getAddCategoryView(secondStage));
+            secondStage.show();
+          
+          
             
         });
         

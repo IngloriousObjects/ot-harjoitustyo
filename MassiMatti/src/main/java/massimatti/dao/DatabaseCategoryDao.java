@@ -8,9 +8,11 @@ package massimatti.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import massimatti.domain.Category;
+import massimatti.domain.User;
 
 /**
  *
@@ -43,6 +45,32 @@ public class DatabaseCategoryDao implements CategoryDao {
         conn.close();
 
         return category;
+    }
+    
+    @Override
+    public Category read (Category category) throws SQLException{
+        Connection conn = DriverManager.
+                getConnection(path, user, password);
+
+        PreparedStatement stmt = conn.prepareStatement(
+                "SELECT category FROM Category WHERE category = ?");
+
+        stmt.setString(1, category.getCategoryName());
+        ResultSet result = stmt.executeQuery();
+
+        if (!result.next()) {
+            return null;
+        }
+
+        Category newCategory = new Category(
+                result.getString("category"));
+             
+
+        result.close();
+        stmt.close();
+        conn.close();
+
+        return newCategory;
     }
 
     @Override

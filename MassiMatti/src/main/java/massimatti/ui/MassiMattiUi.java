@@ -37,11 +37,10 @@ public class MassiMattiUi extends Application {
         properties.load(new FileInputStream("config.properties"));
 
         String path = properties.getProperty("path");
-        System.out.println(path);
+
         String user = properties.getProperty("user");
-        System.out.println(user);
+
         String password = properties.getProperty("password");
-        System.out.println(password);
 
         DatabaseUserDao userDao = new DatabaseUserDao(path, user, password);
         DatabaseEntryDao entryDao = new DatabaseEntryDao(path, user, password);
@@ -53,7 +52,7 @@ public class MassiMattiUi extends Application {
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
 
-        // Testataan toimintoja tietokannan suhteen suoraan ohjelman sisällä
+        /* Testataan toimintoja tietokannan suhteen suoraan ohjelman sisällä
         categoryController.addCategory("Ravintola");
         categoryController.addCategory("Elintarvikkeet");
         categoryController.addCategory("Alkoholi");
@@ -64,6 +63,7 @@ public class MassiMattiUi extends Application {
 
         System.out.println(entryController.getEntries("petri"));
         System.out.println("BOUSUUB!");
+        */
 
     }
 

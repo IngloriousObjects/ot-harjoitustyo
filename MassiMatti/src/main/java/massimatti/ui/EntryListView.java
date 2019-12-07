@@ -29,7 +29,7 @@ public class EntryListView {
     private UserController userController;
     private EntryController entryController;
     private CategoryController categoryController;
-    private Stage secondStage;
+    
 
     //Tämäkin osio on vielä raakile -- muokkausta ilmeeseen ja funktionaalisuuteen 
     public EntryListView(UserController userController, EntryController entryController, CategoryController categoryController) {
@@ -50,7 +50,7 @@ public class EntryListView {
 
         HBox hbox = new HBox(byUser);
 
-        Scene scene = new Scene(hbox, 500, 300);
+        Scene scene = new Scene(hbox, 1000, 600);
 
         return scene;
 

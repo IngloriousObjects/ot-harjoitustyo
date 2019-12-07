@@ -22,14 +22,26 @@ public class CategoryController {
         this.categoryDao = categoryDao;
     }
 
-    public boolean addCategory(String categoryName) throws Exception {   // tee tähän read-tarkistus...lisää daoon?
+    public boolean addCategory(Category category) throws Exception {   // tee tähän read-tarkistus...lisää daoon?
         try {
-            categoryDao.create(new Category(categoryName));
-            return true;
+            if (categoryDao.read(category) == null) {
+                categoryDao.create(new Category(category.getCategoryName()));
+                return true;
+            }
+            return false;
 
         } catch (SQLException e) {
             return false;
         }
+    }
+ 
+
+    
+
+    public boolean checkFormality(String string) {
+
+        return (string.length() > 2 && string.length() < 37);
+
     }
 
 }

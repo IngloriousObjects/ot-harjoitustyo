@@ -39,7 +39,7 @@
                     <excludes>
                         <exclude>massimatti/ui/*</exclude>
                         
-                        <exclude>massimatti/*</exclude>
+                        <exclude>massimatti/Main*</exclude>
 
                     </excludes>
                
