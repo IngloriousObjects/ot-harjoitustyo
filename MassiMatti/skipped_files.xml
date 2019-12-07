@@ -6,5 +6,13 @@
 
 <suppressions>
     <suppress files="massimatti.ui.MassiMattiUi.java" checks="[a-zA-Z0-9]*"/>
-    
+    <suppress files="massimatti.ui.LoginView.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="massimatti.ui.AppView.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="massimatti.ui.EntryListView.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="massimatti.ui.AddCategoryView.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="massimatti.ui.AddEntryView.java" checks="[a-zA-Z0-9]*"/>
+
+
+
+
 </suppressions>

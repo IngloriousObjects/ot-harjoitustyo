@@ -94,6 +94,7 @@ public class LoginView {
             if (userController.checkUsername(user) == true && userController.checkPassword(password) == true) {
 
                 userController.createUser(user, password);
+                creationSuccessfulAlert();
 
                 usernameInput.clear();
                 passwordInput.clear();
@@ -159,10 +160,23 @@ public class LoginView {
         createError.setContentText(
                 "Käyttäjätunnuksen pituus voi olla 4-36 merkkiä ja salasanan 8-36 merkkiä.");
         createError.getDialogPane()
-                .setPrefSize(320, 200);
+                .setPrefSize(300, 180);
 
         createError.showAndWait();
 
+    }
+    
+    public void creationSuccessfulAlert(){
+        
+         
+        
+        Alert creationSuccessfullInfo = new Alert(Alert.AlertType.INFORMATION);
+        creationSuccessfullInfo.setTitle("MassiMatti");
+        creationSuccessfullInfo.setHeaderText("Käyttäjätunnuksen luominen onnistui!");
+        creationSuccessfullInfo.setContentText("Kirjaudu sisään tai luo uusi tunnus.");
+        creationSuccessfullInfo.getDialogPane().setPrefSize(300, 180);
+        creationSuccessfullInfo.showAndWait();
+        
     }
 
 }
