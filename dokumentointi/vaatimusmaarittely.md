@@ -20,7 +20,7 @@ Sovelluksessa on alkuvaiheessa ainoastaan yksi käyttäjätyyppi eli normaali k�
 Järjestelmän päänäkymässä käyttäjä voi:
   * lisätä uuden tapahtuman
     * päänäkymästä siirrytään tapahtumanäkymään ja lisäyksen ((pvm, tyyppi(meno/tulo), summa, kategoria, kuvaus) jälkeen takaisin           päänäkymään
-  * lisätä uuden kategorian
+  * TEHTY lisätä uuden kategorian
     * päänäkymästä siirrytään kategorianäkymään (lisätään kategoria) ja lisäyksen jälkeen takaisin päänäkymään
   * TEHTY(ilman täyttä toiminnalisuutta, sillä riippuvainen vielä tekemättömistä) listata tapahtumat
     * päänäkymästä siirrytään listausnäkymään, jossa valitaan ajanjakso, jonka perusteella listataan tapahtumat sekä niiden erotus erillisessä tulosnäkymässä, joka suljetaan painikkeella
