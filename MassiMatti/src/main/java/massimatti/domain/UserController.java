@@ -11,7 +11,7 @@ public class UserController {
     /**
      * Luokan konstruktori.
      *
-     * @param UserDao Käyttäjän Dao-toiminnallisuudet tarjoava luokka
+     * @param userDao Käyttäjän Dao-toiminnallisuudet tarjoava luokka
      */
     public UserController(UserDao userDao) {
 
@@ -31,7 +31,7 @@ public class UserController {
     /**
      * Kirjaa käyttäjän ulos järjestelmästä
      *
-     * @return käyttäjä on null
+     * 
      */
     public void logOutUser() {
 

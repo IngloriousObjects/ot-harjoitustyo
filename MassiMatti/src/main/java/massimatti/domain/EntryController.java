@@ -13,7 +13,7 @@ public class EntryController {
     /**
      * Luokan konstruktori.
      *
-     * @param EntryDao Tapahtumien Dao-toiminnallisuudet tarjoava luokka
+     * @param entryDao Tapahtumien Dao-toiminnallisuudet tarjoava luokka
      */
     public EntryController(EntryDao entryDao) {
 
