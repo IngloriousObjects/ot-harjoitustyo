@@ -3,6 +3,10 @@ package massimatti.domain;
 import java.sql.SQLException;
 import massimatti.dao.UserDao;
 
+/**
+ * Käyttäjän toiminnallisuuksien sovelluslogiikasta vastaava luokka
+ */
+
 public class UserController {
 
     private UserDao userDao;
@@ -31,7 +35,7 @@ public class UserController {
     /**
      * Kirjaa käyttäjän ulos järjestelmästä
      *
-     * 
+     *
      */
     public void logOutUser() {
 

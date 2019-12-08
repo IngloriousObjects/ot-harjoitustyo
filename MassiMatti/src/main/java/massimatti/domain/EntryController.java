@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import massimatti.dao.EntryDao;
 
+/**
+ * Tapahtumien toiminnalisuuksien sovelluslogiikasta vastaava luokka
+ */
 public class EntryController {
 
     private EntryDao entryDao;

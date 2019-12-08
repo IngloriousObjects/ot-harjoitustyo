@@ -12,6 +12,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Entry-olioiden tallennuksesta vastaava luokka.
+ *
+ */
 public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
 
     private String path;
@@ -19,6 +23,13 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
     private String password;
     private Map<String, List<Entry>> cacheMemory;                                  //käytetään tikapesta tuttua välimuistimenetelmää
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param path config.properties tiedostossa määritelty polku tietokantaan
+     * @param user tietokannan käyttäjätunnus
+     * @param password tietokannan salasana
+     */
     public DatabaseEntryDao(String path, String user, String password) {
 
         this.path = path;
@@ -27,6 +38,14 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
         this.cacheMemory = new HashMap<>();
 
     }
+
+    /**
+     * Tallentaa tapahtuma-olion tietokantaan.
+     *
+     * @param object tapahtuma-olio
+     * @return palauttaa tietokantaan tallennettun tapahtuma-olion
+     * @throws SQLException Tietokannan heittämä poikkeus virhetilanteessa.
+     */
 
     @Override
     public Entry create(Entry object) throws SQLException {
@@ -59,6 +78,13 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
         throw new UnsupportedOperationException("Not supported yet."); //käytetään, jos ehditään
     }
 
+    /**
+     * Hakee käyttäjän kaikki tapahtumat tietokannasta.
+     *
+     * @param key käyttäjätunnus, jonka tapahtumia haetaan
+     * @return palautetaan lista käyttäjän tapahtumista
+     * @throws SQLException Tietokannan heittämä poikkeus virhetilanteessa.
+     */
     @Override
     public List<Entry> listByUser(String key) throws SQLException {
 

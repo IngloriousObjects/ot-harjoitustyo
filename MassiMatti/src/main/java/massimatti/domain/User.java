@@ -17,14 +17,14 @@ public class User {
     }
 
     /**
-     * @return the username
+     * @return palauttaa käyttäjätunnuksen
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * @return the password
+     * @return palauttaa salasanan
      */
     public String getPassword() {
         return password;

@@ -7,12 +7,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import massimatti.domain.User;
 
+/**
+ * User-olioiden tallennuksesta vastaava luokka.
+ *
+ */
 public class DatabaseUserDao implements UserDao<User, String> {
 
     private String path;
     private String user;
     private String password;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param path config.properties tiedostossa määritelty polku tietokantaan
+     * @param user tietokannan käyttäjätunnus
+     * @param password tietokannan salasana
+     */
     public DatabaseUserDao(String path, String user, String password) {
 
         this.path = path;
@@ -20,6 +31,13 @@ public class DatabaseUserDao implements UserDao<User, String> {
         this.password = password;
     }
 
+    /**
+     * Tallentaa käyttäjä-olion tietokantaan.
+     *
+     * @param object käyttäjä-olio
+     * @return palauttaa tietokantaan tallennettun käyttäjä-olion
+     * @throws SQLException Tietokannan heittämä poikkeus virhetilanteessa.
+     */
     @Override
     public User create(User object) throws SQLException {
 
@@ -39,6 +57,14 @@ public class DatabaseUserDao implements UserDao<User, String> {
         return object;
     }
 
+    /**
+     * Lukee käyttäjän tietokannasta.
+     *
+     * @param key String-muodossa oleva käyttäjätunnus
+     * @return luettu käyttäjä tai null, jos käyttäjää ei löydy
+     * käyttäjätunnuksen perusteella
+     * @throws SQLException Tietokannan heittämä poikkeus virhetilanteessa.
+     */
     @Override
     public User read(String key) throws SQLException {
         //käytetään tikape-kikkoja ja hiotaan myöhemmin
