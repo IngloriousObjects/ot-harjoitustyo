@@ -9,10 +9,6 @@ Pakkaus massimatti.ui sisältää JavaFX:llä toteutetun käyttöliittymän mass
 # Sovelluslogiikka
 ![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/rakenne_arkkitehtuuri.png)
 
-
-# Sekvenssikaavio sisäänkirjautumisesta
-![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssi_loginMM.png)
-
 # Tietojen pysyväistallennus
 
 # Päätoiminnnalisuudet
