@@ -30,4 +30,4 @@ Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla _re
 
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/register.png" width="400">
 
-Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään.
+Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään. Mikäli käyttäjä haluaa palata kirjautumisnäkymään ilman tunnuksen luontia, tämä tapahtuu painamalla _palaa_.
