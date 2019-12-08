@@ -7,7 +7,7 @@ Pakkaus massimatti.ui sisältää JavaFX:llä toteutetun käyttöliittymän mass
 # Käyttöliittymä
 
 # Sovelluslogiikka
-![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/arkkitehtuuri.png)
+![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/rak_ark_v2.png)
 
 # Tietojen pysyväistallennus
 
