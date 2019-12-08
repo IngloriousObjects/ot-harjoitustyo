@@ -78,6 +78,13 @@ public class AppView {
             
         });
         
+        addEntry.setOnAction((event)->{
+            
+            AddEntryView addEntryView = new AddEntryView(userController, entryController, categoryController);
+            secondStage.setScene(addEntryView.getAddEntryViewScene(secondStage));
+            secondStage.show();
+        });
+        
         return scene;
         
     }

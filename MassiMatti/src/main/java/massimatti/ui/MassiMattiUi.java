@@ -63,8 +63,7 @@ public class MassiMattiUi extends Application {
 
         System.out.println(entryController.getEntries("petri"));
         System.out.println("BOUSUUB!");
-        */
-
+         */
     }
 
     @Override
