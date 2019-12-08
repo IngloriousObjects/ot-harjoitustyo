@@ -34,9 +34,6 @@ public class CategoryController {
             return false;
         }
     }
- 
-
-    
 
     public boolean checkFormality(String string) {
 

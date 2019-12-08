@@ -32,7 +32,7 @@ public class EntryController {
     /**
      * Lisää käyttäjälle uuden tapahtuman tietokantaan
      *
-     * @param date Tapahtuman suorituspäivi
+     * @param date Tapahtuman suorituspäivä
      * @param type Tapahtuman tyyppi;false, jos meno, true mikäli tulo
      * @param sum Taphtuma suuruus euroina
      * @param category Tapahtuman kategoria

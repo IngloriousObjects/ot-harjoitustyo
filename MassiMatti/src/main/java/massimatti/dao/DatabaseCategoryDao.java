@@ -46,9 +46,9 @@ public class DatabaseCategoryDao implements CategoryDao {
 
         return category;
     }
-    
+
     @Override
-    public Category read (Category category) throws SQLException{
+    public Category read(Category category) throws SQLException {
         Connection conn = DriverManager.
                 getConnection(path, user, password);
 
@@ -64,7 +64,6 @@ public class DatabaseCategoryDao implements CategoryDao {
 
         Category newCategory = new Category(
                 result.getString("category"));
-             
 
         result.close();
         stmt.close();
