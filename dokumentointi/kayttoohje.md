@@ -22,3 +22,12 @@ Sovellus käynnistyy kirjautumisnäkymään:
 
 Kirjautuminen onnistuu kirjoittamalla olemassaoleva käyttäjätunnus ja salasana syötekenttiin ja painamalla _kirjaudu_.
 
+## Uuden käyttäjän luominen
+
+Kirjautumisnäkymästä on mahdollista siirtyä uuden käyttäjän luomisnäkymään panikkeella _rekisteröidy_.
+
+Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla _rekisteröidy_
+
+<img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/register.png" width="400">
+
+Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään.
