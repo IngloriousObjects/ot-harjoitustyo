@@ -9,6 +9,10 @@ Pakkaus massimatti.ui sisältää JavaFX:llä toteutetun käyttöliittymän mass
 # Sovelluslogiikka
 ![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/rak_ark_v2.png)
 
+Luokat User,Entry ja Category muodostavat sovelluksen loogisen datamallin kuvaten järjestelmän käyttäjää, käyttäjän luomia tapahtumia sekä käyttäjien luomia kategorioita. Sovelluslogiikan luokat UserController, EntryController ja CategoryController vastaavat taasen kaikista käyttöliittymän tarvitsemista sovellustoiminnoista.
+
+Daopakkauksen luokat DatabaseUserDao, DatabaseEntryDao ja DatabaseCategoryDao toteuttava rajapinnat UserDao, EntryDao ja CategoryDao. Edellä mainituttujen rajapintojen toteuttavat luokat siis mahdollistavat pääsyn käyttäjiin, tapahtumiin ja kategorioihin. Luokkien toteutus injektoidaan sovelluslogiikalle konstruktorikutsun yhteydessä.
+
 # Tietojen pysyväistallennus
 
 # Päätoiminnnalisuudet
