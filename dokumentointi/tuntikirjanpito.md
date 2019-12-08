@@ -18,4 +18,6 @@
 | 1.12.  | 7    | Tuunattu checkstyle, luotu congfig-filet sekä apille että testeille, koodattu yleisesti luokkia|
 | 2.12.  | 7    | Tuskailua javaFX:n kanssa ja testien tekoa|
 | 3.12.  | 3    | Releasen update, hiukan viilausta UI:n osalta sekä sekvenssikaavion tekeminen sisäänkirjautumisesta|
-| yht    |59    | | 
+| 4.12.  | 4    | Käyttöliittymän koodaamista|
+| 5.12.  | 7    | Luotu sovelluksen dokumentaatiota, käytetty tunteja mavenin javadoc-ongelmaan ja luotu testejä|
+| yht    |70    | | 
