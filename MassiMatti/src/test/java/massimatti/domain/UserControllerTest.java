@@ -12,14 +12,52 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author pjtoropa
- */
 public class UserControllerTest {
-    
 
+    private FakeUserDao userDao;
+    private UserController userController;
+
+    @Before
+    public void setUp() {
+        userDao = new FakeUserDao();
+        userController = new UserController(userDao);
+        userController.createUser("petri", "salasana");
+        userController.createUser("jesus", "salasana");
+
+    }
+
+    @Test
+    public void createdUsersNameSavedProperly() throws Exception {
+        assertEquals("petri", userDao.read("petri").getUsername());
+    }
     
-     @Test
-     public void hello() {}
+    @Test
+    public void createdUsersPasswordSavedProperly() throws Exception {
+        assertEquals("salasana", userDao.read("petri").getPassword());
+
+    }
+    
+    @Test
+    public void sameUsernameNotPossibleToSaveTwice(){
+        
+        assertFalse(userController.createUser("petri", "password"));
+    }
+    @Test
+    public void samePasswordIsPossibleToSaveDifferentUsers() throws Exception{
+        
+        assertEquals("salasana", userDao.read("jesus").getPassword());
+    }
+    
+    @Test
+    public void notPossibleToLoginWrongUsername(){
+        
+        assertFalse(userController.loginUser("Bill", "win95"));
+    }
+    @Test
+    public void notPossibleToLoginWrongPassword(){
+        
+        assertFalse(userController.loginUser("petri", "silavana"));
+    }
+    
+    
 }
