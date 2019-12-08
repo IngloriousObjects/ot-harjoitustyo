@@ -3,10 +3,6 @@ package massimatti.domain;
 import java.sql.SQLException;
 import massimatti.dao.UserDao;
 
-/**
- *
- *
- */
 public class UserController {
 
     private UserDao userDao;

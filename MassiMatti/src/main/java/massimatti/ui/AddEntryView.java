@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package massimatti.ui;
 
 import javafx.geometry.Insets;
@@ -18,53 +13,46 @@ import massimatti.domain.CategoryController;
 import massimatti.domain.EntryController;
 import massimatti.domain.UserController;
 
-/**
- *
- * @author pjtoropa
- */
 public class AddEntryView {
-    
-    
+
     private DatePicker datePicker;
     private UserController userController;
     private EntryController entryController;
     private CategoryController categoryController;
-    
-    public AddEntryView (UserController userController, EntryController entryController, CategoryController categoryController){
-        
+
+    public AddEntryView(UserController userController, EntryController entryController, CategoryController categoryController) {
+
         this.categoryController = categoryController;
         this.entryController = entryController;
         this.userController = userController;
-        
+
     }
-    
-   public Scene getAddEntryViewScene (Stage secondStage){
-       
-        
-       
-       VBox addEntryPane = new VBox(10);
-       VBox inputPane = new VBox(10);
-       addEntryPane.setPadding(new Insets(10));
 
-       Label dateLabel = new Label("Päivämäärä");
-       datePicker = new DatePicker();
+    public Scene getAddEntryViewScene(Stage secondStage) {
 
-       inputPane.getChildren().addAll(dateLabel, datePicker);
+        VBox addEntryPane = new VBox(10);
+        VBox inputPane = new VBox(10);
+        addEntryPane.setPadding(new Insets(10));
 
-       Label categoryMessage = new Label("Lisää kategoria (3-36 merkkiä)");
+        Label dateLabel = new Label("Päivämäärä");
+        datePicker = new DatePicker();
 
-       TextFlow flow = new TextFlow();
-       categoryMessage.setStyle("-fx-font-weight: bold");
+        inputPane.getChildren().addAll(dateLabel, datePicker);
 
-       flow.getChildren().addAll(categoryMessage);
-       Button addButton = new Button("Lisää");
+        Label categoryMessage = new Label("Lisää kategoria (3-36 merkkiä)");
 
-       addEntryPane.getChildren().addAll(categoryMessage, inputPane, addButton);
+        TextFlow flow = new TextFlow();
+        categoryMessage.setStyle("-fx-font-weight: bold");
 
-       Scene scene = new Scene(addEntryPane, 280, 260);
-        
-       return scene;
-        
+        flow.getChildren().addAll(categoryMessage);
+        Button addButton = new Button("Lisää");
+
+        addEntryPane.getChildren().addAll(categoryMessage, inputPane, addButton);
+
+        Scene scene = new Scene(addEntryPane, 280, 260);
+
+        return scene;
+
     }
-   
+
 }

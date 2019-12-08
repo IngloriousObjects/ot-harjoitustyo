@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package massimatti.dao;
 
 import java.sql.Connection;
@@ -14,10 +9,6 @@ import java.util.List;
 import massimatti.domain.Category;
 import massimatti.domain.User;
 
-/**
- *
- * @author pjtoropa
- */
 public class DatabaseCategoryDao implements CategoryDao {
 
     private String path;

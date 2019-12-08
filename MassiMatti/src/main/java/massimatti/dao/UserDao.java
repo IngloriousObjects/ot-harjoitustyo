@@ -3,10 +3,6 @@ package massimatti.dao;
 import java.sql.SQLException;
 import massimatti.domain.User;
 
-/**
- *
- *
- */
 public interface UserDao<T, K> {
 
     //Aloitetaan ihan perus-CRUDILLA ja geneerisellä rajapinnalla

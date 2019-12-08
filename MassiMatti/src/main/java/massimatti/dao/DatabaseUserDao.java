@@ -7,10 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import massimatti.domain.User;
 
-/**
- *
- *
- */
 public class DatabaseUserDao implements UserDao<User, String> {
 
     private String path;

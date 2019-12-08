@@ -28,6 +28,9 @@
             <artifactId>h2</artifactId>
             <version>1.4.197</version> 
         </dependency>
+
+
+        
     </dependencies>
     <build>
         <plugins>
@@ -89,6 +92,8 @@
                     <configLocation>checkstyle.xml</configLocation>
                 </configuration>
             </plugin>
+            
+                
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>

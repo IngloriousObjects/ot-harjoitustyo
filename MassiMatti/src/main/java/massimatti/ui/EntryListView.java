@@ -20,16 +20,11 @@ import massimatti.domain.UserController;
 import massimatti.domain.EntryController;
 import massimatti.domain.CategoryController;
 
-/**
- *
- * @author pjtoropa
- */
 public class EntryListView {
 
     private UserController userController;
     private EntryController entryController;
     private CategoryController categoryController;
-    
 
     //Tämäkin osio on vielä raakile -- muokkausta ilmeeseen ja funktionaalisuuteen 
     public EntryListView(UserController userController, EntryController entryController, CategoryController categoryController) {

@@ -21,10 +21,6 @@ import massimatti.dao.DatabaseEntryDao;
 import massimatti.dao.DatabaseCategoryDao;
 import massimatti.dao.DatabaseUserDao;
 
-/**
- *
- *
- */
 public class MassiMattiUi extends Application {
 
     private UserController userController;
