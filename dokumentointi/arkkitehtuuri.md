@@ -15,7 +15,7 @@ Daopakkauksen luokat DatabaseUserDao, DatabaseEntryDao ja DatabaseCategoryDao to
 
 # Tietojen pysyväistallennus
 
-# Päätoiminnnalisuudet
+# Päätoiminnnallisuudet
 
 ## Kirjautuminen
 ![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssi_loginMM.png)
