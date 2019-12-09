@@ -93,7 +93,6 @@ public class AddEntryView {
                 sumAlert();
                 sumInput.clear();
             }
-            System.out.println(date+" "+ type+" " + sum + " " +category+" "+ user);
             entryController.addEntry(date, type, sum, category, user);
 
         });
