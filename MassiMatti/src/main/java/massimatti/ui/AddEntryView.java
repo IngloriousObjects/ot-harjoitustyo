@@ -42,7 +42,8 @@ public class AddEntryView {
         addEntryPane.setPadding(new Insets(20));
 
         Label dateLabel = new Label("Päivämäärä");
-        datePicker = new DatePicker();
+        datePicker = new DatePicker(LocalDate.now());
+        datePicker.getEditor().setDisable(true);
 
         Label typeLabel = new Label("Tulo/Meno");
         ComboBox typeInput = new ComboBox();
@@ -93,6 +94,7 @@ public class AddEntryView {
                 sumAlert();
                 sumInput.clear();
             }
+
             entryController.addEntry(date, type, sum, category, user);
 
         });
@@ -126,6 +128,29 @@ public class AddEntryView {
                 .setPrefSize(280, 180);
 
         sumAlert.showAndWait();
+    }
+
+    public boolean datePickerChecker(LocalDate date) {
+        if (date == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public void dateAlert() {
+
+        Alert dateAlert = new Alert(Alert.AlertType.ERROR);
+        dateAlert.setTitle(
+                "MassiMatti");
+        dateAlert.setHeaderText(
+                "Päivämäärä on virheellinen!");
+        dateAlert.setContentText(
+                "Valitse päivämäärä.");
+        dateAlert.getDialogPane()
+                .setPrefSize(280, 180);
+
+        dateAlert.showAndWait();
+
     }
 
 }
