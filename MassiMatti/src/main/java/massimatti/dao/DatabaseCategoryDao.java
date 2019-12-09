@@ -1,12 +1,16 @@
 package massimatti.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import massimatti.domain.Category;
+import massimatti.domain.Entry;
 import massimatti.domain.User;
 
 public class DatabaseCategoryDao implements CategoryDao {
@@ -64,8 +68,24 @@ public class DatabaseCategoryDao implements CategoryDao {
     }
 
     @Override
-    public List<Category> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public List<Category> getAll() throws SQLException {
+        Connection conn = DriverManager.getConnection(path, user, password);
+        Statement stmt = conn.createStatement();
+        String category = "SELECT * FROM Category ORDER BY category ASC";
 
+        ResultSet result = stmt.executeQuery(category);
+        List<Category> categories = new ArrayList<>();
+
+        while (result.next()) {
+            categories.add(new Category(result.getString("category")));
+
+        }
+        result.close();
+        stmt.close();
+        conn.close();
+
+        System.out.println("metodissa" + categories);
+
+        return categories;
+    }
 }

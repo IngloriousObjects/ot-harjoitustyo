@@ -14,9 +14,7 @@ public class AppView {
     private UserController userController;
     private EntryController entryController;
     private CategoryController categoryController;
-
     private Scene loginScene;
-    //  private Scene entryListViewScene;
     private Stage secondStage;
 
     public AppView(UserController userController, EntryController entryController, CategoryController categoryController, Scene loginScene, Stage secondStage) {
@@ -24,9 +22,7 @@ public class AppView {
         this.userController = userController;
         this.entryController = entryController;
         this.categoryController = categoryController;
-
         this.loginScene = loginScene;
-        //     this.entryListViewScene = entryListViewScene;
         this.secondStage = secondStage;
 
     }
@@ -36,7 +32,10 @@ public class AppView {
         /* Tämä osa vielä täysin raakile ilman järkevää muotoilua, mutta toteuttaa toiminnot 'Kirjaudu ulos' ja 'Listaa tapahtumat'
          * Vaikkakaan listaa tapahtumat eivät luonnollisesti vielä listaa kuin tyhjää, sillä 'Lisää tapahtuma' -toimintoa ei ole vielä
          */
+        secondStage.setTitle("MassiMatti");
+
         VBox appPane = new VBox(10);
+        
         Button logOut = new Button("Kirjaudu ulos");
         Button addEntry = new Button("Lisää tapahtuma");
         Button addCategory = new Button("Lisää kategoria");

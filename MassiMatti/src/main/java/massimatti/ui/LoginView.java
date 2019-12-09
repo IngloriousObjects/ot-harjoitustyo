@@ -26,7 +26,6 @@ public class LoginView {
         this.userController = userController;
         this.entryController = entryController;
         this.categoryController = categoryController;
-
         this.appScene = null;
     }
 
@@ -37,12 +36,13 @@ public class LoginView {
     public Scene getLoginScene(Stage primaryStage) {
 
         VBox loginPane = new VBox(10);
-
         VBox inputPane = new VBox(10);
+        
         loginPane.setPadding(new Insets(10));
 
         Label loginLabel = new Label("Käyttäjätunnus");
         TextField usernameInput = new TextField();
+        
         Label loginLabelSecond = new Label("Salasana");
         PasswordField passwordInput = new PasswordField();
 
@@ -65,7 +65,6 @@ public class LoginView {
 
         loginButton.setOnAction((event) -> {
 
-          
             String user = usernameInput.getText();
             String password = passwordInput.getText();
 
@@ -87,8 +86,7 @@ public class LoginView {
         });
 
         registerUserButton.setOnAction((event) -> {
-
-            //Tämä vielä yksinkertaistettu versio eli ei vielä mm. muototarkistuksia eikä muita poikkeamailmoituksia
+        
             String user = usernameInput.getText().trim();
             String password = passwordInput.getText();
             if (userController.checkUsername(user) == true && userController.checkPassword(password) == true) {
@@ -165,18 +163,16 @@ public class LoginView {
         createError.showAndWait();
 
     }
-    
-    public void creationSuccessfulAlert(){
-        
-         
-        
+
+    public void creationSuccessfulAlert() {
+
         Alert creationSuccessfullInfo = new Alert(Alert.AlertType.INFORMATION);
         creationSuccessfullInfo.setTitle("MassiMatti");
         creationSuccessfullInfo.setHeaderText("Käyttäjätunnuksen luominen onnistui!");
         creationSuccessfullInfo.setContentText("Kirjaudu sisään tai luo uusi tunnus.");
         creationSuccessfullInfo.getDialogPane().setPrefSize(300, 180);
         creationSuccessfullInfo.showAndWait();
-        
+
     }
 
 }

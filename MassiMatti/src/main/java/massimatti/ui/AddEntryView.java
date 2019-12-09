@@ -1,14 +1,21 @@
 package massimatti.ui;
 
+import java.time.LocalDate;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import massimatti.domain.Category;
 import massimatti.domain.CategoryController;
 import massimatti.domain.EntryController;
 import massimatti.domain.UserController;
@@ -30,29 +37,93 @@ public class AddEntryView {
 
     public Scene getAddEntryViewScene(Stage secondStage) {
 
-        VBox addEntryPane = new VBox(10);
-        VBox inputPane = new VBox(10);
-        addEntryPane.setPadding(new Insets(10));
+        VBox addEntryPane = new VBox(20);
+        VBox inputPane = new VBox(20);
+        addEntryPane.setPadding(new Insets(20));
 
         Label dateLabel = new Label("Päivämäärä");
         datePicker = new DatePicker();
 
-        inputPane.getChildren().addAll(dateLabel, datePicker);
+        Label typeLabel = new Label("Tulo/Meno");
+        ComboBox typeInput = new ComboBox();
+        typeInput.getItems().add("meno");
+        typeInput.getItems().add("tulo");
+        typeInput.getSelectionModel().selectFirst();
 
-        Label categoryMessage = new Label("Lisää kategoria (3-36 merkkiä)");
+        Label sumLabel = new Label("Summa");
+        TextField sumInput = new TextField();
+
+        Label categoryLabel = new Label("Kategoria");
+        ComboBox categoryInput = new ComboBox();
+
+        List<Category> categories = categoryController.getCategories();
+        ObservableList<Category> categoriesList = FXCollections.observableArrayList(categories);
+        categoryInput.setItems(categoriesList);
+        categoryInput.getSelectionModel().selectFirst();
+
+        inputPane.getChildren().addAll(dateLabel, datePicker, typeLabel, typeInput, sumLabel, sumInput, categoryLabel, categoryInput);
+
+        Label entryMessage = new Label("Lisää tapahtuma:");
 
         TextFlow flow = new TextFlow();
-        categoryMessage.setStyle("-fx-font-weight: bold");
+        entryMessage.setStyle("-fx-font-weight: bold");
 
-        flow.getChildren().addAll(categoryMessage);
+        flow.getChildren().addAll(entryMessage);
         Button addButton = new Button("Lisää");
 
-        addEntryPane.getChildren().addAll(categoryMessage, inputPane, addButton);
+        addEntryPane.getChildren().addAll(entryMessage, inputPane, addButton);
 
-        Scene scene = new Scene(addEntryPane, 280, 260);
+        addButton.setOnAction((event) -> {
+
+            LocalDate date = datePicker.getValue();
+            Boolean type = false;
+            Double sum = 0.00;
+            String user = userController.getUser().getUsername();
+
+            if (typeInput.getValue() == "tulo") {
+                type = true;
+            }
+            if (isDouble(sumInput.getText())) {
+
+                sum = Double.parseDouble(sumInput.getText());
+
+            } else {
+
+                sumAlert();
+                sumInput.clear();
+            }
+
+        });
+
+        Scene scene = new Scene(addEntryPane, 320, 450);
 
         return scene;
 
+    }
+
+    // Tarkastaa onko input double
+    public boolean isDouble(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public void sumAlert() {
+
+        Alert sumAlert = new Alert(Alert.AlertType.ERROR);
+        sumAlert.setTitle(
+                "MassiMatti");
+        sumAlert.setHeaderText(
+                "Summa on virheellinen!");
+        sumAlert.setContentText(
+                "Summan tulee olla kokonais- tai desimaaliluku. Käytä erottimena pistettä.");
+        sumAlert.getDialogPane()
+                .setPrefSize(280, 180);
+
+        sumAlert.showAndWait();
     }
 
 }

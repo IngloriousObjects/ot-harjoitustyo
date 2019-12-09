@@ -27,7 +27,6 @@ public class AddCategoryView {
     public Scene getAddCategoryView(Stage secondStage) {
 
         VBox addCategoryPane = new VBox(10);
-
         VBox inputPane = new VBox(10);
         addCategoryPane.setPadding(new Insets(10));
 
@@ -50,7 +49,7 @@ public class AddCategoryView {
 
         addButton.setOnAction((event) -> {
 
-            String addedCategory = categoryInput.getText();
+            String addedCategory = categoryInput.getText().toUpperCase();
 
             if (categoryController.checkFormality(addedCategory) == false) {
 

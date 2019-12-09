@@ -1,6 +1,8 @@
 package massimatti.domain;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import massimatti.dao.CategoryDao;
 
@@ -41,6 +43,16 @@ public class CategoryController {
             return false;
         }
     }
+    
+    public List<Category> getCategories() {
+        try {
+            return categoryDao.getAll();
+
+        } catch (SQLException e) {
+            return new ArrayList<>();
+        }
+    }
+    
 
     /**
      * Tarkistaa kategorian muodon oikeellisuuden

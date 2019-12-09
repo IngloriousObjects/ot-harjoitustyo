@@ -10,6 +10,6 @@ public interface CategoryDao {
 
     Category read(Category category) throws SQLException;
 
-    List<Category> getAll();
+    List<Category> getAll() throws SQLException;
 
 }
