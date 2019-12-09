@@ -20,4 +20,5 @@
 | 3.12.  | 3    | Releasen update, hiukan viilausta UI:n osalta sekä sekvenssikaavion tekeminen sisäänkirjautumisesta|
 | 7.12.  | 4    | Käyttöliittymän koodaamista|
 | 8.12.  | 7    | Luotu sovelluksen dokumentaatiota, käytetty tunteja mavenin javadoc-ongelmaan ja luotu testejä|
-| yht    |71    | | 
+| 9.12.  | 3    | UI:n muokkaamista ja toimintojen lisäämistä|
+| yht    |74    | | 
