@@ -18,8 +18,8 @@ Sovelluksessa on alkuvaiheessa ainoastaan yksi käyttäjätyyppi eli normaali k�
 ### Järjestelmässä
 
 Järjestelmän päänäkymässä käyttäjä voi:
-  * lisätä uuden tapahtuman
-    * päänäkymästä siirrytään tapahtumanäkymään ja lisäyksen ((pvm, tyyppi(meno/tulo), summa, kategoria, kuvaus) jälkeen takaisin           päänäkymään
+  * TEHTY lisätä uuden tapahtuman
+    * päänäkymästä siirrytään tapahtumanäkymään ja lisäyksen ((pvm, tyyppi(meno/tulo), summa, kategoria) jälkeen takaisin           päänäkymään
   * TEHTY lisätä uuden kategorian
     * päänäkymästä siirrytään kategorianäkymään (lisätään kategoria) ja lisäyksen jälkeen takaisin päänäkymään
   * TEHTY(ilman täyttä toiminnalisuutta, sillä riippuvainen vielä tekemättömistä) listata tapahtumat
@@ -31,7 +31,7 @@ Järjestelmän päänäkymässä käyttäjä voi:
  * tarkastella tapahtumia päivä-, kuukausi- tai vuositasolla
     * päänäkymästä siirrytään aikatason tarkastelunäkymään, jossa valitaan ajanjakso, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa aikaa ja y-akseli euromäärää. Kaavionäkymä suljetaan painikkeella
     * paluu päänäkymään
- * TEHTYkirjautua ulos järjestelmästä
+ * TEHTY kirjautua ulos järjestelmästä
     
  ## Jatkokehitysmahdollisuudet
     
