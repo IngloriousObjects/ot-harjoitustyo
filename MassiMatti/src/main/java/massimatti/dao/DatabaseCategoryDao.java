@@ -84,8 +84,6 @@ public class DatabaseCategoryDao implements CategoryDao {
         stmt.close();
         conn.close();
 
-        System.out.println("metodissa" + categories);
-
         return categories;
     }
 }

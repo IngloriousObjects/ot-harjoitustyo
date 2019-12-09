@@ -78,6 +78,7 @@ public class AddEntryView {
             LocalDate date = datePicker.getValue();
             Boolean type = false;
             Double sum = 0.00;
+            String category = categoryInput.getValue().toString();
             String user = userController.getUser().getUsername();
 
             if (typeInput.getValue() == "tulo") {
@@ -92,6 +93,8 @@ public class AddEntryView {
                 sumAlert();
                 sumInput.clear();
             }
+            System.out.println(date+" "+ type+" " + sum + " " +category+" "+ user);
+            entryController.addEntry(date, type, sum, category, user);
 
         });
 
