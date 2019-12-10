@@ -87,4 +87,9 @@ public class DatabaseEntryDaoTest {
         
         assertEquals(2, entry.listByUser("lalli").size());
     }
+    
+    @After
+    public void tearDown() {
+        this.temp.delete();
+    }
 }

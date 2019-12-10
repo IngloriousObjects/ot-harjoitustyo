@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import massimatti.dao.UserDao;
 
 /**
- * Käyttäjän toiminnallisuuksien sovelluslogiikasta vastaava luokka
+ * Käyttäjän toiminnallisuuksien sovelluslogiikasta vastaava luokka.
  */
 
 public class UserController {
@@ -33,7 +33,7 @@ public class UserController {
     }
 
     /**
-     * Kirjaa käyttäjän ulos järjestelmästä
+     * Kirjaa käyttäjän ulos järjestelmästä.
      *
      *
      */
@@ -90,7 +90,7 @@ public class UserController {
     }
 
     /**
-     * Tarkastetaan käyttäjänimen muodon oikeellisuus
+     * Tarkastetaan käyttäjänimen muodon oikeellisuus.
      *
      * @param string Käyttäjän käyttäjätunnus
      * @return palauttaa totuusarvon true, mikäli käyttäjätunnus on yli 3
@@ -101,7 +101,7 @@ public class UserController {
     }
 
     /**
-     * Tarkastetaan salasanan muodon oikeellisuus
+     * Tarkastetaan salasanan muodon oikeellisuus.
      *
      * @param string Käyttäjän salasana
      * @return palauttaa totuusarvon true, mikäli käyttäjätunnus on yli 7

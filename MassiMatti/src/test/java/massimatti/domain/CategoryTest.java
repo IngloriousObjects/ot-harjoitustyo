@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package massimatti.domain;
 
 import org.junit.After;
@@ -12,30 +7,24 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author pjtoropa
- */
 public class CategoryTest {
-    
-    public CategoryTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+
+    Category category;
+
     @Before
     public void setUp() {
+
+        category = new Category("MEEMI");
+
     }
     
-    @After
-    public void tearDown() {
+    @Test
+    public void checKIfCategorySavedProperly(){
+        
+        assertEquals("MEEMI", category.getCategoryName());
     }
+
+    
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

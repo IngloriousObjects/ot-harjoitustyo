@@ -7,7 +7,7 @@ import java.util.List;
 import massimatti.dao.EntryDao;
 
 /**
- * Tapahtumien toiminnalisuuksien sovelluslogiikasta vastaava luokka
+ * Tapahtumien toiminnalisuuksien sovelluslogiikasta vastaava luokka.
  */
 public class EntryController {
 
@@ -24,7 +24,7 @@ public class EntryController {
     }
 
     /**
-     * Lisää käyttäjälle uuden tapahtuman tietokantaan
+     * Lisää käyttäjälle uuden tapahtuman tietokantaan.
      *
      * @param date Tapahtuman suorituspäivä
      * @param type Tapahtuman tyyppi;false, jos meno, true mikäli tulo
@@ -45,7 +45,7 @@ public class EntryController {
     }
 
     /**
-     * Hakee käyttäjän tapahtumat tietokannasta
+     * Hakee käyttäjän tapahtumat tietokannasta.
      *
      * @param user Käyttäjän, jonka tapahtumat haetaan
      * @return Käyttäjän tapahtumat sisältävä lista, mikäli tapahtuu virhe

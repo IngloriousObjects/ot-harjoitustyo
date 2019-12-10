@@ -20,6 +20,7 @@ import massimatti.domain.CategoryController;
 import massimatti.dao.DatabaseEntryDao;
 import massimatti.dao.DatabaseCategoryDao;
 import massimatti.dao.DatabaseUserDao;
+import massimatti.domain.Category;
 
 public class MassiMattiUi extends Application {
 
@@ -48,18 +49,11 @@ public class MassiMattiUi extends Application {
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
 
-        /* Testataan toimintoja tietokannan suhteen suoraan ohjelman sisällä
-        categoryController.addCategory("Ravintola");
-        categoryController.addCategory("Elintarvikkeet");
-        categoryController.addCategory("Alkoholi");
-        categoryController.addCategory("Liikunta ja terveys");
+        categoryController.addCategory(new Category("Ravintola"));
+        categoryController.addCategory(new Category("Elintarvikkeet"));
+        categoryController.addCategory(new Category("Alkoholi"));
+        categoryController.addCategory(new Category("Liikunta ja terveys"));
 
-        userController.createUser("petri", "salasana");
-        entryController.addEntry(LocalDate.of(2019, 1, 2), false, 19.20, "Ravintola", "petri");
-
-        System.out.println(entryController.getEntries("petri"));
-        System.out.println("BOUSUUB!");
-         */
     }
 
     @Override

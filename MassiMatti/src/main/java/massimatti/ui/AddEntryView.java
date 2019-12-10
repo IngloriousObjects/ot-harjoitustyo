@@ -96,6 +96,8 @@ public class AddEntryView {
             }
 
             entryController.addEntry(date, type, sum, category, user);
+            createAlert();
+            sumInput.clear();
 
         });
 
@@ -137,15 +139,15 @@ public class AddEntryView {
         return true;
     }
 
-    public void dateAlert() {
+    public void createAlert() {
 
-        Alert dateAlert = new Alert(Alert.AlertType.ERROR);
+        Alert dateAlert = new Alert(Alert.AlertType.INFORMATION);
         dateAlert.setTitle(
                 "MassiMatti");
         dateAlert.setHeaderText(
-                "Päivämäärä on virheellinen!");
+                "Tapahtuman luonti onnistui!");
         dateAlert.setContentText(
-                "Valitse päivämäärä.");
+                "Luo uusi tapahtuma tai sulje ruksista.");
         dateAlert.getDialogPane()
                 .setPrefSize(280, 180);
 

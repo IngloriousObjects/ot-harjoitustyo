@@ -73,5 +73,10 @@ public class DatabaseUserDaoTest {
     public void passwordProperlySaved() throws SQLException {
         assertEquals("ysiysi", user.read("Wayne").getPassword());
     }
+    
+    @After
+    public void tearDown() {
+        this.temp.delete();
+    }
 
 }

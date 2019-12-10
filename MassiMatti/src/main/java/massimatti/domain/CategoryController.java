@@ -7,9 +7,8 @@ import java.util.List;
 import massimatti.dao.CategoryDao;
 
 /**
- * Kategorioiden toiminnallisuuksien sovelluslogiikasta vastaava luokka
+ * Kategorioiden toiminnallisuuksien sovelluslogiikasta vastaava luokka.
  */
-
 public class CategoryController {
 
     private CategoryDao categoryDao;
@@ -17,7 +16,7 @@ public class CategoryController {
     /**
      * Luokan konstruktori.
      *
-     * @param categoryDao Kategorioiden Dao-toiminnallisuudet tarjoava luokka
+     * @param categoryDao Kategorioiden Dao-toiminnallisuudet tarjoava luokka.
      */
     public CategoryController(CategoryDao categoryDao) {
 
@@ -25,13 +24,14 @@ public class CategoryController {
     }
 
     /**
-     * Lisää uuden kategorian tietokanta
+     * Lisää uuden kategorian tietokanta.
      *
      * @param category Category-olio
      * @return palauttaa totuusarvon;true, mikäli kategorian luominen onnistuu,
      * ja false, jos kategoria on jo tietokannassa tai tapahtuu virhe
+     * @throws poikkeus virhetilanteessa
      */
-    public boolean addCategory(Category category) throws Exception {   // tee tähän read-tarkistus...lisää daoon?
+    public boolean addCategory(Category category) throws Exception {   
         try {
             if (categoryDao.read(category) == null) {
                 categoryDao.create(new Category(category.getCategoryName()));
@@ -43,7 +43,13 @@ public class CategoryController {
             return false;
         }
     }
-    
+
+    /**
+     * Hakee kategoriat tietokannasta.
+     *
+     * @return palauttaa kaikki tietokannan sisältämät kategoriat listana
+     */
+
     public List<Category> getCategories() {
         try {
             return categoryDao.getAll();
@@ -52,16 +58,14 @@ public class CategoryController {
             return new ArrayList<>();
         }
     }
-    
 
     /**
-     * Tarkistaa kategorian muodon oikeellisuuden
+     * Tarkistaa kategorian muodon oikeellisuuden.
      *
      * @param string kategorian nimi
      * @return palauttaa totuusarvon true, jos kategorian nimi on yli 2 ja alle
      * 37 merkkiä, ja false, mikäli ehdot eivät täyty tai tapahtuu virhe
      */
-
     public boolean checkFormality(String string) {
 
         return (string.length() > 2 && string.length() < 37);
