@@ -84,15 +84,20 @@ public class AddEntryView {
                 type = true;
             }
 
-            if (!isDouble(sumInput.getText()) || Double.parseDouble(sumInput.getText()) <= 0) {
+            if (isDouble(sumInput.getText()) == false || Double.parseDouble(sumInput.getText()) <= 0) {
                 sumAlert();
                 sumInput.clear();
                 return;
+                
             }
+              
+            
             Double sum = Double.parseDouble(sumInput.getText());
+            
             entryController.addEntry(date, type, sum, category, user);
             createAlert();
             sumInput.clear();
+             
         });
 
         Scene scene = new Scene(addEntryPane, 320, 450);
