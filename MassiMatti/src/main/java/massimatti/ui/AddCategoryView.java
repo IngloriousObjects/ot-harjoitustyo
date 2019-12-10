@@ -110,7 +110,7 @@ public class AddCategoryView {
         Alert createdInfo = new Alert(Alert.AlertType.INFORMATION);
         createdInfo.setTitle("MassiMatti");
         createdInfo.setHeaderText("Kategorian lisääminen onnistui!");
-        createdInfo.setContentText("Lisää uusi kategoria tai poistu.");
+        createdInfo.setContentText("Lisää uusi kategoria tai sulje ikkuna.");
         createdInfo.getDialogPane().setPrefSize(280, 180);
         createdInfo.showAndWait();
 
