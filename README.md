@@ -15,6 +15,8 @@ MassiMatti on henkilökohtaisen talouden seurantaan tarkoitettu sovellus, jonka 
 ## **Releaset**
 [Viikko 5](https://github.com/InglouriousObjects/ot-harjoitustyo/releases/tag/Viikko5)
 
+[Viikko 6](https://github.com/InglouriousObjects/ot-harjoitustyo/releases/tag/Viikko6)
+
 ## **Komentorivitoiminnot**
 
 ### Testaus
