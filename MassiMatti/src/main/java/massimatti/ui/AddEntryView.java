@@ -75,30 +75,24 @@ public class AddEntryView {
         addEntryPane.getChildren().addAll(entryMessage, inputPane, addButton);
 
         addButton.setOnAction((event) -> {
-
             LocalDate date = datePicker.getValue();
             Boolean type = false;
-            Double sum = 0.00;
             String category = categoryInput.getValue().toString();
             String user = userController.getUser().getUsername();
 
             if (typeInput.getValue() == "tulo") {
                 type = true;
             }
-            if (isDouble(sumInput.getText())) {
 
-                sum = Double.parseDouble(sumInput.getText());
-
-            } else {
-
+            if (!isDouble(sumInput.getText()) || Double.parseDouble(sumInput.getText()) <= 0) {
                 sumAlert();
                 sumInput.clear();
+                return;
             }
-
+            Double sum = Double.parseDouble(sumInput.getText());
             entryController.addEntry(date, type, sum, category, user);
             createAlert();
             sumInput.clear();
-
         });
 
         Scene scene = new Scene(addEntryPane, 320, 450);
@@ -125,7 +119,7 @@ public class AddEntryView {
         sumAlert.setHeaderText(
                 "Summa on virheellinen!");
         sumAlert.setContentText(
-                "Summan tulee olla kokonais- tai desimaaliluku. Käytä erottimena pistettä.");
+                "Summan tulee olla nollasta poikkeava positiivinen kokonais- tai desimaaliluku. Käytä erottimena pistettä.");
         sumAlert.getDialogPane()
                 .setPrefSize(280, 180);
 
@@ -147,7 +141,7 @@ public class AddEntryView {
         dateAlert.setHeaderText(
                 "Tapahtuman luonti onnistui!");
         dateAlert.setContentText(
-                "Luo uusi tapahtuma tai sulje ruksista.");
+                "Luo uusi tapahtuma tai sulje ikkuna.");
         dateAlert.getDialogPane()
                 .setPrefSize(280, 180);
 
