@@ -21,34 +21,34 @@ import massimatti.domain.EntryController;
 import massimatti.domain.CategoryController;
 
 public class EntryListView {
-
+    
     private UserController userController;
     private EntryController entryController;
     private CategoryController categoryController;
 
     //Tämäkin osio on vielä raakile -- muokkausta ilmeeseen ja funktionaalisuuteen 
     public EntryListView(UserController userController, EntryController entryController, CategoryController categoryController) {
-
+        
         this.userController = userController;
         this.entryController = entryController;
         this.categoryController = categoryController;
-
+        
     }
-
+    
     public Scene getListViewScene(Stage secondStage) {
-
+        entryController.emptyCache(userController.getUser().getUsername());
         List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
         ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
-
+        
         ListView<Entry> byUser = new ListView<Entry>();
         byUser.getItems().addAll(entries);
-
+        
         HBox hbox = new HBox(byUser);
-
+        
         Scene scene = new Scene(hbox, 1000, 600);
-
+        
         return scene;
-
+        
     }
-
+    
 }

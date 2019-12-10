@@ -46,7 +46,6 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
      * @return palauttaa tietokantaan tallennettun tapahtuma-olion
      * @throws SQLException Tietokannan heittämä poikkeus virhetilanteessa.
      */
-
     @Override
     public Entry create(Entry object) throws SQLException {
 
@@ -73,9 +72,18 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
         throw new UnsupportedOperationException("Not supported yet.");              //käytetään, jos ehditään
     }
 
+    /**
+     * Tyhjentää käyttäjän tapahtumat välimuistista.
+     *
+     * @param key Käyttäjätunnus, jonka välimuisti tyhjennetään
+     *
+     */
     @Override
     public void removeByUser(String key) {
-        throw new UnsupportedOperationException("Not supported yet."); //käytetään, jos ehditään
+
+        if (cacheMemory.containsKey(key)) {
+            cacheMemory.remove(key);
+        }
     }
 
     /**

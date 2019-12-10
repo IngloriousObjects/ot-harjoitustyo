@@ -60,4 +60,15 @@ public class EntryController {
         }
     }
 
+    /**
+     * Tyhjennetään välimuisti.
+     *
+     * @param user käyttäjätunnus
+     */
+    public void emptyCache(String user) {
+
+        entryDao.removeByUser(user);
+
+    }
+
 }

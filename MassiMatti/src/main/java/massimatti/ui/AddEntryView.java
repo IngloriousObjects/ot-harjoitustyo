@@ -88,16 +88,15 @@ public class AddEntryView {
                 sumAlert();
                 sumInput.clear();
                 return;
-                
+
             }
-              
-            
+
             Double sum = Double.parseDouble(sumInput.getText());
-            
+
             entryController.addEntry(date, type, sum, category, user);
             createAlert();
             sumInput.clear();
-             
+
         });
 
         Scene scene = new Scene(addEntryPane, 320, 450);
