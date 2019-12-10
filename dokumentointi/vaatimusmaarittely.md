@@ -19,12 +19,12 @@ Sovelluksessa on alkuvaiheessa ainoastaan yksi käyttäjätyyppi eli normaali k�
 
 Järjestelmän päänäkymässä käyttäjä voi:
   * TEHTY lisätä uuden tapahtuman
-    * päänäkymästä siirrytään tapahtumanäkymään ja lisäyksen ((pvm, tyyppi(meno/tulo), summa, kategoria) jälkeen takaisin           päänäkymään
+    * päänäkymästä avautuu erillinen tapahtumanäkymä ja lisäyksen ((pvm, tyyppi(meno/tulo), summa, kategoria) jälkeen käyttäjä  voi lisätä uuden tapahtuman tai sulkea näkymään
   * TEHTY lisätä uuden kategorian
-    * päänäkymästä siirrytään kategorianäkymään (lisätään kategoria) ja lisäyksen jälkeen takaisin päänäkymään
-  * TEHTY(ilman täyttä toiminnalisuutta, sillä riippuvainen vielä tekemättömistä) listata tapahtumat
-    * päänäkymästä siirrytään listausnäkymään, jossa valitaan ajanjakso, jonka perusteella listataan tapahtumat sekä niiden erotus erillisessä tulosnäkymässä, joka suljetaan painikkeella
-    * paluu päänäkymään
+    * päänäkymästä valitsemalla 'Lisää kategoria' avautuu erillinen kategorianäkymä (lisätään kategoria) ja lisäyksen jälkeen voi lisätä uuden kategorian tai sulkea kategorianäkymän
+  * TEHTY listata tapahtumat
+    * päänäkymästä avautuu erillinen listausnäkymä, joka listaa käyttäjän kaikki tapahtumat ja näkymästä poistutaan sulkemalla se
+    
   * tarkastella tapahtumia kategorioittain
     * päänäkymästä siirrytään kategorian tarkastelunäkymään, jossa valitaan ajanjakso, jonka perusteella uuteen näkymään piirretään pylväskaavio, jossa x-akselilla on kategoriat ja y-akselilla euromäärät. Kaavionäkymä suljetaan painikkeella.
     * paluu päänäkymään
