@@ -49,10 +49,10 @@ public class MassiMattiUi extends Application {
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
 
-        categoryController.addCategory(new Category("Ravintola"));
-        categoryController.addCategory(new Category("Elintarvikkeet"));
-        categoryController.addCategory(new Category("Alkoholi"));
-        categoryController.addCategory(new Category("Liikunta ja terveys"));
+        categoryController.addCategory(new Category("RAVINTOLA"));
+        categoryController.addCategory(new Category("ELINTARVIKKEET"));
+        categoryController.addCategory(new Category("ALKOHOLI"));
+        categoryController.addCategory(new Category("LIIKUNTA JA TERVEYS"));
 
     }
 
