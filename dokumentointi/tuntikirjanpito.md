@@ -22,4 +22,5 @@
 | 8.12.  | 7    | Luotu sovelluksen dokumentaatiota, käytetty tunteja mavenin javadoc-ongelmaan ja luotu testejä|
 | 9.12.  | 3    | UI:n muokkaamista ja toimintojen lisäämistä|
 | 10.12. | 2    | Testien ja javavadocin luontia sekä pientä korjaamista sieltä täältä|
-| yht    |76    | | 
+| 12.12. | 4    | UI:n hiomista ja luomista. Mm. erinäisten virheiden kalastelua ja korjaamista|
+| yht    |80    | | 
