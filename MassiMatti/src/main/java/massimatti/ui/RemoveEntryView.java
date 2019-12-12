@@ -29,7 +29,6 @@ public class RemoveEntryView {
 
     public Scene getRemoveEntryView(Stage secondStage) {
 
-        entryController.emptyCache(userController.getUser().getUsername());
         List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
         ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
 
@@ -38,11 +37,19 @@ public class RemoveEntryView {
 
         Button button = new Button("Poista tapahtuma");
 
-        button.setOnAction(event -> {
+        button.setOnAction((event) -> {
+
+            if (byUser.getItems().isEmpty()) {
+
+                nothingToRemoveAlert();
+                return;
+            }
 
             Integer entryId = byUser.getSelectionModel().getSelectedItem().getId();
-
             removeEntry(entryId);
+
+            byUser.getItems().clear();
+            byUser.getItems().addAll(refreshObservableList());
 
         });
 
@@ -54,12 +61,22 @@ public class RemoveEntryView {
 
     }
 
+    public ObservableList<Entry> refreshObservableList() {
+
+        entryController.emptyCache(userController.getUser().getUsername());
+        List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
+        ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
+        return entries;
+    }
+
     public void removeEntry(Integer id) {
 
         if (confirmationAlert() == true) {
 
             entryController.removeEntry(id);
+
             confirmedAlert();
+
         }
         return;
 
@@ -93,6 +110,17 @@ public class RemoveEntryView {
         confirmedAlert.setContentText("Tapahtuman poistaminen onnistui!");
 
         confirmedAlert.showAndWait();
+
+    }
+
+    public void nothingToRemoveAlert() {
+
+        Alert nothingToRemoveAlert = new Alert(Alert.AlertType.ERROR);
+        nothingToRemoveAlert.setTitle("MassiMatti");
+        nothingToRemoveAlert.setHeaderText("Tapahtuman poistaminen");
+        nothingToRemoveAlert.setContentText("Ei poistettavia tapahtumia!");
+
+        nothingToRemoveAlert.showAndWait();
 
     }
 
