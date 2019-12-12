@@ -51,7 +51,7 @@ public class AddEntryView {
         typeInput.getItems().add("tulo");
         typeInput.getSelectionModel().selectFirst();
 
-        Label sumLabel = new Label("Summa");
+        Label sumLabel = new Label("Summa (min. 0.01 / max. 10000)");
         TextField sumInput = new TextField();
 
         Label categoryLabel = new Label("Kategoria");
@@ -84,7 +84,7 @@ public class AddEntryView {
                 type = true;
             }
 
-            if (isDouble(sumInput.getText()) == false || Double.parseDouble(sumInput.getText()) <= 0) {
+            if (isDouble(sumInput.getText()) == false || Double.parseDouble(sumInput.getText()) <= 0 || Double.parseDouble(sumInput.getText()) > 10000) {
                 sumAlert();
                 sumInput.clear();
                 return;
@@ -123,7 +123,7 @@ public class AddEntryView {
         sumAlert.setHeaderText(
                 "Summa on virheellinen!");
         sumAlert.setContentText(
-                "Summan tulee olla nollasta poikkeava positiivinen kokonais- tai desimaaliluku. Käytä erottimena pistettä.");
+                "Summan tulee olla korkeintaan 10000 ja nollasta poikkeava positiivinen kokonais- tai desimaaliluku. Käytä erottimena pistettä.");
         sumAlert.getDialogPane()
                 .setPrefSize(280, 180);
 
@@ -143,7 +143,7 @@ public class AddEntryView {
         dateAlert.setTitle(
                 "MassiMatti");
         dateAlert.setHeaderText(
-                "Tapahtuman luonti onnistui!");
+                "Tapahtuman lisääminen onnistui!");
         dateAlert.setContentText(
                 "Luo uusi tapahtuma tai sulje ikkuna.");
         dateAlert.getDialogPane()

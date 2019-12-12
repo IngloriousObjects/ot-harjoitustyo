@@ -5,11 +5,22 @@ import java.time.format.DateTimeFormatter;
 
 public class Entry {
 
+    private Integer id;
     private LocalDate date;
     private Boolean type;
     private Double sum;
     private String category;
     private String user;
+
+    public Entry(Integer id, LocalDate date, Boolean type, Double sum, String category, String user) {
+
+        this.id = id;
+        this.date = date;
+        this.type = type;
+        this.sum = sum;
+        this.category = category;
+        this.user = user;
+    }
 
     public Entry(LocalDate date, Boolean type, Double sum, String category, String user) {
 
@@ -18,7 +29,11 @@ public class Entry {
         this.sum = sum;
         this.category = category;
         this.user = user;
+    }
 
+    public void setId(Integer id) {
+
+        this.id = id;
     }
 
     public void setDate(LocalDate date) {
@@ -39,6 +54,11 @@ public class Entry {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public Integer getId() {
+
+        return id;
     }
 
     public LocalDate getDate() {

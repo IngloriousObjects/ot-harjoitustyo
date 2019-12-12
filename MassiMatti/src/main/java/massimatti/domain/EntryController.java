@@ -1,10 +1,12 @@
 package massimatti.domain;
 
+import massimatti.dao.EntryDao;
+import massimatti.domain.Entry;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import massimatti.dao.EntryDao;
+import java.util.TreeMap;
 
 /**
  * Tapahtumien toiminnalisuuksien sovelluslogiikasta vastaava luokka.
@@ -12,6 +14,7 @@ import massimatti.dao.EntryDao;
 public class EntryController {
 
     private EntryDao entryDao;
+    private Entry entry;
 
     /**
      * Luokan konstruktori.
@@ -44,6 +47,16 @@ public class EntryController {
         }
     }
 
+    public boolean removeEntry(Integer entryId) {
+        try {
+            entryDao.remove(entryId);
+            return true;
+
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
     /**
      * Hakee käyttäjän tapahtumat tietokannasta.
      *
@@ -68,6 +81,27 @@ public class EntryController {
     public void emptyCache(String user) {
 
         entryDao.removeByUser(user);
+
+    }
+
+    //Kokeelllista
+    public TreeMap<String, Double> sumByCategories(List<Entry> entries) {
+
+        TreeMap<String, Double> order = new TreeMap<>();
+
+        for (Entry entry : entries) {
+
+            if (order.containsKey(entry.getCategory().toString())) {
+
+                order.put(entry.getCategory().toString(), order.get(entry.getCategory().toString()) + (entry.getSum().doubleValue()));
+            } else {
+
+                order.put(entry.getCategory().toString(), entry.getSum().doubleValue());
+            }
+
+        }
+
+        return order;
 
     }
 

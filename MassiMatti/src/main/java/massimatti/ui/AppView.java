@@ -38,14 +38,15 @@ public class AppView {
         
         Button logOut = new Button("Kirjaudu ulos");
         Button addEntry = new Button("Lisää tapahtuma");
+        Button removeEntry = new Button("Poista tapahtuma");
         Button addCategory = new Button("Lisää kategoria");
         Button listEntries = new Button("Listaa tapahtumat");
         Button categoryEntries = new Button("Tapahtumat kategorioittain");
         Button graphEntires = new Button("Tapahtumat graafeina");
 
-        appPane.getChildren().addAll(logOut, addEntry, addCategory, listEntries, categoryEntries, graphEntires);
+        appPane.getChildren().addAll(logOut, addEntry, removeEntry, addCategory, listEntries, categoryEntries, graphEntires);
 
-        Scene scene = new Scene(appPane, 1000, 750);
+        Scene scene = new Scene(appPane, 300, 300);
 
         logOut.setOnAction((event) -> {
 
@@ -74,6 +75,24 @@ public class AppView {
             secondStage.setScene(addEntryView.getAddEntryViewScene(secondStage));
             secondStage.show();
         });
+        
+        removeEntry.setOnAction((event) ->{
+            
+            RemoveEntryView removeEntryView = new RemoveEntryView(userController, entryController);
+            secondStage.setScene(removeEntryView.getRemoveEntryView(secondStage));
+            secondStage.show();
+            
+        });
+        
+        categoryEntries.setOnAction((event) -> {
+
+            SumByCategoryView sumByCategoryView = new SumByCategoryView(userController, entryController,categoryController);
+            secondStage.setScene(sumByCategoryView.getSumByCategoryScene(secondStage));
+            secondStage.show();
+
+        });
+
+        
 
         return scene;
 

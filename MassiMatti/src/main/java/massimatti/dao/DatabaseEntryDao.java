@@ -19,7 +19,7 @@ import java.util.Map;
 public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
 
     private String path;
-    private String user;
+    private String stmt;
     private String password;
     private Map<String, List<Entry>> cacheMemory;                                  //käytetään tikapesta tuttua välimuistimenetelmää
 
@@ -33,7 +33,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
     public DatabaseEntryDao(String path, String user, String password) {
 
         this.path = path;
-        this.user = user;
+        this.stmt = user;
         this.password = password;
         this.cacheMemory = new HashMap<>();
 
@@ -49,7 +49,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
     @Override
     public Entry create(Entry object) throws SQLException {
 
-        Connection conn = DriverManager.getConnection(path, user, password);
+        Connection conn = DriverManager.getConnection(path, stmt, password);
         PreparedStatement stmt = conn.prepareStatement(
                 "INSERT INTO Entry (date,type,sum,category,userID) VALUES (?,?,?,?,?)");
 
@@ -68,8 +68,17 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
     }
 
     @Override
-    public void remove(Integer key) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");              //käytetään, jos ehditään
+    public void remove(Integer id) throws SQLException {
+        
+        Connection conn = DriverManager.getConnection(path, stmt, password);
+        PreparedStatement stmt = conn.prepareStatement("DELETE FROM Entry WHERE id = ?");
+        stmt.setInt(1, id);
+
+        stmt.executeUpdate();
+        stmt.close();
+        conn.close();
+        
+        
     }
 
     /**
@@ -98,7 +107,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
 
         if (!cacheMemory.containsKey(key)) {
 
-            Connection conn = DriverManager.getConnection(path, user, password);
+            Connection conn = DriverManager.getConnection(path, stmt, password);
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * FROM Entry WHERE userId = ? ORDER BY date DESC");
 
@@ -109,6 +118,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
 
             while (result.next()) {
                 entries.add(new Entry(
+                        result.getInt("id"),
                         Date.valueOf(result.getString("date")).toLocalDate(),
                         result.getBoolean("type"),
                         result.getDouble("sum"),
@@ -122,7 +132,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
 
             cacheMemory.put(key, entries);
         }
-
+        
         return cacheMemory.get(key);
 
     }
