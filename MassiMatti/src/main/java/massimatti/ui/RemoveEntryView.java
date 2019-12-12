@@ -30,8 +30,9 @@ public class RemoveEntryView {
     public Scene getRemoveEntryView(Stage secondStage) {
 
         List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
-        ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
+        // ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
 
+        ObservableList<Entry> entries = createObservableList();
         ListView<Entry> byUser = new ListView<Entry>();
         byUser.getItems().addAll(entries);
 
@@ -49,7 +50,7 @@ public class RemoveEntryView {
             removeEntry(entryId);
 
             byUser.getItems().clear();
-            byUser.getItems().addAll(refreshObservableList());
+            byUser.getItems().addAll(createObservableList());
 
         });
 
@@ -61,7 +62,7 @@ public class RemoveEntryView {
 
     }
 
-    public ObservableList<Entry> refreshObservableList() {
+    public ObservableList<Entry> createObservableList() {
 
         entryController.emptyCache(userController.getUser().getUsername());
         List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());

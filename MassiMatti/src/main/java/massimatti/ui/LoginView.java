@@ -37,12 +37,12 @@ public class LoginView {
 
         VBox loginPane = new VBox(10);
         VBox inputPane = new VBox(10);
-        
+
         loginPane.setPadding(new Insets(10));
 
         Label loginLabel = new Label("Käyttäjätunnus");
         TextField usernameInput = new TextField();
-        
+
         Label loginLabelSecond = new Label("Salasana");
         PasswordField passwordInput = new PasswordField();
 
@@ -86,12 +86,19 @@ public class LoginView {
         });
 
         registerUserButton.setOnAction((event) -> {
-        
+
             String user = usernameInput.getText().trim();
             String password = passwordInput.getText();
             if (userController.checkUsername(user) == true && userController.checkPassword(password) == true) {
 
-                userController.createUser(user, password);
+                if (userController.createUser(user, password) == false) {
+
+                    userExistsAlert();
+                    usernameInput.clear();
+                    passwordInput.clear();
+                    return;
+
+                }
                 creationSuccessfulAlert();
 
                 usernameInput.clear();
@@ -162,6 +169,22 @@ public class LoginView {
 
         createError.showAndWait();
 
+    }
+
+    public void userExistsAlert() {
+
+        Alert userExistsError = new Alert(AlertType.ERROR);
+
+        userExistsError.setTitle(
+                "MassiMatti");
+        userExistsError.setHeaderText(
+                "Käyttäjätunnus on jo käytössä!");
+        userExistsError.setContentText(
+                "Valitse uusi käyttäjätunnus.");
+        userExistsError.getDialogPane()
+                .setPrefSize(300, 180);
+
+        userExistsError.showAndWait();
     }
 
     public void creationSuccessfulAlert() {
