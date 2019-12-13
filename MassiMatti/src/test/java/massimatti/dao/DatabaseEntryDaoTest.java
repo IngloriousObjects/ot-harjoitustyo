@@ -35,7 +35,7 @@ public class DatabaseEntryDaoTest {
     String user;
     String password;
 
-    DatabaseEntryDao entry;
+    DatabaseEntryDao entryDao;
     DatabaseCategoryDao dao;
     DatabaseUserDao dbUser;
 
@@ -51,7 +51,7 @@ public class DatabaseEntryDaoTest {
         DatabaseDao testDatabase = new DatabaseDao(path, user, password);
         testDatabase.createDatabase();
 
-        entry = new DatabaseEntryDao(path, user, password);
+        entryDao = new DatabaseEntryDao(path, user, password);
         dao = new DatabaseCategoryDao(path, user, password);
         dao.create(new Category("MEEMI"));
         dao.create(new Category("OLUT"));
@@ -64,28 +64,39 @@ public class DatabaseEntryDaoTest {
         dbUser.create(new User("sokrates", "salasana"));
         dbUser.create(new User("lalli", "salasana"));
 
-        entry.create(new Entry(LocalDate.of(2019, 1, 1), false, 19.20, "MEEMI", "petri"));
-        entry.create(new Entry(LocalDate.of(2019, 2, 12), false, 19.10, "OLUT", "sokrates"));
-        entry.create(new Entry(LocalDate.of(1156, 1, 20), true, 1000.00, "PALKKA", "lalli"));
-        entry.create(new Entry(LocalDate.of(1156, 1, 21), false, 1000.00, "SAKKO", "lalli"));
+        entryDao.create(new Entry(LocalDate.of(2019, 1, 1), false, 19.20, "MEEMI", "petri"));
+        entryDao.create(new Entry(LocalDate.of(2019, 2, 12), false, 19.10, "OLUT", "sokrates"));
+        entryDao.create(new Entry(LocalDate.of(1156, 1, 20), true, 1000.00, "PALKKA", "lalli"));
+        entryDao.create(new Entry(LocalDate.of(1156, 1, 21), false, 1000.00, "SAKKO", "lalli"));
 
     }
 
     @Test
     public void listByUsersIsFunctional() throws SQLException {
-        assertTrue(entry.listByUser("lalli") != null);
+        assertTrue(entryDao.listByUser("lalli") != null);
     }
     
     @Test
     public void listByUsersNoUser() throws SQLException {
         
-        assertFalse(entry.listByUser("jesus") == null);
+        assertFalse(entryDao.listByUser("jesus") == null);
     }
 
     @Test
     public void allEntriesByUserIsSaved() throws SQLException{
         
-        assertEquals(2, entry.listByUser("lalli").size());
+        assertEquals(2, entryDao.listByUser("lalli").size());
+    }
+    
+    @Test
+    public void entryIsRemoved() throws SQLException{
+        
+        entryDao.remove(1);
+        
+        assertTrue(entryDao.listByUser("petri").isEmpty());
+        
+        
+        
     }
     
     @After

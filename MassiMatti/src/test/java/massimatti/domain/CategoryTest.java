@@ -1,9 +1,7 @@
 package massimatti.domain;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,18 +15,19 @@ public class CategoryTest {
         category = new Category("MEEMI");
 
     }
-    
+
     @Test
-    public void checKIfCategorySavedProperly(){
-        
+    public void CategorySavedProperly() {
+
         assertEquals("MEEMI", category.getCategoryName());
     }
 
-    
+    @Test
+    public void setCategoryNameProperly() {
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+        category.setCategoryName("muumi");
+        assertEquals("muumi", category.getCategoryName());
+
+    }
+
 }

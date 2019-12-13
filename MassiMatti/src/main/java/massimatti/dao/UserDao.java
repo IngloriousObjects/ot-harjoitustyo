@@ -10,8 +10,6 @@ public interface UserDao<T, K> {
 
     T read(K key) throws SQLException;
 
-    T update(T object) throws SQLException;
-
-    void delete(K key) throws SQLException;
+    
 
 }

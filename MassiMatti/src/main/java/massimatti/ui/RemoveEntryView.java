@@ -8,8 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import massimatti.domain.Entry;
 import massimatti.domain.EntryController;
@@ -29,14 +32,23 @@ public class RemoveEntryView {
 
     public Scene getRemoveEntryView(Stage secondStage) {
 
-        List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
-        // ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
+
 
         ObservableList<Entry> entries = createObservableList();
         ListView<Entry> byUser = new ListView<Entry>();
         byUser.getItems().addAll(entries);
-
+        byUser.setPrefSize(400, 400);
+        
+        Label infoLabel = new Label("Poista tapahtuma:");
+        Label contentLabel  = new Label("Valitse listasta poistettava tapahtuma ja paina 'Poista tapahtuma'.");
+        Label noticeLabel = new Label("Poistu näkymästä sulkemalla ikkuna.");
+        TextFlow flow = new TextFlow();
+        infoLabel.setStyle("-fx-font-weight: bold");
+        VBox infoPane = new VBox(20);
         Button button = new Button("Poista tapahtuma");
+        infoPane.getChildren().addAll(infoLabel, contentLabel, noticeLabel, button);
+
+        
 
         button.setOnAction((event) -> {
 
@@ -54,7 +66,7 @@ public class RemoveEntryView {
 
         });
 
-        HBox hbox = new HBox(byUser, button);
+        HBox hbox = new HBox(byUser, infoPane);
 
         Scene scene = new Scene(hbox, 1000, 600);
 

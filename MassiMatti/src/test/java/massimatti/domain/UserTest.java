@@ -54,5 +54,10 @@ public class UserTest {
         Object o = new Object();
         assertFalse(user.equals(o));
     }
+    @Test
+    public void toStringReturnsProperly(){
+        
+        assertEquals("Petri", user.toString());
+    }
 }
 

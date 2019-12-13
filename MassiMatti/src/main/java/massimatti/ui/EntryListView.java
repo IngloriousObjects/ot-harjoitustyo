@@ -42,6 +42,9 @@ public class EntryListView {
         ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
         
         ListView<Entry> byUser = new ListView<Entry>();
+        
+        byUser.setPrefSize(400, 400);
+        
         byUser.getItems().addAll(entries);
         
         HBox hbox = new HBox(byUser);

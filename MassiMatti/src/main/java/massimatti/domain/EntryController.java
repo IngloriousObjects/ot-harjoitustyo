@@ -14,7 +14,7 @@ import java.util.TreeMap;
 public class EntryController {
 
     private EntryDao entryDao;
-    private Entry entry;
+   
 
     /**
      * Luokan konstruktori.

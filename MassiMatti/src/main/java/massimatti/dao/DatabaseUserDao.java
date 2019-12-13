@@ -93,14 +93,4 @@ public class DatabaseUserDao implements UserDao<User, String> {
 
     }
 
-    @Override
-    public User update(User object) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Käytetään, jos ehditään
-    }
-
-    @Override
-    public void delete(String key) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Käytetään, jos ehditään
-    }
-
 }
