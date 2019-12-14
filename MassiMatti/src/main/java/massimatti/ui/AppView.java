@@ -42,9 +42,9 @@ public class AppView {
         Button addCategory = new Button("Lisää kategoria");
         Button listEntries = new Button("Listaa tapahtumat");
         Button categoryEntries = new Button("Tapahtumat kategorioittain");
-        Button graphEntires = new Button("Tapahtumat graafeina");
+        Button graphEntries = new Button("Tapahtumat graafeina");
 
-        appPane.getChildren().addAll(logOut, addEntry, removeEntry, addCategory, listEntries, categoryEntries, graphEntires);
+        appPane.getChildren().addAll(logOut, addEntry, removeEntry, addCategory, listEntries, categoryEntries, graphEntries);
 
         Scene scene = new Scene(appPane, 300, 300);
 
@@ -91,8 +91,13 @@ public class AppView {
             secondStage.show();
 
         });
-
         
+        graphEntries.setOnAction((event) -> {
+
+            EntryGraphView entryGraphView = new EntryGraphView(userController, entryController, categoryController);
+            secondStage.setScene(entryGraphView.getEntryGraphScene(secondStage));
+            secondStage.show();
+        });
 
         return scene;
 

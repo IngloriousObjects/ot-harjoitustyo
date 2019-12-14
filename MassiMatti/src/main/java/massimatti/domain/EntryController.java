@@ -14,7 +14,6 @@ import java.util.TreeMap;
 public class EntryController {
 
     private EntryDao entryDao;
-   
 
     /**
      * Luokan konstruktori.
@@ -40,6 +39,7 @@ public class EntryController {
     public boolean addEntry(LocalDate date, Boolean type, Double sum, String category, String user) {
         try {
             entryDao.create(new Entry(date, type, sum, category, user));
+
             return true;
 
         } catch (SQLException e) {
@@ -103,6 +103,24 @@ public class EntryController {
 
         return order;
 
+    }
+
+    //Kokeellista 14.12.2019
+    public List<Entry> getSelectedEntries(List<Entry> entries, LocalDate date1, LocalDate date2) {
+
+        List<Entry> selected = new ArrayList<>();
+
+        for (Entry entry : entries) {
+
+            if ((entry.getDate().isEqual(date1) || entry.getDate().isEqual(date2))
+                    || (entry.getDate().isAfter(date1)) && entry.getDate().isBefore(date2)) {
+
+                selected.add(entry);
+            }
+
+        }
+        System.out.println(selected);
+        return selected;
     }
 
 }

@@ -32,7 +32,7 @@ public class DatabaseDao {
 
             String createEntry = "CREATE TABLE IF NOT EXISTS Entry ("
                     + "id int AUTO_INCREMENT primary key,"
-                    + "date TEXT,"
+                    + "date DATE,"
                     + "type BOOLEAN,"
                     + "sum DECIMAL(19,2),"
                     + "category VARCHAR(36),"

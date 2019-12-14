@@ -11,7 +11,9 @@
     <suppress files="massimatti.ui.EntryListView.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="massimatti.ui.AddCategoryView.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="massimatti.ui.AddEntryView.java" checks="[a-zA-Z0-9]*"/>
-
+    <suppress files="massimatti.ui.RemoveEntryView.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="massimatti.ui.SumByCategoryView.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="massimatti.ui.EntryGraphView.java" checks="[a-zA-Z0-9]*"/>
 
 
 
