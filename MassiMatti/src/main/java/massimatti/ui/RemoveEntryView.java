@@ -131,7 +131,7 @@ public class RemoveEntryView {
 
         Alert nothingToRemoveAlert = new Alert(Alert.AlertType.ERROR);
         nothingToRemoveAlert.setTitle("MassiMatti");
-        nothingToRemoveAlert.setHeaderText("Tapahtuman poistaminen");
+        nothingToRemoveAlert.setHeaderText("Tapahtuman poistaminen ei onnistunut.");
         nothingToRemoveAlert.setContentText("Ei poistettavia tapahtumia tai valintasi on tyhjä!");
 
         nothingToRemoveAlert.showAndWait();
