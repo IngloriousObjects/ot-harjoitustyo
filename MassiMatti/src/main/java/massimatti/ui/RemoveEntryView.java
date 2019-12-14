@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -32,23 +33,20 @@ public class RemoveEntryView {
 
     public Scene getRemoveEntryView(Stage secondStage) {
 
-
-
         ObservableList<Entry> entries = createObservableList();
         ListView<Entry> byUser = new ListView<Entry>();
         byUser.getItems().addAll(entries);
         byUser.setPrefSize(400, 400);
-        
+
         Label infoLabel = new Label("Poista tapahtuma:");
-        Label contentLabel  = new Label("Valitse listasta poistettava tapahtuma ja paina 'Poista tapahtuma'.");
+        Label contentLabel = new Label("Valitse listasta poistettava tapahtuma ja paina 'Poista tapahtuma'.");
         Label noticeLabel = new Label("Poistu näkymästä sulkemalla ikkuna.");
         TextFlow flow = new TextFlow();
         infoLabel.setStyle("-fx-font-weight: bold");
         VBox infoPane = new VBox(20);
+        infoPane.setPadding(new Insets(15));
         Button button = new Button("Poista tapahtuma");
         infoPane.getChildren().addAll(infoLabel, contentLabel, noticeLabel, button);
-
-        
 
         button.setOnAction((event) -> {
 

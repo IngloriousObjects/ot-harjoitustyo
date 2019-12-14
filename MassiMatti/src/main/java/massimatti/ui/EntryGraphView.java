@@ -41,7 +41,7 @@ public class EntryGraphView {
 
         VBox addEntryPane = new VBox(20);
         VBox inputPane = new VBox(20);
-        addEntryPane.setPadding(new Insets(20));
+        addEntryPane.setPadding(new Insets(15));
 
         Label dateLabelStart = new Label("Alkupäivämäärä");
         datePickerStart = new DatePicker(LocalDate.now());

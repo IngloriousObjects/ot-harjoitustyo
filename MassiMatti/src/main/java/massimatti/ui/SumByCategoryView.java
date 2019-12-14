@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -44,6 +45,8 @@ public class SumByCategoryView {
         // entryController.emptyCache(userController.getUser().getUsername());
         // List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
         VBox categoryPane = new VBox(25);
+        categoryPane.setPadding(new Insets(15));
+        categoryPane.setPrefSize(800, 800);
         Button allTime = new Button("Kaikki");
         Button selected = new Button("Valitulta ajanjaksolta");
 
@@ -61,6 +64,7 @@ public class SumByCategoryView {
         yAxis.setLabel("Summa (euroa)");
 
         BarChart<String, Number> barchart = new BarChart<>(xAxis, yAxis);
+        barchart.setPrefSize(400, 500);
 
         allTime.setOnAction((event) -> {
             barchart.getData().clear();
@@ -72,7 +76,7 @@ public class SumByCategoryView {
             yAxis.setLabel("Summa (euroa)");
 
             barchart.setTitle("MENOT / TULOT KATEGORIOITTAIN");
-            barchart.setLegendVisible(true);
+            barchart.setLegendVisible(false);
 
             XYChart.Series sumCategory = new XYChart.Series();
 
@@ -112,7 +116,7 @@ public class SumByCategoryView {
             yAxis.setLabel("Summa (euroa)");
 
             barchart.setTitle("MENOT / TULOT KATEGORIOITTAIN");
-            barchart.setLegendVisible(true);
+            barchart.setLegendVisible(false);
 
             XYChart.Series sumCategory = new XYChart.Series();
 

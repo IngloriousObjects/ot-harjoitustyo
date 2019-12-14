@@ -1,5 +1,6 @@
 package massimatti.ui;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -35,7 +36,7 @@ public class AppView {
         secondStage.setTitle("MassiMatti");
 
         VBox appPane = new VBox(10);
-        
+        appPane.setPadding(new Insets(15));
         Button logOut = new Button("Kirjaudu ulos");
         Button addEntry = new Button("Lisää tapahtuma");
         Button removeEntry = new Button("Poista tapahtuma");

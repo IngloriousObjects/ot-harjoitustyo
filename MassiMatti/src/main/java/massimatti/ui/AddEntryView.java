@@ -38,6 +38,7 @@ public class AddEntryView {
     public Scene getAddEntryViewScene(Stage secondStage) {
 
         VBox addEntryPane = new VBox(20);
+        addEntryPane.setPadding(new Insets(15));
         VBox inputPane = new VBox(20);
         addEntryPane.setPadding(new Insets(20));
 

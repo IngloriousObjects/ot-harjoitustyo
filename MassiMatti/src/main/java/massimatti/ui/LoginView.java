@@ -38,7 +38,7 @@ public class LoginView {
         VBox loginPane = new VBox(10);
         VBox inputPane = new VBox(10);
 
-        loginPane.setPadding(new Insets(10));
+        loginPane.setPadding(new Insets(15));
 
         Label loginLabel = new Label("Käyttäjätunnus");
         TextField usernameInput = new TextField();

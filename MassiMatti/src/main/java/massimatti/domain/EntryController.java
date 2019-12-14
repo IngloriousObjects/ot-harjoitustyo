@@ -119,7 +119,7 @@ public class EntryController {
             }
 
         }
-        System.out.println(selected);
+
         return selected;
     }
 
