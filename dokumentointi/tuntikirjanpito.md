@@ -24,4 +24,5 @@
 | 10.12. | 2    | Testien ja javavadocin luontia sekä pientä korjaamista sieltä täältä|
 | 12.12. | 4    | Sekä UI:n että sovelluslogiikan hiomista ja luomista. Mm. erinäisten virheiden kalastelua ja korjaamista|
 | 13.12. | 3    | Testien luontia sekä UI:n pientä viilausta|
-| yht    |83    | | 
+| 14.12. | 4    | Ominaisuuksien lisäämistä ja hiomista sekä sovelluslogiikan että UI:n osalta|
+| yht    |87    | | 
