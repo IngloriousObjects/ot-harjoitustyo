@@ -84,7 +84,7 @@ public class EntryController {
 
     }
 
-    //Kokeelllista
+    //muodostaa TreeMapin syötteen entry-listasta 
     public TreeMap<String, Double> sumByCategories(List<Entry> entries) {
 
         TreeMap<String, Double> order = new TreeMap<>();
@@ -105,15 +105,15 @@ public class EntryController {
 
     }
 
-    //Kokeellista 14.12.2019
-    public List<Entry> getSelectedEntries(List<Entry> entries, LocalDate date1, LocalDate date2) {
+    //valikoidut entryt
+    public List<Entry> getSelectedEntries(List<Entry> entries, LocalDate dateStart, LocalDate dateEnd) {
 
         List<Entry> selected = new ArrayList<>();
 
         for (Entry entry : entries) {
 
-            if ((entry.getDate().isEqual(date1) || entry.getDate().isEqual(date2))
-                    || (entry.getDate().isAfter(date1)) && entry.getDate().isBefore(date2)) {
+            if ((entry.getDate().isEqual(dateStart) || entry.getDate().isEqual(dateEnd))
+                    || (entry.getDate().isAfter(dateStart)) && entry.getDate().isBefore(dateEnd)) {
 
                 selected.add(entry);
             }

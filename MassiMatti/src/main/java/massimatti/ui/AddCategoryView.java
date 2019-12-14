@@ -36,14 +36,15 @@ public class AddCategoryView {
         inputPane.getChildren().addAll(categoryLabel, categoryInput);
 
         Label categoryMessage = new Label("Lisää kategoria (3-36 merkkiä)");
-
-        TextFlow flow = new TextFlow();
         categoryMessage.setStyle("-fx-font-weight: bold");
 
-        flow.getChildren().addAll(categoryMessage);
+        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");
+
+        noticeLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: blue");
+
         Button addButton = new Button("Lisää");
 
-        addCategoryPane.getChildren().addAll(categoryMessage, inputPane, addButton);
+        addCategoryPane.getChildren().addAll(categoryMessage, inputPane, addButton, noticeLabel);
 
         Scene scene = new Scene(addCategoryPane, 280, 260);
 

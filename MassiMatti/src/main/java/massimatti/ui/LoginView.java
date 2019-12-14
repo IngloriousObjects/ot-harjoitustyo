@@ -45,8 +45,13 @@ public class LoginView {
 
         Label loginLabelSecond = new Label("Salasana");
         PasswordField passwordInput = new PasswordField();
+        
+        Label infoLabel = new Label("Käyttäjätunnuksen pituus voi olla\n5-36 merkkiä ja salasanan 8-36\nmerkkiä.");
+        infoLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: red;"+"-fx-font-style: italic");
+  
+        
 
-        inputPane.getChildren().addAll(loginLabel, usernameInput, loginLabelSecond, passwordInput);
+        inputPane.getChildren().addAll(loginLabel, usernameInput, loginLabelSecond, passwordInput, infoLabel);
 
         Label loginMessage = new Label("KIRJAUDU");
         Label registerMessage = new Label("REKISTERÖIDY");
@@ -61,7 +66,7 @@ public class LoginView {
 
         loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, changeToRegisterViewButton);
 
-        Scene loginScene = new Scene(loginPane, 280, 260);
+        Scene loginScene = new Scene(loginPane, 280, 320);
 
         loginButton.setOnAction((event) -> {
 

@@ -50,6 +50,9 @@ public class EntryListView {
         sidePane.setPadding(new Insets(15));
         Button allTime = new Button("Kaikki");
         Button selected = new Button("Valitulta ajanjaksolta");
+        
+        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");      
+        noticeLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
 
         Label dateLabelStart = new Label("Alkupäivämäärä");
         datePickerStart = new DatePicker(LocalDate.now());
@@ -98,7 +101,7 @@ public class EntryListView {
         //   listViewPane.setAlignment(Pos.BASELINE_LEFT);
         //    listViewPane.setPrefSize(800, 300);
 
-        sidePane.getChildren().addAll(dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, listViewPane);
+        sidePane.getChildren().addAll(dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, listViewPane);
 
         Scene scene = new Scene(sidePane, 650, 800);
 

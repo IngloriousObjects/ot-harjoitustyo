@@ -38,19 +38,19 @@ public class RemoveEntryView {
         byUser.getItems().addAll(entries);
         byUser.setPrefSize(400, 400);
 
-        Label infoLabel = new Label("Poista tapahtuma:");
+        Label infoLabel = new Label("Poista tapahtuma");
         Label contentLabel = new Label("Valitse listasta poistettava tapahtuma ja paina 'Poista tapahtuma'.");
-        Label noticeLabel = new Label("Poistu näkymästä sulkemalla ikkuna.");
-        TextFlow flow = new TextFlow();
+        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");      
+        
         infoLabel.setStyle("-fx-font-weight: bold");
+        noticeLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
         VBox infoPane = new VBox(20);
         infoPane.setPadding(new Insets(15));
         Button button = new Button("Poista tapahtuma");
-        infoPane.getChildren().addAll(infoLabel, contentLabel, noticeLabel, button);
+        infoPane.getChildren().addAll(infoLabel, contentLabel, button, noticeLabel);
 
         button.setOnAction((event) -> {
 
-            System.out.println("byUser..; " + byUser.getSelectionModel().getSelectedItem());
             if (byUser.getItems().isEmpty() || byUser.getSelectionModel().getSelectedItem() == null) {
 
                 nothingToRemoveAlert();

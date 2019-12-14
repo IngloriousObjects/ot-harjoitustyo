@@ -34,17 +34,24 @@ public class AppView {
 
         VBox appPane = new VBox(15);
         appPane.setPadding(new Insets(15));
+        
+        Label mainLabel = new Label("Päänäkymä");
+        Label underLabel = new Label("Valitse toiminto");
+        
+        mainLabel.setStyle("-fx-font-weight: bold");
+        
+        
         Button logOut = new Button("Kirjaudu ulos");
         Button addEntry = new Button("Lisää tapahtuma");
         Button removeEntry = new Button("Poista tapahtuma");
         Button addCategory = new Button("Lisää kategoria");
         Button listEntries = new Button("Listaa tapahtumat");
         Button categoryEntries = new Button("Menot / Tulot kategorioittain");
-        Button graphEntries = new Button("Menot / Tulot ajanjaksolla");
+        Button graphEntries = new Button("Menot / Tulot vertailu");
 
-        appPane.getChildren().addAll(logOut, addEntry, removeEntry, addCategory, listEntries, categoryEntries, graphEntries);
+        appPane.getChildren().addAll(mainLabel, underLabel,logOut, addEntry, removeEntry, addCategory, listEntries, categoryEntries, graphEntries);
 
-        Scene scene = new Scene(appPane, 300, 300);
+        Scene scene = new Scene(appPane, 300, 400);
 
         logOut.setOnAction((event) -> {
 

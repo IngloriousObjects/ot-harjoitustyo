@@ -65,15 +65,16 @@ public class AddEntryView {
 
         inputPane.getChildren().addAll(dateLabel, datePicker, typeLabel, typeInput, sumLabel, sumInput, categoryLabel, categoryInput);
 
-        Label entryMessage = new Label("Lisää tapahtuma:");
-
-        TextFlow flow = new TextFlow();
+        Label entryMessage = new Label("Lisää tapahtuma");
         entryMessage.setStyle("-fx-font-weight: bold");
+        
+        Label infoLabel = new Label("Voit poistua näkymästä\nsulkemalla ikkunan.");
+        infoLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
 
-        flow.getChildren().addAll(entryMessage);
+     
         Button addButton = new Button("Lisää");
 
-        addEntryPane.getChildren().addAll(entryMessage, inputPane, addButton);
+        addEntryPane.getChildren().addAll(entryMessage, inputPane, addButton, infoLabel);
 
         addButton.setOnAction((event) -> {
             LocalDate date = datePicker.getValue();
@@ -100,7 +101,7 @@ public class AddEntryView {
 
         });
 
-        Scene scene = new Scene(addEntryPane, 320, 450);
+        Scene scene = new Scene(addEntryPane, 320, 480);
 
         return scene;
 

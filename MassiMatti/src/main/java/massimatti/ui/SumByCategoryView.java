@@ -18,7 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import massimatti.domain.Entry;
-import massimatti.domain.Category;
+
 import massimatti.domain.UserController;
 import massimatti.domain.EntryController;
 import massimatti.domain.CategoryController;
@@ -30,7 +30,6 @@ public class SumByCategoryView {
     private CategoryController categoryController;
     private DatePicker datePickerStart;
     private DatePicker datePickerEnd;
-    private BarChart barchart;
 
     public SumByCategoryView(UserController userController, EntryController entryController, CategoryController categoryController) {
 
@@ -42,13 +41,13 @@ public class SumByCategoryView {
 
     public Scene getSumByCategoryScene(Stage secondStage) {
 
-        // entryController.emptyCache(userController.getUser().getUsername());
-        // List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
         VBox categoryPane = new VBox(25);
         categoryPane.setPadding(new Insets(15));
         categoryPane.setPrefSize(800, 800);
         Button allTime = new Button("Kaikki");
         Button selected = new Button("Valitulta ajanjaksolta");
+        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");      
+        noticeLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
 
         Label dateLabelStart = new Label("Alkupäivämäärä");
         datePickerStart = new DatePicker(LocalDate.now());
@@ -59,12 +58,13 @@ public class SumByCategoryView {
         datePickerEnd.getEditor().setDisable(true);
 
         CategoryAxis xAxis = new CategoryAxis();
-        NumberAxis yAxis = new NumberAxis(); //(0, 10000, 50);
-        yAxis.setForceZeroInRange(false);
-        yAxis.setLabel("Summa (euroa)");
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Euroa");
 
         BarChart<String, Number> barchart = new BarChart<>(xAxis, yAxis);
         barchart.setPrefSize(400, 500);
+        barchart.setAnimated(false);
+        barchart.setLegendVisible(false);
 
         allTime.setOnAction((event) -> {
             barchart.getData().clear();
@@ -72,12 +72,7 @@ public class SumByCategoryView {
             List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
             TreeMap<String, Double> sumByCategory = sumCategories(entriesByUser);
 
-            yAxis.setForceZeroInRange(false);
-            yAxis.setLabel("Summa (euroa)");
-
-            barchart.setTitle("MENOT / TULOT KATEGORIOITTAIN");
-            barchart.setLegendVisible(false);
-            barchart.setAnimated(false);
+            barchart.setTitle("Menot / Tulot kategorioittain: kaikki");
 
             XYChart.Series sumCategory = new XYChart.Series();
 
@@ -102,9 +97,9 @@ public class SumByCategoryView {
 
             LocalDate dateS = datePickerStart.getValue();
             LocalDate dateE = datePickerEnd.getValue();
-            
-            if(dateE.isBefore(dateS)){
-                
+
+            if (dateE.isBefore(dateS)) {
+
                 dateAlert();
                 return;
             }
@@ -112,22 +107,15 @@ public class SumByCategoryView {
             List<Entry> entriesPicked = entryController.getEntries(userController.getUser().getUsername());
             List<Entry> entriesByUser = entryController.getSelectedEntries(entriesPicked, dateS, dateE);
             TreeMap<String, Double> sumByCategory = sumCategories(entriesByUser);
-           
-            yAxis.setForceZeroInRange(false);
-            yAxis.setLabel("Summa (euroa)");
 
-            barchart.setTitle("MENOT / TULOT KATEGORIOITTAIN");
-            barchart.setLegendVisible(false);
+            barchart.setTitle("Menot / Tulot kategorioittain ajanjaksolla " + dateS + " – " + dateE);
 
             XYChart.Series sumCategory = new XYChart.Series();
-            
-            
-              
+
             for (Map.Entry<String, Double> entries : sumByCategory.entrySet()) {
 
                 String key = entries.getKey();
                 Double value = entries.getValue();
-                System.out.println("String in ui: " + key);
                 sumCategory.getData().add(new XYChart.Data(key, value));
             }
 
@@ -136,8 +124,8 @@ public class SumByCategoryView {
             barchart.getData().add(sumCategory);
         });
 
-        categoryPane.getChildren().addAll(dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, barchart);
-        
+        categoryPane.getChildren().addAll(dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);
+
         Scene scene = new Scene(categoryPane);
 
         return scene;
@@ -155,11 +143,11 @@ public class SumByCategoryView {
         return sumByCategory;
 
     }
-    
-    public void dateAlert(){
-        
+
+    public void dateAlert() {
+
         Alert dateAlert = new Alert(AlertType.ERROR);
-             dateAlert.setTitle(
+        dateAlert.setTitle(
                 "MassiMatti");
         dateAlert.setHeaderText(
                 "Ajanjakso on virheellinen!");
