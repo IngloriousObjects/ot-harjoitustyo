@@ -77,6 +77,7 @@ public class SumByCategoryView {
 
             barchart.setTitle("MENOT / TULOT KATEGORIOITTAIN");
             barchart.setLegendVisible(false);
+            barchart.setAnimated(false);
 
             XYChart.Series sumCategory = new XYChart.Series();
 
@@ -111,7 +112,7 @@ public class SumByCategoryView {
             List<Entry> entriesPicked = entryController.getEntries(userController.getUser().getUsername());
             List<Entry> entriesByUser = entryController.getSelectedEntries(entriesPicked, dateS, dateE);
             TreeMap<String, Double> sumByCategory = sumCategories(entriesByUser);
-
+           
             yAxis.setForceZeroInRange(false);
             yAxis.setLabel("Summa (euroa)");
 
@@ -119,12 +120,14 @@ public class SumByCategoryView {
             barchart.setLegendVisible(false);
 
             XYChart.Series sumCategory = new XYChart.Series();
-
+            
+            
+              
             for (Map.Entry<String, Double> entries : sumByCategory.entrySet()) {
 
                 String key = entries.getKey();
                 Double value = entries.getValue();
-
+                System.out.println("String in ui: " + key);
                 sumCategory.getData().add(new XYChart.Data(key, value));
             }
 
@@ -134,7 +137,7 @@ public class SumByCategoryView {
         });
 
         categoryPane.getChildren().addAll(dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, barchart);
-
+        
         Scene scene = new Scene(categoryPane);
 
         return scene;

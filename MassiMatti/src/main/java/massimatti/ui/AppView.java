@@ -30,20 +30,17 @@ public class AppView {
 
     public Scene getAppScene(Stage primaryStage) {
 
-        /* Tämä osa vielä täysin raakile ilman järkevää muotoilua, mutta toteuttaa toiminnot 'Kirjaudu ulos' ja 'Listaa tapahtumat'
-         * Vaikkakaan listaa tapahtumat eivät luonnollisesti vielä listaa kuin tyhjää, sillä 'Lisää tapahtuma' -toimintoa ei ole vielä
-         */
         secondStage.setTitle("MassiMatti");
 
-        VBox appPane = new VBox(10);
+        VBox appPane = new VBox(15);
         appPane.setPadding(new Insets(15));
         Button logOut = new Button("Kirjaudu ulos");
         Button addEntry = new Button("Lisää tapahtuma");
         Button removeEntry = new Button("Poista tapahtuma");
         Button addCategory = new Button("Lisää kategoria");
         Button listEntries = new Button("Listaa tapahtumat");
-        Button categoryEntries = new Button("Tapahtumat kategorioittain");
-        Button graphEntries = new Button("Tapahtumat graafeina");
+        Button categoryEntries = new Button("Menot / Tulot kategorioittain");
+        Button graphEntries = new Button("Menot / Tulot ajanjaksolla");
 
         appPane.getChildren().addAll(logOut, addEntry, removeEntry, addCategory, listEntries, categoryEntries, graphEntries);
 

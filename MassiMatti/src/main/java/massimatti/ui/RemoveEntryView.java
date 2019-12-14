@@ -50,13 +50,16 @@ public class RemoveEntryView {
 
         button.setOnAction((event) -> {
 
-            if (byUser.getItems().isEmpty()) {
+            System.out.println("byUser..; " + byUser.getSelectionModel().getSelectedItem());
+            if (byUser.getItems().isEmpty() || byUser.getSelectionModel().getSelectedItem() == null) {
 
                 nothingToRemoveAlert();
+
                 return;
             }
 
             Integer entryId = byUser.getSelectionModel().getSelectedItem().getId();
+
             removeEntry(entryId);
 
             byUser.getItems().clear();
@@ -129,7 +132,7 @@ public class RemoveEntryView {
         Alert nothingToRemoveAlert = new Alert(Alert.AlertType.ERROR);
         nothingToRemoveAlert.setTitle("MassiMatti");
         nothingToRemoveAlert.setHeaderText("Tapahtuman poistaminen");
-        nothingToRemoveAlert.setContentText("Ei poistettavia tapahtumia!");
+        nothingToRemoveAlert.setContentText("Ei poistettavia tapahtumia tai valintasi on tyhjä!");
 
         nothingToRemoveAlert.showAndWait();
 
