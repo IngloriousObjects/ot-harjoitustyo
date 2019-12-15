@@ -25,4 +25,5 @@
 | 12.12. | 4    | Sekä UI:n että sovelluslogiikan hiomista ja luomista. Mm. erinäisten virheiden kalastelua ja korjaamista|
 | 13.12. | 3    | Testien luontia sekä UI:n pientä viilausta|
 | 14.12. | 4    | Ominaisuuksien lisäämistä ja hiomista sekä sovelluslogiikan että UI:n osalta|
-| yht    |87    | | 
+| 15.12. | 2    | Koodin siistimistä välivaiheessa ja viimeisen täysin keskeneräisen luokan valmiiksi saattaminen|
+| yht    |89    | | 
