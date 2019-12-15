@@ -62,7 +62,7 @@ public class EntryGraphView {
         BarChart<String, Number> barchart = new BarChart<>(xAxis, yAxis);
         barchart.setPrefSize(400, 500);
         barchart.setAnimated(false);
-        barchart.setLegendVisible(false);
+        barchart.setLegendVisible(true);
 
         allTime.setOnAction((event) -> {
 
@@ -74,7 +74,7 @@ public class EntryGraphView {
             Double sumOfExpenses = entryController.sumOfExpenses(entriesByUser);
             Double sumOfIncomes = entryController.sumOfIncomes(entriesByUser);
 
-            barchart.setTitle("Menot / Tulot vertailu: kaikki");
+            barchart.setTitle("Kaikki menot ja tulot");
 
             XYChart.Series sumExpenses = new XYChart.Series();
             sumExpenses.setName("Menot");
@@ -104,14 +104,22 @@ public class EntryGraphView {
                 return;
             }
 
-            List<Entry> entriesPicked = entryController.getEntries(userController.getUser().getUsername());
-            List<Entry> entriesByUser = entryController.getSelectedEntries(entriesPicked, dateS, dateE);
+            List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
+            List<Entry> entriesPicked = entryController.getSelectedEntries(entriesByUser, dateS, dateE);
+            Double sumOfExpensesS = entryController.sumOfExpenses(entriesPicked);
+            Double sumOfIncomesS = entryController.sumOfIncomes(entriesPicked);
 
             barchart.setTitle("Ajanjakso: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+            XYChart.Series sumExpensesS = new XYChart.Series();
+            sumExpensesS.setName("Menot");
+            XYChart.Series sumIncomesS = new XYChart.Series();
+            sumIncomesS.setName("Tulot");
 
-            XYChart.Series sumCategory = new XYChart.Series();
+            sumExpensesS.getData().add(new XYChart.Data("Menot", sumOfExpensesS));
+            sumIncomesS.getData().add(new XYChart.Data("Tulot", sumOfIncomesS));
 
-            barchart.getData().add(sumCategory);
+            barchart.getData().add(sumExpensesS);
+            barchart.getData().add(sumIncomesS);
         });
 
         categoryPane.getChildren().addAll(mainLabel, dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);
