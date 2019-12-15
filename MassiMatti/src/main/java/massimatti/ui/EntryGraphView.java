@@ -63,6 +63,7 @@ public class EntryGraphView {
         barchart.setPrefSize(400, 500);
         barchart.setAnimated(false);
         barchart.setLegendVisible(true);
+      
 
         allTime.setOnAction((event) -> {
 
@@ -74,7 +75,7 @@ public class EntryGraphView {
             Double sumOfExpenses = entryController.sumOfExpenses(entriesByUser);
             Double sumOfIncomes = entryController.sumOfIncomes(entriesByUser);
 
-            barchart.setTitle("Kaikki menot ja tulot");
+            barchart.setTitle("KAIKKI MENOT JA TULOT");
 
             XYChart.Series sumExpenses = new XYChart.Series();
             sumExpenses.setName("Menot");
@@ -109,8 +110,9 @@ public class EntryGraphView {
             Double sumOfExpensesS = entryController.sumOfExpenses(entriesPicked);
             Double sumOfIncomesS = entryController.sumOfIncomes(entriesPicked);
 
-            barchart.setTitle("Ajanjakso: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+            barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
             XYChart.Series sumExpensesS = new XYChart.Series();
+            
             sumExpensesS.setName("Menot");
             XYChart.Series sumIncomesS = new XYChart.Series();
             sumIncomesS.setName("Tulot");
@@ -120,6 +122,7 @@ public class EntryGraphView {
 
             barchart.getData().add(sumExpensesS);
             barchart.getData().add(sumIncomesS);
+            return;
         });
 
         categoryPane.getChildren().addAll(mainLabel, dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);

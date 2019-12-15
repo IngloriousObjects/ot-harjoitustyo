@@ -92,11 +92,18 @@ public class EntryController {
         for (Entry entry : entries) {
 
             if (order.containsKey(entry.getCategory().toString())) {
+                if (entry.getType() == false) {
+                } else {
+                    order.put(entry.getCategory().toString(), order.get(entry.getCategory().toString()) + (entry.getSum().doubleValue()));
+                }
 
-                order.put(entry.getCategory().toString(), order.get(entry.getCategory().toString()) + (entry.getSum().doubleValue()));
             } else {
 
-                order.put(entry.getCategory().toString(), entry.getSum().doubleValue());
+                if (entry.getType() == false) {
+                    order.put(entry.getCategory().toString(), -entry.getSum().doubleValue());
+                } else {
+                    order.put(entry.getCategory().toString(), entry.getSum().doubleValue());
+                }
             }
 
         }
@@ -122,33 +129,33 @@ public class EntryController {
 
         return selected;
     }
-    
-    public Double sumOfExpenses (List<Entry> entries){
-        
+
+    public Double sumOfExpenses(List<Entry> entries) {
+
         Double sumExpenses = 0.00;
-        
-        for(Entry entry : entries){
-            
-            if(entry.getType() == false){
-                
+
+        for (Entry entry : entries) {
+
+            if (entry.getType() == false) {
+
                 sumExpenses += entry.getSum().doubleValue();
             }
-            
+
         }
         return sumExpenses;
     }
-    
-     public Double sumOfIncomes (List<Entry> entries){
-        
+
+    public Double sumOfIncomes(List<Entry> entries) {
+
         Double sumIncomes = 0.00;
-        
-        for(Entry entry : entries){
-            
-            if(entry.getType() == true){
-                
+
+        for (Entry entry : entries) {
+
+            if (entry.getType() == true) {
+
                 sumIncomes += entry.getSum().doubleValue();
             }
-            
+
         }
         return sumIncomes;
     }

@@ -39,8 +39,6 @@ public class SumByCategoryView {
 
     public Scene getSumByCategoryScene(Stage secondStage) {
 
-        entryController.emptyCache(userController.getUser().getUsername());
-
         VBox categoryPane = new VBox(25);
         categoryPane.setPadding(new Insets(15));
         categoryPane.setPrefSize(800, 800);
@@ -68,34 +66,43 @@ public class SumByCategoryView {
         BarChart<String, Number> barchart = new BarChart<>(xAxis, yAxis);
         barchart.setPrefSize(400, 500);
         barchart.setAnimated(false);
-        barchart.setLegendVisible(false);
+        barchart.setLegendVisible(true);
 
         allTime.setOnAction((event) -> {
+            entryController.emptyCache(userController.getUser().getUsername());
             barchart.getData().clear();
             barchart.layout();
+            barchart.setTitle("KAIKKI MENOT JA TULOT KATEGORIOITTAIN");
             List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
             TreeMap<String, Double> sumByCategory = sumCategories(entriesByUser);
 
-            barchart.setTitle("Menot / Tulot kategorioittain: kaikki");
-
-            XYChart.Series sumCategory = new XYChart.Series();
-
+            XYChart.Series sumCategoryE = new XYChart.Series();
+            sumCategoryE.setName("Menot");
+            XYChart.Series sumCategoryS = new XYChart.Series();
+            sumCategoryS.setName("Tulot");
             for (Map.Entry<String, Double> entries : sumByCategory.entrySet()) {
 
                 String key = entries.getKey();
                 Double value = entries.getValue();
 
-                sumCategory.getData().add(new XYChart.Data(key, value));
+                if (value < 0.0) {
+
+                    sumCategoryE.getData().add(new XYChart.Data(key, Math.abs(value)));
+
+                } else {
+                    sumCategoryS.getData().add(new XYChart.Data(key, value));
+                }
+
             }
 
             sumByCategory.clear();
+            barchart.getData().add(sumCategoryE);
+            barchart.getData().add(sumCategoryS);
 
-            barchart.getData().add(sumCategory);
-            return;
         });
 
         selected.setOnAction((event) -> {
-
+            entryController.emptyCache(userController.getUser().getUsername());
             barchart.getData().clear();
             barchart.layout();
 
@@ -112,20 +119,32 @@ public class SumByCategoryView {
             List<Entry> entriesByUser = entryController.getSelectedEntries(entriesPicked, dateS, dateE);
             TreeMap<String, Double> sumByCategory = sumCategories(entriesByUser);
 
-            barchart.setTitle("Ajanjakso: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+            barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 
-            XYChart.Series sumCategory = new XYChart.Series();
-
+            XYChart.Series sumCategoryE = new XYChart.Series();
+            sumCategoryE.setName("Menot");
+            XYChart.Series sumCategoryS = new XYChart.Series();
+            sumCategoryE.setName("Tulot");
             for (Map.Entry<String, Double> entries : sumByCategory.entrySet()) {
 
                 String key = entries.getKey();
                 Double value = entries.getValue();
-                sumCategory.getData().add(new XYChart.Data(key, value));
+
+                if (value < 0.0) {
+
+                    sumCategoryE.getData().add(new XYChart.Data(key, Math.abs(value)));
+
+                } else {
+                    sumCategoryS.getData().add(new XYChart.Data(key, value));
+                }
+
             }
 
             sumByCategory.clear();
+           
+            barchart.getData().add(sumCategoryE);
+            barchart.getData().add(sumCategoryS);
 
-            barchart.getData().add(sumCategory);
         });
 
         categoryPane.getChildren().addAll(mainLabel, dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);
