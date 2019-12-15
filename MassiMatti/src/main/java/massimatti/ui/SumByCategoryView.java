@@ -1,5 +1,8 @@
 package massimatti.ui;
 
+import massimatti.domain.UserController;
+import massimatti.domain.EntryController;
+import massimatti.domain.Entry;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -18,17 +21,12 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import massimatti.domain.Entry;
-
-import massimatti.domain.UserController;
-import massimatti.domain.EntryController;
-import massimatti.domain.CategoryController;
 
 public class SumByCategoryView {
 
     private UserController userController;
     private EntryController entryController;
-   
+
     private DatePicker datePickerStart;
     private DatePicker datePickerEnd;
 
@@ -36,23 +34,24 @@ public class SumByCategoryView {
 
         this.userController = userController;
         this.entryController = entryController;
-        
 
     }
 
     public Scene getSumByCategoryScene(Stage secondStage) {
-        
+
         entryController.emptyCache(userController.getUser().getUsername());
-        
+
         VBox categoryPane = new VBox(25);
         categoryPane.setPadding(new Insets(15));
         categoryPane.setPrefSize(800, 800);
+
         Button allTime = new Button("Kaikki");
         Button selected = new Button("Valitulta ajanjaksolta");
+
         Label mainLabel = new Label("Menot / Tulot kategorioittain");
-        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");      
+        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");
         mainLabel.setStyle("-fx-font-weight: bold");
-        noticeLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
+        noticeLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: blue");
 
         Label dateLabelStart = new Label("Alkupäivämäärä");
         datePickerStart = new DatePicker(LocalDate.now());
@@ -129,7 +128,7 @@ public class SumByCategoryView {
             barchart.getData().add(sumCategory);
         });
 
-        categoryPane.getChildren().addAll(mainLabel,dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);
+        categoryPane.getChildren().addAll(mainLabel, dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);
 
         Scene scene = new Scene(categoryPane);
 
@@ -137,8 +136,6 @@ public class SumByCategoryView {
 
     }
 
-    //palauttaa Treemapin, jossa data-arvot kaaviolle l. XYChart.Series sumCtaegory = metodi
-    // syötteenä list, joka all tai selected
     public TreeMap<String, Double> sumCategories(List<Entry> entriesByUser) {
 
         entryController.emptyCache(userController.getUser().getUsername());

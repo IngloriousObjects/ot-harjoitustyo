@@ -1,12 +1,11 @@
 package massimatti.ui;
 
+import massimatti.domain.Entry;
+import massimatti.domain.EntryController;
+import massimatti.domain.UserController;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -15,18 +14,10 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import massimatti.domain.Category;
-import massimatti.domain.CategoryController;
-import massimatti.domain.Entry;
-import massimatti.domain.EntryController;
-import massimatti.domain.UserController;
 
 public class EntryGraphView {
 
@@ -34,28 +25,27 @@ public class EntryGraphView {
     private DatePicker datePickerEnd;
     private UserController userController;
     private EntryController entryController;
-    private CategoryController categoryController;
-    
 
-    public EntryGraphView(UserController userController, EntryController entryController, CategoryController categoryController) {
+    public EntryGraphView(UserController userController, EntryController entryController) {
 
         this.userController = userController;
         this.entryController = entryController;
-        this.categoryController = categoryController;
+
     }
 
     public Scene getEntryGraphScene(Stage secondStage) {
-        
-        
+
         VBox categoryPane = new VBox(25);
         categoryPane.setPadding(new Insets(15));
         categoryPane.setPrefSize(800, 800);
-        Button allTime = new Button("Kaikki");
-        Button selected = new Button("Valitulta ajanjaksolta");
+
         Label mainLabel = new Label("Menot / Tulot vertailu");
         Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");
         mainLabel.setStyle("-fx-font-weight: bold");
         noticeLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: blue");
+
+        Button allTime = new Button("Kaikki");
+        Button selected = new Button("Valitulta ajanjaksolta");
 
         Label dateLabelStart = new Label("Alkupäivämäärä");
         datePickerStart = new DatePicker(LocalDate.now());
@@ -75,15 +65,15 @@ public class EntryGraphView {
         barchart.setLegendVisible(false);
 
         allTime.setOnAction((event) -> {
-            
+
             entryController.emptyCache(userController.getUser().getUsername());
             barchart.getData().clear();
             barchart.layout();
-            
+
             List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
             Double sumOfExpenses = entryController.sumOfExpenses(entriesByUser);
             Double sumOfIncomes = entryController.sumOfIncomes(entriesByUser);
-            
+
             barchart.setTitle("Menot / Tulot vertailu: kaikki");
 
             XYChart.Series sumExpenses = new XYChart.Series();
@@ -96,9 +86,7 @@ public class EntryGraphView {
 
             barchart.getData().add(sumExpenses);
             barchart.getData().add(sumIncomes);
-            
-            sumOfExpenses = 0.00;
-            sumOfIncomes = 0.00;
+
             return;
         });
 
@@ -122,8 +110,6 @@ public class EntryGraphView {
             barchart.setTitle("Ajanjakso: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 
             XYChart.Series sumCategory = new XYChart.Series();
-
-        //    sumCategory.getData().add(new XYChart.Data(key, value));
 
             barchart.getData().add(sumCategory);
         });

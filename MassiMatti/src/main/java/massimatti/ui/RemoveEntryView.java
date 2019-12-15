@@ -1,5 +1,8 @@
 package massimatti.ui;
 
+import massimatti.domain.Entry;
+import massimatti.domain.EntryController;
+import massimatti.domain.UserController;
 import java.util.List;
 import java.util.Optional;
 import javafx.collections.FXCollections;
@@ -13,11 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import massimatti.domain.Entry;
-import massimatti.domain.EntryController;
-import massimatti.domain.UserController;
 
 public class RemoveEntryView {
 
@@ -40,13 +39,15 @@ public class RemoveEntryView {
 
         Label infoLabel = new Label("Poista tapahtuma");
         Label contentLabel = new Label("Valitse listasta poistettava tapahtuma ja paina 'Poista tapahtuma'.");
-        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");      
-        
+        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");
         infoLabel.setStyle("-fx-font-weight: bold");
-        noticeLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
+        noticeLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: blue");
+
         VBox infoPane = new VBox(20);
         infoPane.setPadding(new Insets(15));
+
         Button button = new Button("Poista tapahtuma");
+
         infoPane.getChildren().addAll(infoLabel, contentLabel, button, noticeLabel);
 
         button.setOnAction((event) -> {

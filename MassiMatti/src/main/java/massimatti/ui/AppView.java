@@ -1,14 +1,14 @@
 package massimatti.ui;
 
+import massimatti.domain.UserController;
+import massimatti.domain.EntryController;
+import massimatti.domain.CategoryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import massimatti.domain.UserController;
-import massimatti.domain.EntryController;
-import massimatti.domain.CategoryController;
 
 public class AppView {
 
@@ -34,13 +34,12 @@ public class AppView {
 
         VBox appPane = new VBox(15);
         appPane.setPadding(new Insets(15));
-        
+
         Label mainLabel = new Label("Päänäkymä");
         Label underLabel = new Label("Valitse toiminto");
-        
+
         mainLabel.setStyle("-fx-font-weight: bold");
-        
-        
+
         Button logOut = new Button("Kirjaudu ulos");
         Button addEntry = new Button("Lisää tapahtuma");
         Button removeEntry = new Button("Poista tapahtuma");
@@ -49,7 +48,7 @@ public class AppView {
         Button categoryEntries = new Button("Menot / Tulot kategorioittain");
         Button graphEntries = new Button("Menot / Tulot vertailu");
 
-        appPane.getChildren().addAll(mainLabel, underLabel,logOut, addEntry, removeEntry, addCategory, listEntries, categoryEntries, graphEntries);
+        appPane.getChildren().addAll(mainLabel, underLabel, logOut, addEntry, removeEntry, addCategory, listEntries, categoryEntries, graphEntries);
 
         Scene scene = new Scene(appPane, 300, 400);
 
@@ -80,15 +79,15 @@ public class AppView {
             secondStage.setScene(addEntryView.getAddEntryViewScene(secondStage));
             secondStage.show();
         });
-        
-        removeEntry.setOnAction((event) ->{
-            
+
+        removeEntry.setOnAction((event) -> {
+
             RemoveEntryView removeEntryView = new RemoveEntryView(userController, entryController);
             secondStage.setScene(removeEntryView.getRemoveEntryView(secondStage));
             secondStage.show();
-            
+
         });
-        
+
         categoryEntries.setOnAction((event) -> {
 
             SumByCategoryView sumByCategoryView = new SumByCategoryView(userController, entryController);
@@ -96,10 +95,10 @@ public class AppView {
             secondStage.show();
 
         });
-        
+
         graphEntries.setOnAction((event) -> {
 
-            EntryGraphView entryGraphView = new EntryGraphView(userController, entryController, categoryController);
+            EntryGraphView entryGraphView = new EntryGraphView(userController, entryController);
             secondStage.setScene(entryGraphView.getEntryGraphScene(secondStage));
             secondStage.show();
         });

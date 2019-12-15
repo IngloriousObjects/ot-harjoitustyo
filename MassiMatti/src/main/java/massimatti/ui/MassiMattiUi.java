@@ -1,10 +1,5 @@
 package massimatti.ui;
 
-import java.io.FileInputStream;
-import java.util.Properties;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import massimatti.dao.DatabaseDao;
 import massimatti.domain.UserController;
 import massimatti.domain.EntryController;
@@ -12,7 +7,11 @@ import massimatti.domain.CategoryController;
 import massimatti.dao.DatabaseEntryDao;
 import massimatti.dao.DatabaseCategoryDao;
 import massimatti.dao.DatabaseUserDao;
-import massimatti.domain.Category;
+import java.io.FileInputStream;
+import java.util.Properties;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class MassiMattiUi extends Application {
 
@@ -28,10 +27,10 @@ public class MassiMattiUi extends Application {
         String path = properties.getProperty("path");
         String user = properties.getProperty("user");
         String password = properties.getProperty("password");
-        
+
         Properties categoryProperties = new Properties();
         categoryProperties.load(new FileInputStream("categories.txt"));
-        
+
         String categoryA = categoryProperties.getProperty("categoryA");
         String categoryB = categoryProperties.getProperty("categoryB");
         String categoryC = categoryProperties.getProperty("categoryC");
@@ -46,8 +45,6 @@ public class MassiMattiUi extends Application {
         this.userController = new UserController(userDao);
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
-        
-         
 
         categoryController.addCategory(categoryA);
         categoryController.addCategory(categoryB);

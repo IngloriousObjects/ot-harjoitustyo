@@ -1,36 +1,28 @@
 package massimatti.ui;
 
+import massimatti.domain.Entry;
+import massimatti.domain.UserController;
+import massimatti.domain.EntryController;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.TreeMap;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import massimatti.domain.Entry;
-import massimatti.domain.Category;
-import massimatti.domain.UserController;
-import massimatti.domain.EntryController;
-import massimatti.domain.CategoryController;
 
 public class EntryListView {
 
     private UserController userController;
     private EntryController entryController;
-
     private DatePicker datePickerStart;
     private DatePicker datePickerEnd;
 
@@ -47,6 +39,7 @@ public class EntryListView {
 
         VBox sidePane = new VBox(20);
         sidePane.setPadding(new Insets(15));
+
         Button allTime = new Button("Kaikki");
         Button selected = new Button("Valitulta ajanjaksolta");
 
@@ -54,7 +47,6 @@ public class EntryListView {
         mainLabel.setStyle("-fx-font-weight: bold");
         Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");
         noticeLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: blue");
-
         Label eraLabel = new Label("");
         eraLabel.setStyle("-fx-font-weight: bold");
 
@@ -105,9 +97,6 @@ public class EntryListView {
         });
 
         HBox listViewPane = new HBox(byUser);
-        //   listViewPane.setAlignment(Pos.BASELINE_LEFT);
-        //    listViewPane.setPrefSize(800, 300);
-
         sidePane.getChildren().addAll(mainLabel, dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, eraLabel, listViewPane);
 
         Scene scene = new Scene(sidePane, 650, 800);

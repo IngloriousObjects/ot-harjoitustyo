@@ -1,8 +1,6 @@
 package massimatti.ui;
 
 import massimatti.domain.UserController;
-import massimatti.domain.EntryController;
-import massimatti.domain.CategoryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -19,11 +17,9 @@ public class LoginView {
 
     private Scene appScene;
     private UserController userController;
-    
 
     public LoginView(UserController userController) {
         this.userController = userController;
-      
         this.appScene = null;
     }
 
@@ -43,11 +39,9 @@ public class LoginView {
 
         Label loginLabelSecond = new Label("Salasana");
         PasswordField passwordInput = new PasswordField();
-        
+
         Label infoLabel = new Label("Käyttäjätunnuksen pituus voi olla\n5-36 merkkiä ja salasanan 8-36\nmerkkiä.");
-        infoLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: red;"+"-fx-font-style: italic");
-  
-        
+        infoLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: red;" + "-fx-font-style: italic");
 
         inputPane.getChildren().addAll(loginLabel, usernameInput, loginLabelSecond, passwordInput, infoLabel);
 
@@ -57,6 +51,7 @@ public class LoginView {
         loginMessage.setStyle("-fx-font-weight: bold");
         registerMessage.setStyle("-fx-font-weight: bold");
         flow.getChildren().addAll(loginMessage, registerMessage);
+
         Button loginButton = new Button("Kirjaudu");
         Button changeToRegisterViewButton = new Button("Rekisteröidy");
         Button registerUserButton = new Button("Rekisteröidy");
