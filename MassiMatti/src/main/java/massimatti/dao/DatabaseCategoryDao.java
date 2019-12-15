@@ -27,30 +27,30 @@ public class DatabaseCategoryDao implements CategoryDao {
     }
 
     @Override
-    public Category create(Category category) throws SQLException {
+    public Category create(Category object) throws SQLException {
 
         Connection conn = DriverManager.getConnection(path, user, password);
         PreparedStatement stmt = conn.prepareStatement(
                 "INSERT INTO Category (category) VALUES (?)");
 
-        stmt.setString(1, category.getCategoryName());
+        stmt.setString(1, object.getCategoryName());
 
         stmt.executeUpdate();
         stmt.close();
         conn.close();
 
-        return category;
+        return object;
     }
 
     @Override
-    public Category read(Category category) throws SQLException {
+    public Category read(String category) throws SQLException {
         Connection conn = DriverManager.
                 getConnection(path, user, password);
 
         PreparedStatement stmt = conn.prepareStatement(
                 "SELECT category FROM Category WHERE category = ?");
 
-        stmt.setString(1, category.getCategoryName());
+        stmt.setString(1, category);
         ResultSet result = stmt.executeQuery();
 
         if (!result.next()) {

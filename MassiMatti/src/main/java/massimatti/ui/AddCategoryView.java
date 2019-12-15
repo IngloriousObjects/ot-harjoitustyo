@@ -50,7 +50,7 @@ public class AddCategoryView {
 
         addButton.setOnAction((event) -> {
 
-            String addedCategory = categoryInput.getText().toUpperCase();
+            String addedCategory = categoryInput.getText();
 
             if (categoryController.checkFormality(addedCategory) == false) {
 
@@ -58,10 +58,10 @@ public class AddCategoryView {
                 categoryInput.clear();
 
             } else {
-                Category category = new Category(addedCategory);
+               
 
                 try {
-                    if (categoryController.addCategory(category) == true) {
+                    if (categoryController.addCategory(addedCategory) == true) {
 
                         categoryCreatedAlert();
                         categoryInput.clear();

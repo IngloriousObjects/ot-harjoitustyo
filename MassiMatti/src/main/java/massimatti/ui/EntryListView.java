@@ -51,8 +51,13 @@ public class EntryListView {
         Button allTime = new Button("Kaikki");
         Button selected = new Button("Valitulta ajanjaksolta");
         
+        Label mainLabel = new Label("Listaa tapahtumat");
+        mainLabel.setStyle("-fx-font-weight: bold");
         Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");      
         noticeLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
+        
+        Label eraLabel = new Label("");
+        eraLabel.setStyle("-fx-font-weight: bold");
 
         Label dateLabelStart = new Label("Alkupäivämäärä");
         datePickerStart = new DatePicker(LocalDate.now());
@@ -73,6 +78,7 @@ public class EntryListView {
             ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
 
             byUser.getItems().addAll(entries);
+            eraLabel.setText("");
 
         });
 
@@ -94,6 +100,7 @@ public class EntryListView {
             ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
 
             byUser.getItems().addAll(entries);
+            eraLabel.setText("Tapahtumat ajanjaksolla " + dateS + " – " + dateE);
 
         });
 
@@ -101,7 +108,7 @@ public class EntryListView {
         //   listViewPane.setAlignment(Pos.BASELINE_LEFT);
         //    listViewPane.setPrefSize(800, 300);
 
-        sidePane.getChildren().addAll(dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, listViewPane);
+        sidePane.getChildren().addAll(mainLabel, dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, eraLabel, listViewPane);
 
         Scene scene = new Scene(sidePane, 650, 800);
 

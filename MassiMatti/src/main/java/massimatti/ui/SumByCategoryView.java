@@ -1,6 +1,7 @@
 package massimatti.ui;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -46,7 +47,9 @@ public class SumByCategoryView {
         categoryPane.setPrefSize(800, 800);
         Button allTime = new Button("Kaikki");
         Button selected = new Button("Valitulta ajanjaksolta");
+        Label mainLabel = new Label("Menot / Tulot kategorioittain");
         Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");      
+        mainLabel.setStyle("-fx-font-weight: bold");
         noticeLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
 
         Label dateLabelStart = new Label("Alkupäivämäärä");
@@ -108,7 +111,7 @@ public class SumByCategoryView {
             List<Entry> entriesByUser = entryController.getSelectedEntries(entriesPicked, dateS, dateE);
             TreeMap<String, Double> sumByCategory = sumCategories(entriesByUser);
 
-            barchart.setTitle("Menot / Tulot kategorioittain ajanjaksolla " + dateS + " – " + dateE);
+            barchart.setTitle("Ajanjakso: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 
             XYChart.Series sumCategory = new XYChart.Series();
 
@@ -124,7 +127,7 @@ public class SumByCategoryView {
             barchart.getData().add(sumCategory);
         });
 
-        categoryPane.getChildren().addAll(dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);
+        categoryPane.getChildren().addAll(mainLabel,dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);
 
         Scene scene = new Scene(categoryPane);
 

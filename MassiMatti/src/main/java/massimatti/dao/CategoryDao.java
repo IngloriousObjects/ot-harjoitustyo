@@ -4,11 +4,11 @@ import java.sql.SQLException;
 import massimatti.domain.Category;
 import java.util.List;
 
-public interface CategoryDao {
+public interface CategoryDao<T> {
 
-    Category create(Category category) throws SQLException;
+    T create(Category object) throws SQLException;
 
-    Category read(Category category) throws SQLException;
+    Category read(String category) throws SQLException;
 
     List<Category> getAll() throws SQLException;
 

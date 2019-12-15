@@ -1,17 +1,9 @@
 package massimatti.ui;
 
 import java.io.FileInputStream;
-import java.time.LocalDate;
 import java.util.Properties;
 import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import massimatti.dao.DatabaseDao;
 import massimatti.domain.UserController;
@@ -49,10 +41,10 @@ public class MassiMattiUi extends Application {
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
 
-        categoryController.addCategory(new Category("RAVINTOLA"));
-        categoryController.addCategory(new Category("ELINTARVIKKEET"));
-        categoryController.addCategory(new Category("ALKOHOLI"));
-        categoryController.addCategory(new Category("LIIKUNTA JA TERVEYS"));
+        categoryController.addCategory("RAVINTOLA");
+        categoryController.addCategory("ELINTARVIKKEET");
+        categoryController.addCategory("ALKOHOLI");
+        categoryController.addCategory("LIIKUNTA JA TERVEYS");
 
     }
 

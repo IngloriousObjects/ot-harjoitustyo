@@ -84,10 +84,10 @@ public class Entry {
     public String toString() {
 
         if (this.type == false) {
-            return this.date.format(DateTimeFormatter.ofPattern("dd.MM.YYYY"))
+            return this.date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
                     + "  " + this.category + "  -" + this.sum + " euroa";
         } else {
-            return this.date.format(DateTimeFormatter.ofPattern("dd.MM.YYYY"))
+            return this.date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
                     + "  " + this.category + "  " + this.sum + " euroa";
         }
 

@@ -31,10 +31,10 @@ public class CategoryController {
      * ja false, jos kategoria on jo tietokannassa tai tapahtuu virhe
      * @throws poikkeus virhetilanteessa
      */
-    public boolean addCategory(Category category) throws Exception {   
+    public boolean addCategory(String category) throws Exception {   
         try {
             if (categoryDao.read(category) == null) {
-                categoryDao.create(new Category(category.getCategoryName()));
+                categoryDao.create(new Category(category.toUpperCase()));
                 return true;
             }
             return false;
