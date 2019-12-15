@@ -122,5 +122,34 @@ public class EntryController {
 
         return selected;
     }
-
+    
+    public Double sumOfExpenses (List<Entry> entries){
+        
+        Double sumExpenses = 0.00;
+        
+        for(Entry entry : entries){
+            
+            if(entry.getType() == false){
+                
+                sumExpenses += entry.getSum().doubleValue();
+            }
+            
+        }
+        return sumExpenses;
+    }
+    
+     public Double sumOfIncomes (List<Entry> entries){
+        
+        Double sumIncomes = 0.00;
+        
+        for(Entry entry : entries){
+            
+            if(entry.getType() == true){
+                
+                sumIncomes += entry.getSum().doubleValue();
+            }
+            
+        }
+        return sumIncomes;
+    }
 }

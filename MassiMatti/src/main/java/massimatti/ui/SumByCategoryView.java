@@ -28,20 +28,22 @@ public class SumByCategoryView {
 
     private UserController userController;
     private EntryController entryController;
-    private CategoryController categoryController;
+   
     private DatePicker datePickerStart;
     private DatePicker datePickerEnd;
 
-    public SumByCategoryView(UserController userController, EntryController entryController, CategoryController categoryController) {
+    public SumByCategoryView(UserController userController, EntryController entryController) {
 
         this.userController = userController;
         this.entryController = entryController;
-        this.categoryController = categoryController;
+        
 
     }
 
     public Scene getSumByCategoryScene(Stage secondStage) {
-
+        
+        entryController.emptyCache(userController.getUser().getUsername());
+        
         VBox categoryPane = new VBox(25);
         categoryPane.setPadding(new Insets(15));
         categoryPane.setPrefSize(800, 800);

@@ -1,6 +1,7 @@
 package massimatti.ui;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.TreeMap;
 import javafx.collections.FXCollections;
@@ -29,16 +30,14 @@ public class EntryListView {
 
     private UserController userController;
     private EntryController entryController;
-    private CategoryController categoryController;
+
     private DatePicker datePickerStart;
     private DatePicker datePickerEnd;
-    private ListView<Entry> byUser;
 
-    public EntryListView(UserController userController, EntryController entryController, CategoryController categoryController) {
+    public EntryListView(UserController userController, EntryController entryController) {
 
         this.userController = userController;
         this.entryController = entryController;
-        this.categoryController = categoryController;
 
     }
 
@@ -50,12 +49,12 @@ public class EntryListView {
         sidePane.setPadding(new Insets(15));
         Button allTime = new Button("Kaikki");
         Button selected = new Button("Valitulta ajanjaksolta");
-        
+
         Label mainLabel = new Label("Listaa tapahtumat");
         mainLabel.setStyle("-fx-font-weight: bold");
-        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");      
-        noticeLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
-        
+        Label noticeLabel = new Label("Voit poistua näkymästä sulkemalla ikkunan.");
+        noticeLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: blue");
+
         Label eraLabel = new Label("");
         eraLabel.setStyle("-fx-font-weight: bold");
 
@@ -100,7 +99,8 @@ public class EntryListView {
             ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
 
             byUser.getItems().addAll(entries);
-            eraLabel.setText("Tapahtumat ajanjaksolla " + dateS + " – " + dateE);
+            eraLabel.setText("Tapahtumat ajanjaksolla " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+                    + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 
         });
 

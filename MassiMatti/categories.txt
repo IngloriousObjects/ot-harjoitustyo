@@ -1,0 +1,5 @@
+categoryA=kirjat ja lehdet
+categoryB=ravintola
+categoryC=liikunta ja terveys
+categoryD=elintarvikkeet
+

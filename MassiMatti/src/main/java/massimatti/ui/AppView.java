@@ -60,7 +60,7 @@ public class AppView {
         });
 
         listEntries.setOnAction((event) -> {
-            EntryListView entryListView = new EntryListView(userController, entryController, categoryController);
+            EntryListView entryListView = new EntryListView(userController, entryController);
             secondStage.setScene(entryListView.getListViewScene(secondStage));
             secondStage.show();
 
@@ -91,7 +91,7 @@ public class AppView {
         
         categoryEntries.setOnAction((event) -> {
 
-            SumByCategoryView sumByCategoryView = new SumByCategoryView(userController, entryController,categoryController);
+            SumByCategoryView sumByCategoryView = new SumByCategoryView(userController, entryController);
             secondStage.setScene(sumByCategoryView.getSumByCategoryScene(secondStage));
             secondStage.show();
 

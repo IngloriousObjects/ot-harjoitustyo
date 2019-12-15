@@ -26,10 +26,16 @@ public class MassiMattiUi extends Application {
         properties.load(new FileInputStream("config.properties"));
 
         String path = properties.getProperty("path");
-
         String user = properties.getProperty("user");
-
         String password = properties.getProperty("password");
+        
+        Properties categoryProperties = new Properties();
+        categoryProperties.load(new FileInputStream("categories.txt"));
+        
+        String categoryA = categoryProperties.getProperty("categoryA");
+        String categoryB = categoryProperties.getProperty("categoryB");
+        String categoryC = categoryProperties.getProperty("categoryC");
+        String categoryD = categoryProperties.getProperty("categoryD");
 
         DatabaseUserDao userDao = new DatabaseUserDao(path, user, password);
         DatabaseEntryDao entryDao = new DatabaseEntryDao(path, user, password);
@@ -40,18 +46,20 @@ public class MassiMattiUi extends Application {
         this.userController = new UserController(userDao);
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
+        
+         
 
-        categoryController.addCategory("RAVINTOLA");
-        categoryController.addCategory("ELINTARVIKKEET");
-        categoryController.addCategory("ALKOHOLI");
-        categoryController.addCategory("LIIKUNTA JA TERVEYS");
+        categoryController.addCategory(categoryA);
+        categoryController.addCategory(categoryB);
+        categoryController.addCategory(categoryC);
+        categoryController.addCategory(categoryD);
 
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        LoginView loginView = new LoginView(userController, entryController, categoryController);
+        LoginView loginView = new LoginView(userController);
         Scene loginScene = loginView.getLoginScene(primaryStage);
 
         Stage secondStage = new Stage();

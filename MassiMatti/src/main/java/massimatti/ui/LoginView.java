@@ -19,13 +19,11 @@ public class LoginView {
 
     private Scene appScene;
     private UserController userController;
-    private EntryController entryController;
-    private CategoryController categoryController;
+    
 
-    public LoginView(UserController userController, EntryController entryController, CategoryController categoryController) {
+    public LoginView(UserController userController) {
         this.userController = userController;
-        this.entryController = entryController;
-        this.categoryController = categoryController;
+      
         this.appScene = null;
     }
 
