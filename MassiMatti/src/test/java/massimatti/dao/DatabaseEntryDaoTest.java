@@ -75,30 +75,37 @@ public class DatabaseEntryDaoTest {
     public void listByUsersIsFunctional() throws SQLException {
         assertTrue(entryDao.listByUser("lalli") != null);
     }
-    
+
     @Test
     public void listByUsersNoUser() throws SQLException {
-        
+
         assertFalse(entryDao.listByUser("jesus") == null);
     }
 
     @Test
-    public void allEntriesByUserIsSaved() throws SQLException{
-        
+    public void allEntriesByUserIsSaved() throws SQLException {
+
         assertEquals(2, entryDao.listByUser("lalli").size());
     }
-    
+
     @Test
-    public void entryIsRemoved() throws SQLException{
-        
+    public void entryIsRemoved() throws SQLException {
+
         entryDao.remove(1);
-        
+
         assertTrue(entryDao.listByUser("petri").isEmpty());
-        
+
+    }
+    
+    @Test 
+    public void removeByUserWorksProperly () throws SQLException{
+        entryDao.create(new Entry(LocalDate.of(1156, 1, 21), false, 999.00, "SAKKO", "lalli"));
+        entryDao.removeByUser("lalli");
+        assertEquals(3, entryDao.listByUser("lalli").size());
         
         
     }
-    
+
     @After
     public void tearDown() {
         this.temp.delete();

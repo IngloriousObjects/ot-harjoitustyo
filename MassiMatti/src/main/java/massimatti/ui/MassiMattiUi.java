@@ -21,8 +21,7 @@ public class MassiMattiUi extends Application {
     private CategoryController categoryController;
 
     public void init() throws Exception {
-        
-       
+
         Properties properties = new Properties();
         properties.load(new FileInputStream("config.properties"));
 
@@ -31,14 +30,8 @@ public class MassiMattiUi extends Application {
         String password = properties.getProperty("password");
 
         Properties categoryProperties = new Properties();
-        categoryProperties.load(new FileInputStream("category.txt"));
+        categoryProperties.load(new FileInputStream("categories.txt"));
 
-        /*
-        String categoryA = categoryProperties.getProperty("categoryA");
-        String categoryB = categoryProperties.getProperty("categoryB");
-        String categoryC = categoryProperties.getProperty("categoryC");
-        String categoryD = categoryProperties.getProperty("categoryD");
-         */
         DatabaseUserDao userDao = new DatabaseUserDao(path, user, password);
         DatabaseEntryDao entryDao = new DatabaseEntryDao(path, user, password);
         DatabaseCategoryDao categoryDao = new DatabaseCategoryDao(path, user, password);
@@ -55,12 +48,7 @@ public class MassiMattiUi extends Application {
         }
 
 
-        /*
-        categoryController.addCategory(categoryA);
-        categoryController.addCategory(categoryB);
-        categoryController.addCategory(categoryC);
-        categoryController.addCategory(categoryD);
-         */
+   
     }
 
     @Override

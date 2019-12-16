@@ -21,7 +21,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
     private String path;
     private String stmt;
     private String password;
-    private Map<String, List<Entry>> cacheMemory;                                  //käytetään tikapesta tuttua välimuistimenetelmää
+    private Map<String, List<Entry>> cacheMemory;                                  
 
     /**
      * Luokan konstruktori.
