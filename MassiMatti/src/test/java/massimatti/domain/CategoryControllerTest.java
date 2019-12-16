@@ -24,11 +24,9 @@ import org.junit.rules.TemporaryFolder;
 
 public class CategoryControllerTest {
 
-
-
     @Rule
     public TemporaryFolder temp = new TemporaryFolder();
-    
+
     CategoryDao dao;
     CategoryController categoryController;
 
@@ -38,8 +36,6 @@ public class CategoryControllerTest {
 
     @Before
     public void setUp() throws Exception {
-
-        
 
         Properties properties = new Properties();
         properties.load(new FileInputStream("TEST_config.properties"));
@@ -57,7 +53,7 @@ public class CategoryControllerTest {
         dao.create(new Category("OLUT"));
         dao.create(new Category("PALKKA"));
         dao.create(new Category("SAKKO"));
-        
+
     }
 
     @Test
@@ -81,27 +77,35 @@ public class CategoryControllerTest {
 
         assertEquals("[MEEMI, OLUT, PALKKA, SAKKO]", categoryController.getCategories().toString());
     }
-    
-    public void numberOfCategoriesIsCorrect() throws SQLException{
-        
+
+    public void numberOfCategoriesIsCorrect() throws SQLException {
+
         assertEquals(4, categoryController.getCategories().size());
     }
-    
+
     @Test
     public void categoryIsSavedWhenFormal() {
-        
+
         assertTrue(categoryController.checkFormality("ulappa"));
-        
+
     }
-    @Test 
-    public void categoryIsNotSavedWhenUnderThreeCharacters(){
-        
+
+    @Test
+    public void categoryIsNotSavedWhenUnderThreeCharacters() {
+
         assertFalse(categoryController.checkFormality("us"));
     }
-      @After
+    @Test
+    public void CategoryIsNotSavedWhenTooManyCharacters(){
+        
+        assertFalse(categoryController.checkFormality("popopopopopopopopopopopopopopopopopopopopopopopoopopopopopoopopopo"));
+    }
+    
+    
+    
+    @After
     public void tearDown() {
         this.temp.delete();
     }
-    
-    
+
 }
