@@ -44,7 +44,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
      *
      * @param object tapahtuma-olio
      * @return palauttaa tietokantaan tallennettun tapahtuma-olion
-     * @throws SQLException Tietokannan heittämä poikkeus virhetilanteessa.
+     * @throws SQLException tietokannan heittämä poikkeus virhetilanteessa
      */
     @Override
     public Entry create(Entry object) throws SQLException {
@@ -67,9 +67,15 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
 
     }
 
+    /**
+     * Poistaa valitun tapahtuman tietokannasta.
+     *
+     * @param id tapahtuma-olion tietokannan pääavain
+     * @throws SQLException tietokannan heittämä poikkeus virhetilanteessa
+     */
     @Override
     public void remove(Integer id) throws SQLException {
-        
+
         Connection conn = DriverManager.getConnection(path, stmt, password);
         PreparedStatement stmt = conn.prepareStatement("DELETE FROM Entry WHERE id = ?");
         stmt.setInt(1, id);
@@ -77,8 +83,7 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
         stmt.executeUpdate();
         stmt.close();
         conn.close();
-        
-        
+
     }
 
     /**
@@ -104,37 +109,23 @@ public class DatabaseEntryDao implements EntryDao<Entry, Integer> {
      */
     @Override
     public List<Entry> listByUser(String key) throws SQLException {
-
         if (!cacheMemory.containsKey(key)) {
-
             Connection conn = DriverManager.getConnection(path, stmt, password);
-            PreparedStatement stmt = conn.prepareStatement(
-                    "SELECT * FROM Entry WHERE userId = ? ORDER BY date DESC");
-
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Entry WHERE userId = ? ORDER BY date DESC");
             stmt.setString(1, key);
-
             ResultSet result = stmt.executeQuery();
             List<Entry> entries = new ArrayList<>();
-
             while (result.next()) {
                 entries.add(new Entry(
-                        result.getInt("id"),
-                        Date.valueOf(result.getString("date")).toLocalDate(),
-                        result.getBoolean("type"),
-                        result.getDouble("sum"),
-                        result.getString("category"),
-                        result.getString("userId")));
-
+                        result.getInt("id"), Date.valueOf(result.getString("date")).toLocalDate(), result.getBoolean("type"), result.getDouble("sum"),
+                        result.getString("category"), result.getString("userId")));
             }
             result.close();
             stmt.close();
             conn.close();
-
             cacheMemory.put(key, entries);
         }
-        
         return cacheMemory.get(key);
-
     }
 
 }

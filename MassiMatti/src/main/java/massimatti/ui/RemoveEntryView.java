@@ -18,11 +18,22 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Poista tapahtuma-näkymän luova luokka.
+ *
+ *
+ */
 public class RemoveEntryView {
 
     private UserController userController;
     private EntryController entryController;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param userController käyttäjän sovelluslogikaasta vastaava olio
+     * @param entryController tapahtumien sovelluslogikaasta vastaava olio
+     */
     public RemoveEntryView(UserController userController, EntryController entryController) {
 
         this.userController = userController;
@@ -30,6 +41,12 @@ public class RemoveEntryView {
 
     }
 
+    /**
+     * Muodostaa Poista tapahtuma-näkymän.
+     *
+     * @param secondStage MassiMattiUi-luokassa asetettu Stage-olio
+     * @return palauttaa Poista tapahtuma-näkymän Scene-oliona
+     */
     public Scene getRemoveEntryView(Stage secondStage) {
 
         ObservableList<Entry> entries = createObservableList();
@@ -76,6 +93,12 @@ public class RemoveEntryView {
 
     }
 
+    /**
+     * Muodostaa javaFX:in ObservableList-listan tapahtuma-olioista, jota
+     * käytetään tapahtumien näkyväksi listaamisen avuksi.
+     *
+     * @return palauttaa ObservableListin
+     */
     public ObservableList<Entry> createObservableList() {
 
         entryController.emptyCache(userController.getUser().getUsername());
@@ -84,6 +107,12 @@ public class RemoveEntryView {
         return entries;
     }
 
+    /**
+     * Mikäli poista tapahtuman vahvistus Alert-olio on true, poisetaan
+     * tapahtuma, jos muutoin listasta valittua tapahtumaa ei poisteta.
+     *
+     * @param id poistettavan tapahtuma-olion pääavain
+     */
     public void removeEntry(Integer id) {
 
         if (confirmationAlert() == true) {
@@ -97,6 +126,12 @@ public class RemoveEntryView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, joka varmistaa poistetaanko tapahtuma.
+     *
+     * @return palauttaa totuusarvon true, mikäli poistaminen vahvistetaan,
+     * muutoin false
+     */
     public boolean confirmationAlert() {
 
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -117,6 +152,10 @@ public class RemoveEntryView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa tapahtuman poistamisen onnistuneen.
+     *
+     */
     public void confirmedAlert() {
 
         Alert confirmedAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -128,6 +167,11 @@ public class RemoveEntryView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa virheestä, mikäli poistettava
+     * tapahtuma on arvoltaan null.
+     *
+     */
     public void nothingToRemoveAlert() {
 
         Alert nothingToRemoveAlert = new Alert(Alert.AlertType.ERROR);

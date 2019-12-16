@@ -10,13 +10,23 @@ import java.util.ArrayList;
 import java.util.List;
 import massimatti.domain.Category;
 
-
+/**
+ * Category-olioiden tallentamisesta vastaava luokka.
+ *
+ */
 public class DatabaseCategoryDao implements CategoryDao {
 
     private String path;
     private String user;
     private String password;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param path config.properties tiedostossa määritelty polku tietokantaan
+     * @param user tietokannan käyttäjätunnus
+     * @param password tietokannan salasana
+     */
     public DatabaseCategoryDao(String path, String user, String password) {
 
         this.path = path;
@@ -24,6 +34,13 @@ public class DatabaseCategoryDao implements CategoryDao {
         this.password = password;
     }
 
+    /**
+     * Tallentaa kategoria-olion tietokantaan.
+     *
+     * @param object kategoria-olio
+     * @return palauttaa talletetun kategoria-olennon
+     * @throws SQLException Tietokannan heittämä poikkeus virhetilanteessa
+     */
     @Override
     public Category create(Category object) throws SQLException {
 
@@ -40,6 +57,14 @@ public class DatabaseCategoryDao implements CategoryDao {
         return object;
     }
 
+    /**
+     * Lukee tietokannasta kategoria-olion.
+     *
+     * @param category String, jonka niminen kategoria on
+     * @return mikäli syötteenä annetun Stringin mukainen olio löytyy
+     * tietokannasta, palauttaa olion;muutoin palauttaa null
+     * @throws SQLException tietokannan heittämä poikkeus virhetilanteessa
+     */
     @Override
     public Category read(String category) throws SQLException {
         Connection conn = DriverManager.
@@ -65,6 +90,12 @@ public class DatabaseCategoryDao implements CategoryDao {
         return newCategory;
     }
 
+    /**
+     * Listaa kaikki tietokannan kategoria-oliot.
+     *
+     * @return palauttaa listana kaikki kategoria-oliot
+     * @throws SQLException tietokannan heittämä poikkeus virhetilanteessa
+     */
     @Override
     public List<Category> getAll() throws SQLException {
         Connection conn = DriverManager.getConnection(path, user, password);

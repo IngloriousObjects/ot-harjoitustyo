@@ -12,6 +12,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import massimatti.domain.CategoryController;
 
+/**
+ * Sovelluksen Lisää kategoria-näkymän luova luokka.
+ *
+ *
+ */
 public class AddCategoryView {
 
     private CategoryController categoryController;
@@ -22,6 +27,12 @@ public class AddCategoryView {
 
     }
 
+    /**
+     * Luo Lisää kategoria-näkymän
+     *
+     * @param secondStage Stage-olio, joka on luotu MassiMattiUi-luokassa
+     * @return palauttaa Lisää kategoria-näkymän Scene-olion
+     */
     public Scene getAddCategoryView(Stage secondStage) {
 
         VBox addCategoryPane = new VBox(10);
@@ -56,7 +67,6 @@ public class AddCategoryView {
                 categoryInput.clear();
 
             } else {
-               
 
                 try {
                     if (categoryController.addCategory(addedCategory) == true) {
@@ -78,6 +88,11 @@ public class AddCategoryView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, ojka ilmoitttaa virheen, mikäli kategorian muoto
+     * on virheellinen.
+     *
+     */
     public void formalityAlert() {
         Alert formalityError = new Alert(Alert.AlertType.ERROR);
         formalityError.setTitle(
@@ -93,6 +108,11 @@ public class AddCategoryView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa virheen, mikäli kategoria on jo
+     * olemassa.
+     *
+     */
     public void categoryExistsAlert() {
 
         Alert existsError = new Alert(Alert.AlertType.ERROR);
@@ -104,6 +124,11 @@ public class AddCategoryView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa tiedon kategorian luomisen
+     * menestyksekkäästä onnistumisesta.
+     *
+     */
     public void categoryCreatedAlert() {
 
         Alert createdInfo = new Alert(Alert.AlertType.INFORMATION);

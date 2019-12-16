@@ -67,7 +67,7 @@ public class DatabaseUserDao implements UserDao<User, String> {
      */
     @Override
     public User read(String key) throws SQLException {
-        //käytetään tikape-kikkoja ja hiotaan myöhemmin
+
         Connection conn = DriverManager.
                 getConnection(path, user, password);
 

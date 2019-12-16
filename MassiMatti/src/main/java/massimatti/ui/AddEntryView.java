@@ -19,12 +19,25 @@ import massimatti.domain.CategoryController;
 import massimatti.domain.EntryController;
 import massimatti.domain.UserController;
 
+/**
+ * Lisää tapahtuma-näkymän luomisesta vastaava luokka.
+ *
+ */
+
 public class AddEntryView {
 
     private DatePicker datePicker;
     private UserController userController;
     private EntryController entryController;
     private CategoryController categoryController;
+
+    /**
+     * Luokan konstruktori.
+     *
+     * @param userController käyttäjän sovelluslogikaasta vastaava olio
+     * @param entryController tapahtumien sovelluslogikaasta vastaava olio
+     * @param categoryController kategorioiden sovelluslogikaasta vastaava olio
+     */
 
     public AddEntryView(UserController userController, EntryController entryController, CategoryController categoryController) {
 
@@ -33,6 +46,13 @@ public class AddEntryView {
         this.userController = userController;
 
     }
+
+    /**
+     * Muodostaa Lisää tapahtuma-näkymän.
+     *
+     * @param secondStage MassiMattiUi-luokassa asetettu Stage-olio
+     * @return palauttaa Lisää tapahtuma-näkymän Scene-oliona
+     */
 
     public Scene getAddEntryViewScene(Stage secondStage) {
 
@@ -66,11 +86,10 @@ public class AddEntryView {
 
         Label entryMessage = new Label("Lisää tapahtuma");
         entryMessage.setStyle("-fx-font-weight: bold");
-        
-        Label infoLabel = new Label("Voit poistua näkymästä\nsulkemalla ikkunan.");
-        infoLabel.setStyle("-fx-font-size: 10;"+"-fx-text-fill: blue");
 
-     
+        Label infoLabel = new Label("Voit poistua näkymästä\nsulkemalla ikkunan.");
+        infoLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: blue");
+
         Button addButton = new Button("Lisää");
 
         addEntryPane.getChildren().addAll(entryMessage, inputPane, addButton, infoLabel);
@@ -106,7 +125,14 @@ public class AddEntryView {
 
     }
 
-    // Tarkastaa onko input double
+    /**
+     * Tarkastaa onko käyttäjän antama syöte double-tyyppiä.
+     *
+     * @param str sumInput TextField-olion sisältämä käyttäjän syöttämä
+     * merkkijono
+     * @return palauttaa totuusarvon true, jos käännös double.tyypiksi
+     * onnistui,muutoin false
+     */
     public boolean isDouble(String str) {
         try {
             Double.parseDouble(str);
@@ -116,6 +142,11 @@ public class AddEntryView {
         }
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa virheestä, mikäli syötetty summa on
+     * virheellinen.
+     *
+     */
     public void sumAlert() {
 
         Alert sumAlert = new Alert(Alert.AlertType.ERROR);
@@ -131,13 +162,11 @@ public class AddEntryView {
         sumAlert.showAndWait();
     }
 
-    public boolean datePickerChecker(LocalDate date) {
-        if (date == null) {
-            return false;
-        }
-        return true;
-    }
-
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa tiedon tapahtumaan lisäämisen
+     * onnistumisesta.
+     *
+     */
     public void createAlert() {
 
         Alert dateAlert = new Alert(Alert.AlertType.INFORMATION);

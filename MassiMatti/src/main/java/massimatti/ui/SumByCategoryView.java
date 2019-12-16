@@ -22,6 +22,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Menot / Tulot kategorioittain-näkymän luova luokka.
+ *
+ *
+ */
 public class SumByCategoryView {
 
     private UserController userController;
@@ -30,6 +35,12 @@ public class SumByCategoryView {
     private DatePicker datePickerStart;
     private DatePicker datePickerEnd;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param userController käyttjän sovelluslogiikasta vastaava olio
+     * @param entryController tapahtumien sovelluslogikaasta vastaava olio
+     */
     public SumByCategoryView(UserController userController, EntryController entryController) {
 
         this.userController = userController;
@@ -37,6 +48,12 @@ public class SumByCategoryView {
 
     }
 
+    /**
+     * Muoodostaa Menot / Tulot kategorioittain-näkymän.
+     *
+     * @param secondStage MassiMattiUi-luokassa asetettu Stage-olio
+     * @return palauttaa Menot / Tulot kategorioittain-näkymän Scene-oliona
+     */
     public Scene getSumByCategoryScene(Stage secondStage) {
 
         VBox categoryPane = new VBox(25);
@@ -124,7 +141,7 @@ public class SumByCategoryView {
             XYChart.Series sumCategoryE = new XYChart.Series();
             sumCategoryE.setName("Menot");
             XYChart.Series sumCategoryS = new XYChart.Series();
-            sumCategoryE.setName("Tulot");
+            sumCategoryS.setName("Tulot");
             for (Map.Entry<String, Double> entries : sumByCategory.entrySet()) {
 
                 String key = entries.getKey();
@@ -141,7 +158,7 @@ public class SumByCategoryView {
             }
 
             sumByCategory.clear();
-           
+
             barchart.getData().add(sumCategoryE);
             barchart.getData().add(sumCategoryS);
 
@@ -155,6 +172,13 @@ public class SumByCategoryView {
 
     }
 
+    /**
+     * Muodostaa TreeMapin, joka sisältää kategorioittain tapahtumien summat.
+     *
+     * @param entriesByUser tapahtuma-olioita sisältävä lista
+     * @return palauttaa TreeMapin, jonka avaimena on kategoria ja arvona
+     * kategorian tapahtumien yhteissumma
+     */
     public TreeMap<String, Double> sumCategories(List<Entry> entriesByUser) {
 
         entryController.emptyCache(userController.getUser().getUsername());
@@ -165,6 +189,11 @@ public class SumByCategoryView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa virheestä, mikäli käyttäjän antama
+     * ajanjakso on virheellinen.
+     *
+     */
     public void dateAlert() {
 
         Alert dateAlert = new Alert(AlertType.ERROR);

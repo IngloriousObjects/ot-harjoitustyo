@@ -13,20 +13,41 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
+/**
+ * Sovelluksen kirjautumis- ja rekisteröintinäkymän luova luokka.
+ *
+ *
+ */
 public class LoginView {
 
     private Scene appScene;
     private UserController userController;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param userController userController-olio
+     */
     public LoginView(UserController userController) {
         this.userController = userController;
         this.appScene = null;
     }
 
+    /**
+     * Asettaa päänäkymän.
+     *
+     * @param appScene päänäkymän Scene-olio
+     */
     public void setAppScene(Scene appScene) {
         this.appScene = appScene;
     }
 
+    /**
+     * Muodostaa kirjautumis- ja rekisteröintinäkymän.
+     *
+     * @param primaryStage MassiMattiUi-luokassa luotu Stage-olio
+     * @return palauttaa Scene-olion
+     */
     public Scene getLoginScene(Stage primaryStage) {
 
         VBox loginPane = new VBox(10);
@@ -41,7 +62,7 @@ public class LoginView {
         PasswordField passwordInput = new PasswordField();
 
         Label infoLabel = new Label("Jos sinulla ei ole tunnusta, siirry rekisteröintiin\npainamalla 'rekisteröidy'.\n\nKäyttäjätunnuksen pituus voi olla\n5-36 merkkiä ja salasanan 8-36\nmerkkiä.");
-        infoLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: red;" + "-fx-font-style: italic");
+        infoLabel.setStyle("-fx-font-size: 10;" + "-fx-text-fill: navy;" + "-fx-font-style: italic");
 
         inputPane.getChildren().addAll(loginLabel, usernameInput, loginLabelSecond, passwordInput, infoLabel);
 
@@ -121,6 +142,16 @@ public class LoginView {
 
     }
 
+    /**
+     * Vaihtaa kirjautumisnäkymän muodon rekisteröintinäkymään.
+     *
+     * @param login VBox
+     * @param loginMessage Label
+     * @param registerUser Button
+     * @param back Button
+     * @param loginButton Button
+     * @param registerButton Button
+     */
     public void changeToRegisterView(VBox login, Label loginMessage, Button registerUser, Button back, Button loginButton, Button registerButton) {
 
         login.getChildren().remove(loginButton);
@@ -130,6 +161,18 @@ public class LoginView {
         loginMessage.setText("REKISTERÖIDY");
 
     }
+
+    /**
+     * Vaihtaa kirjautumisnäkymän muodon alkuperäiseen siirryttäessä pois
+     * rekisteröintinäkymästä.
+     *
+     * @param login VBox
+     * @param loginMessage Label
+     * @param registerUser Button
+     * @param back Button
+     * @param loginButton Button
+     * @param registerButton Button
+     */
 
     public void backToLoginView(VBox login, Label loginMessage, Button registerUser, Button back, Button loginButton, Button registerButton) {
 
@@ -141,6 +184,11 @@ public class LoginView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, jos sisäänkirjautuessa käyttäjätunnuksen tai
+     * salasanan muoto virheellinen.
+     *
+     */
     public void loginAlert() {
 
         Alert loginError = new Alert(AlertType.ERROR);
@@ -152,6 +200,12 @@ public class LoginView {
         loginError.showAndWait();
 
     }
+
+    /**
+     * Muodostaa Alert-olion, jos käyttäjätunnuksen tai salasanan luomisessa
+     * toinen tai kumpikin syöte ovat virheellisiä.
+     *
+     */
 
     public void createAlert() {
         Alert createError = new Alert(AlertType.ERROR);
@@ -169,6 +223,12 @@ public class LoginView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, jos rekisteröitävä käyttäjätunnus on jo
+     * tietokannassa.
+     *
+     */
+
     public void userExistsAlert() {
 
         Alert userExistsError = new Alert(AlertType.ERROR);
@@ -185,6 +245,11 @@ public class LoginView {
         userExistsError.showAndWait();
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa mikäli käyttäjätunnksen luominen
+     * onnistui.
+     *
+     */
     public void creationSuccessfulAlert() {
 
         Alert creationSuccessfullInfo = new Alert(Alert.AlertType.INFORMATION);

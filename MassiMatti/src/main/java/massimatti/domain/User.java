@@ -9,6 +9,12 @@ public class User {
     private String username;
     private String password;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param username käyttäjän syöttämä käyttäjätunnuksen ilmaiseva merkkijono
+     * @param password käyttäjän syöttämä salasanan ilmaiseva merkkijono
+     */
     public User(String username, String password) {
 
         this.username = username;
@@ -34,6 +40,12 @@ public class User {
         return password;
     }
 
+    /**
+     * Vertaillaan oliota.
+     *
+     * @param obj olio
+     * @return palauttaa true, jos vertailtava user-olio, muutoin false
+     */
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof User)) {
@@ -44,6 +56,11 @@ public class User {
         return username.equals(other.username);
     }
 
+    /**
+     * Olion esitys merkkijonona.
+     *
+     * @return palauttaa merkkijonona käyttäjätunnuksen
+     */
     @Override
     public String toString() {
         return this.username;

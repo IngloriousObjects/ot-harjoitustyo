@@ -101,7 +101,7 @@ public class EntryControllerTest {
     @Test
     public void sumByCategoriesWorksProperly () throws SQLException{
         
-        assertEquals("{ruoka=1.2, testi=19.2}", entryController.sumByCategories(entriesByPetri).toString());
+        assertEquals("{ruoka=-1.2, testi=19.2}", entryController.sumByCategories(entriesByPetri).toString());
         
     }
     

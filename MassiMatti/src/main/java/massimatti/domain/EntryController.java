@@ -28,11 +28,11 @@ public class EntryController {
     /**
      * Lisää käyttäjälle uuden tapahtuman tietokantaan.
      *
-     * @param date Tapahtuman suorituspäivä
-     * @param type Tapahtuman tyyppi;false, jos meno, true mikäli tulo
-     * @param sum Taphtuma suuruus euroina
-     * @param category Tapahtuman kategoria
-     * @param user Tapahtumaan liittyvä käyttäjä
+     * @param date tapahtuman suorituspäivä
+     * @param type tapahtuman tyyppi;false, jos meno, true mikäli tulo
+     * @param sum taphtuma suuruus euroina
+     * @param category tapahtuman kategoria
+     * @param user tapahtumaan liittyvä käyttäjä
      * @return totuusarvo, joka luokittelee tapahtuman lisäämisen onnistumisen:
      * true onnistuneen tapahtuman palautus, false virhe tapahtumaa lisätessä
      */
@@ -47,6 +47,12 @@ public class EntryController {
         }
     }
 
+    /**
+     * Poistaa tapahtuma-olion.
+     *
+     * @param entryId tapahtuma-olion pääavain kokonaislukuna
+     * @return palauttaa onnistuessaa totuusarvon true, muutoin false
+     */
     public boolean removeEntry(Integer entryId) {
         try {
             entryDao.remove(entryId);
@@ -84,7 +90,14 @@ public class EntryController {
 
     }
 
-    //muodostaa TreeMapin syötteen entry-listasta 
+    /**
+     * Luo TreeMapin, jossa avaimena kategoria ja arvona kaikkien saman
+     * kategorian. tapahtuma-olioiden summa.
+     *
+     * @param entries lista, joka sisältää tapahtuma-olioita
+     * @return palauttaa TreeMapin, joka sisältää tapahtumien yhteissumma
+     * kategorioittain
+     */
     public TreeMap<String, Double> sumByCategories(List<Entry> entries) {
 
         TreeMap<String, Double> order = new TreeMap<>();
@@ -112,7 +125,16 @@ public class EntryController {
 
     }
 
-    //valikoidut entryt
+    /**
+     * Hakee käyttäjän tapahtuma-oliosta annetujen päivämäärien sisään luodut
+     * tapahtumat.
+     *
+     * @param entries lista tapahtuma-olioista
+     * @param dateStart alkupäivämäärä haettaville tapahtuma-olioille
+     * @param dateEnd loppupäivämääärä haettaville tapahtuma-olioille
+     * @return palauttaa listan, joka sisältää tapahtuma-oliot haetulta
+     * aikaväliltä
+     */
     public List<Entry> getSelectedEntries(List<Entry> entries, LocalDate dateStart, LocalDate dateEnd) {
 
         List<Entry> selected = new ArrayList<>();
@@ -130,6 +152,13 @@ public class EntryController {
         return selected;
     }
 
+    /**
+     * Laskee syötteenä annetu listan tapahtuma-olioiden menojen summan.
+     *
+     * @param entries lista tapahtuma-olioista
+     * @return palauttaa annetun listan false-tyyppisten tapahtuma-olioiden
+     * summan
+     */
     public Double sumOfExpenses(List<Entry> entries) {
 
         Double sumExpenses = 0.00;
@@ -144,6 +173,14 @@ public class EntryController {
         }
         return sumExpenses;
     }
+
+    /**
+     * Laskee syötteenä annetu listan tapahtuma-olioiden tulojen summan.
+     *
+     * @param entries lista tapahtuma-olioista
+     * @return palauttaa annetun listan true-tyyppisten tapahtuma-olioiden
+     * summan
+     */
 
     public Double sumOfIncomes(List<Entry> entries) {
 

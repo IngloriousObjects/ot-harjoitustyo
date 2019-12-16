@@ -26,12 +26,13 @@ public class CategoryController {
     /**
      * Lisää uuden kategorian tietokanta.
      *
-     * @param category Category-olio
-     * @return palauttaa totuusarvon;true, mikäli kategorian luominen onnistuu,
-     * ja false, jos kategoria on jo tietokannassa tai tapahtuu virhe
-     * @throws poikkeus virhetilanteessa
+     * @param category merkkijono, joka edustaa kategorian nimeä
+     * @return palauttaa totuusarvon;true, mikäli tietokannassa ei ole
+     * vastaavuutta ja luo kategorian, ja false, jos kategoria on jo
+     * tietokannassa tai tapahtuu virhe
+     * @throws Exception heittää poikkeuksen virhetilanteessa
      */
-    public boolean addCategory(String category) throws Exception {   
+    public boolean addCategory(String category) throws Exception {
         try {
             if (categoryDao.read(category) == null) {
                 categoryDao.create(new Category(category.toUpperCase()));
@@ -49,7 +50,6 @@ public class CategoryController {
      *
      * @return palauttaa kaikki tietokannan sisältämät kategoriat listana
      */
-
     public List<Category> getCategories() {
         try {
             return categoryDao.getAll();

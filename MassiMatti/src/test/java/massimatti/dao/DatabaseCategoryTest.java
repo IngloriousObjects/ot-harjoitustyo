@@ -48,10 +48,10 @@ public class DatabaseCategoryTest {
     @Test
     public void CategoryIsSavedProperly() throws SQLException {
 
-        Category memuska = new Category("meemi");
-        categoryDao.create(memuska);
+        
+        categoryDao.create(new Category("memuska"));
 
-        assertEquals(memuska.getCategoryName().toString(), categoryDao.read(memuska).toString());
+        assertEquals("memuska", categoryDao.read("memuska").getCategoryName());
 
     }
     
@@ -76,7 +76,7 @@ public class DatabaseCategoryTest {
         
         Category testA = new Category("");
         
-        assertEquals(null, categoryDao.read(testA));
+        assertEquals(null, categoryDao.read(testA.getCategoryName()));
     }
 
             

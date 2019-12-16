@@ -19,6 +19,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Listaa tapahtumat-näkymän luova luokka.
+ *
+ *
+ */
 public class EntryListView {
 
     private UserController userController;
@@ -26,6 +31,12 @@ public class EntryListView {
     private DatePicker datePickerStart;
     private DatePicker datePickerEnd;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param userController käyttäjän sovelluslogikaasta vastaava olio
+     * @param entryController tapahtumien sovelluslogikaasta vastaava olio
+     */
     public EntryListView(UserController userController, EntryController entryController) {
 
         this.userController = userController;
@@ -33,6 +44,12 @@ public class EntryListView {
 
     }
 
+    /**
+     * Muodostaa Listaa tapahtumat-näkymän.
+     *
+     * @param secondStage MassiMattiUi-luokassa asetettu Stage-olio
+     * @return palauttaa Listaa tapahtumat-näkymän Scene-oliona
+     */
     public Scene getListViewScene(Stage secondStage) {
 
         entryController.emptyCache(userController.getUser().getUsername());
@@ -69,7 +86,7 @@ public class EntryListView {
             ObservableList<Entry> entries = FXCollections.observableArrayList(entriesByUser);
 
             byUser.getItems().addAll(entries);
-            eraLabel.setText("");
+            eraLabel.setText("Kaikki tapahtumat");
 
         });
 
@@ -105,6 +122,11 @@ public class EntryListView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa virheestä, mikäli käyttäjän
+     * asettama ajanjakso on virheellinen.
+     *
+     */
     public void dateAlert() {
 
         Alert dateAlert = new Alert(Alert.AlertType.ERROR);

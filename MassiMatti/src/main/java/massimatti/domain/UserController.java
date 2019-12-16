@@ -6,7 +6,6 @@ import massimatti.dao.UserDao;
 /**
  * Käyttäjän toiminnallisuuksien sovelluslogiikasta vastaava luokka.
  */
-
 public class UserController {
 
     private UserDao userDao;
@@ -110,7 +109,5 @@ public class UserController {
     public boolean checkPassword(String string) {
         return (string.length() > 7 && string.length() < 37);
     }
-    
-   
 
 }

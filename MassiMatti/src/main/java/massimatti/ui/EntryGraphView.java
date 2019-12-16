@@ -19,6 +19,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Menot / Tulot vertailu-näkymän luova luokka.
+ *
+ *
+ */
 public class EntryGraphView {
 
     private DatePicker datePickerStart;
@@ -26,12 +31,25 @@ public class EntryGraphView {
     private UserController userController;
     private EntryController entryController;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param userController käyttäjän sovelluslogiikasta vastaava olio
+     * @param entryController tapahtumien sovelluslogikaasta vastaava olio
+     */
     public EntryGraphView(UserController userController, EntryController entryController) {
 
         this.userController = userController;
         this.entryController = entryController;
 
     }
+
+    /**
+     * Muodostaa Tulot / Menot vertaa -näkymän.
+     *
+     * @param secondStage MassiMattiUi-luokassa asetettu Stage-olio
+     * @return palauttaa Tulot / Menot vertailu -näkymän Scene-olion
+     */
 
     public Scene getEntryGraphScene(Stage secondStage) {
 
@@ -63,7 +81,6 @@ public class EntryGraphView {
         barchart.setPrefSize(400, 500);
         barchart.setAnimated(false);
         barchart.setLegendVisible(true);
-      
 
         allTime.setOnAction((event) -> {
 
@@ -112,7 +129,7 @@ public class EntryGraphView {
 
             barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
             XYChart.Series sumExpensesS = new XYChart.Series();
-            
+
             sumExpensesS.setName("Menot");
             XYChart.Series sumIncomesS = new XYChart.Series();
             sumIncomesS.setName("Tulot");
@@ -133,6 +150,12 @@ public class EntryGraphView {
 
     }
 
+    /**
+     * Muodostaa Alert-olion, joka ilmoittaa virheestä, mikäli käyttäjän
+     * valitsema ajanjakso on virheellinen eli alkupäivämäärä on myöhäisempi
+     * kuin loppupäivämäärä.
+     *
+     */
     public void dateAlert() {
 
         Alert dateAlert = new Alert(Alert.AlertType.ERROR);

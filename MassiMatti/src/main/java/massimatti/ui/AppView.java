@@ -10,6 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Päänäkymän muodostava luokka.
+ *
+ *
+ */
 public class AppView {
 
     private UserController userController;
@@ -18,6 +23,16 @@ public class AppView {
     private Scene loginScene;
     private Stage secondStage;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param userController käyttäjän sovelluslogikaasta vastaava olio
+     * @param entryController tapahtumien sovelluslogikaasta vastaava olio
+     * @param categoryController kategorioiden sovelluslogikaasta vastaava olio
+     * @param loginScene MassiMattiUi-luokassa asetettu Scene-olio
+     * @param secondStage MassiMattiUi-luokassa asetettu Stage-olio ali-näkymien
+     * luomista varten
+     */
     public AppView(UserController userController, EntryController entryController, CategoryController categoryController, Scene loginScene, Stage secondStage) {
 
         this.userController = userController;
@@ -28,6 +43,12 @@ public class AppView {
 
     }
 
+    /**
+     * Muodostaa sovelluksen päänäkymän.
+     *
+     * @param primaryStage MassiMattiUi-luokassa asetettu Stage-olio
+     * @return palauttaa päänäkymän Scene-oliona
+     */
     public Scene getAppScene(Stage primaryStage) {
 
         secondStage.setTitle("MassiMatti");
@@ -107,6 +128,12 @@ public class AppView {
 
     }
 
+    /**
+     * Kirjaa käyttäjän ulos järjestelmästä ja tuo esiin kirjautumis-ja
+     * rekisteröintinäkymän.
+     *
+     * @param primaryStage
+     */
     public void logOut(Stage primaryStage) {
         userController.logOutUser();
 
