@@ -32,7 +32,7 @@ Daopakkauksen luokat DatabaseUserDao, DatabaseEntryDao ja DatabaseCategoryDao to
 
 Sovelluksen tietojen tallettamisen on käytetty h2-tietokannanhallintajärjestelmää. Dao-pakkauksen luokka DatabaseDao luo tietokannan tauluineen, mikäli sitä ei ole olemassa. Tietokannan tietojen tallettaminen ja lukeminen on eristetty Dao-luokkiin, eikä sovelluslogiikka siten käytä tietokannasta lukevia ja siihen tallettavia luokkia DatabaseDao, DatabaseUserDao, DatabaseEntryDao ja DataaseCategoryDao suoraan. Edellinen antaa mahdollisuuksia muuttaa joustavasti sovelluksen toimintoja.
 
-Testeissä on käytössä FakeUserDao ja FakeEntryDao, joilla pystytään testaamaan tiettyjä ominaisuuksia ilman varsinaiseen tietokantaa kohdistuvaa lukemista tai tallettamista. 
+Testeissä on käytössä FakeUserDao- ja FakeEntryDao-luokat, joilla pystytään testaamaan tiettyjä ominaisuuksia ilman varsinaiseen tietokantaa kohdistuvaa lukemista tai tallettamista. 
 
 # Päätoiminnnallisuudet
 Seuraavassa on kuvattu sovelluksen toimintalogiikka kahden sekvenssikaavion ja täydentävän selityksen muodossa.
