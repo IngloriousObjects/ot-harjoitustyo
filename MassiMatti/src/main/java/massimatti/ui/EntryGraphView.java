@@ -50,7 +50,6 @@ public class EntryGraphView {
      * @param secondStage MassiMattiUi-luokassa asetettu Stage-olio
      * @return palauttaa Tulot / Menot vertailu -näkymän Scene-olion
      */
-
     public Scene getEntryGraphScene(Stage secondStage) {
 
         VBox categoryPane = new VBox(25);
@@ -92,7 +91,7 @@ public class EntryGraphView {
             Double sumOfExpenses = entryController.sumOfExpenses(entriesByUser);
             Double sumOfIncomes = entryController.sumOfIncomes(entriesByUser);
 
-            barchart.setTitle("KAIKKI MENOT JA TULOT");
+            barchart.setTitle("KAIKKI MENOT JA TULOT (SALDO: " + (sumOfIncomes - sumOfExpenses) + " €)");
 
             XYChart.Series sumExpenses = new XYChart.Series();
             sumExpenses.setName("Menot");
@@ -127,7 +126,8 @@ public class EntryGraphView {
             Double sumOfExpensesS = entryController.sumOfExpenses(entriesPicked);
             Double sumOfIncomesS = entryController.sumOfIncomes(entriesPicked);
 
-            barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+            barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – "
+                    + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " (SALDO: " + (sumOfIncomesS - sumOfExpensesS) + " €)");
             XYChart.Series sumExpensesS = new XYChart.Series();
 
             sumExpensesS.setName("Menot");
