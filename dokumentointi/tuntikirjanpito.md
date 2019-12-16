@@ -26,4 +26,5 @@
 | 13.12. | 3    | Testien luontia sekä UI:n pientä viilausta|
 | 14.12. | 4    | Ominaisuuksien lisäämistä ja hiomista sekä sovelluslogiikan että UI:n osalta|
 | 15.12. | 2    | Koodin siistimistä välivaiheessa ja viimeisen täysin keskeneräisen luokan valmiiksi saattaminen|
-| yht    |89    | | 
+| 16.12. | 5    | JavaDocsin ja testien loppuunsaattaminen. Lisäksi hiottu sekä sovelluslogiikkaa että käyttöliittymää|
+| yht    |94    | | 
