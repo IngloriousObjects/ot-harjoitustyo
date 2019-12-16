@@ -5,6 +5,21 @@ Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakka
 Pakkaus massimatti.ui sisältää JavaFX:llä toteutetun käyttöliittymän massimatti.domain sovelluslogiikan ja massimatti.dao tietojen pysyväistallennuksesta vastaavan koodin.
 
 # Käyttöliittymä
+Käyttöliittymä on toteutettu käyttäen 7 näkymää:
+* kirjatuminen / rekisteröinti
+* päänäkymä
+* lisää tapahtuma
+* poista tapahtuma
+* lisää kategoria
+* listaa tapahtumat
+* menot / tulot kategorioittain
+* menot / tulot vertailu
+
+Kaikki edellä mainitut näkymät on toteutettu omilla Scene-olioillaan ja omina luokkinaan. Kirjautumis- ja rekisteröitymis-näkymän sekä päänäkymän luokat saavat näkymän toteuttamisen paramtrinaan MassiMattiUi-luokassa asetetun primaryStage-olion. Muut luokat käyttävät MassiMattiUi-luokassa asetettma secondStage-oliota. Ohjelmallisesti käyttöliittymä on rakennettu luokassa massimatti.ui.MassiMattiUi.
+
+Käyttäjän kirjautuessa sisään LoginView-näkymästä, siirrytään AppView-näkymään. AppView-näkymästä käyttäjä voi avata näkymän rinnalle 6 erilaista sovelluksen toimintaan ja tiedon esittämiseen liittyvää näkymää. AppView-näkymästä käyttäjä voi poistua takaisin LoginView-näkymään 'kirjaudu ulos'-painikkeella. 
+
+Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikkaa userController-, entryController- ja categoryController-olioilla.
 
 # Sovelluslogiikka
 ![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/rak_ark_v2.png)
@@ -15,7 +30,12 @@ Daopakkauksen luokat DatabaseUserDao, DatabaseEntryDao ja DatabaseCategoryDao to
 
 # Tietojen pysyväistallennus
 
+Sovelluksen tietojen tallettamisen on käytetty h2-tietokannanhallintajärjestelmää. Dao-pakkauksen luokka DatabaseDao luo tietokannan tauluineen, mikäli sitä ei ole olemassa. Tietokannan tietojen tallettaminen ja lukeminen on eristetty Dao-luokkiin, eikä sovelluslogiikka siten käytä tietokannasta lukevia ja siihen tallettavia luokkia DatabaseDao, DatabaseUserDao, DatabaseEntryDao ja DataaseCategoryDao suoraan. Edellinen antaa mahdollisuuksia muuttaa joustavasti sovelluksen toimintoja.
+
+Testeissä on käytössä FakeUserDao ja FakeEntryDao, joilla pystytään testaamaan tiettyjä ominaisuuksia ilman varsinaiseen tietokantaa kohdistuvaa lukemista tai tallettamista. 
+
 # Päätoiminnnallisuudet
+Seuraavassa on kuvattu sovelluksen toimintalogiikka kahden sekvenssikaavion ja täydentävän selityksen muodossa.
 
 ## Kirjautuminen
 Kun kirjautumis- ja rekisteröitymisnäkymässä on syötekenttään kirjoitettu käyttäjätunnus sekä salasana ja painetaan loginButton-painiketta etenee sovelluksen kontrolli seuraavasti:
