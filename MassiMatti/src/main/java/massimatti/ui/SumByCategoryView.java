@@ -89,7 +89,9 @@ public class SumByCategoryView {
             entryController.emptyCache(userController.getUser().getUsername());
             barchart.getData().clear();
             barchart.layout();
-            barchart.setTitle("KAIKKI MENOT JA TULOT KATEGORIOITTAIN");
+            Double expenses = 0.00;
+            Double incomes = 0.00;
+
             List<Entry> entriesByUser = entryController.getEntries(userController.getUser().getUsername());
             TreeMap<String, Double> sumByCategory = sumCategories(entriesByUser);
 
@@ -105,13 +107,15 @@ public class SumByCategoryView {
                 if (value < 0.0) {
 
                     sumCategoryE.getData().add(new XYChart.Data(key, Math.abs(value)));
+                    expenses += Math.abs(entries.getValue());
 
                 } else {
                     sumCategoryS.getData().add(new XYChart.Data(key, value));
+                    incomes += entries.getValue();
                 }
 
             }
-
+            barchart.setTitle("KAIKKI MENOT JA TULOT KATEGORIOITTAIN (SALDO: " + (incomes - expenses) + " €)");
             sumByCategory.clear();
             barchart.getData().add(sumCategoryE);
             barchart.getData().add(sumCategoryS);
@@ -135,8 +139,8 @@ public class SumByCategoryView {
             List<Entry> entriesPicked = entryController.getEntries(userController.getUser().getUsername());
             List<Entry> entriesByUser = entryController.getSelectedEntries(entriesPicked, dateS, dateE);
             TreeMap<String, Double> sumByCategory = sumCategories(entriesByUser);
-
-            barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+            Double expenses = 0.00;
+            Double incomes = 0.00;
 
             XYChart.Series sumCategoryE = new XYChart.Series();
             sumCategoryE.setName("Menot");
@@ -150,12 +154,17 @@ public class SumByCategoryView {
                 if (value < 0.0) {
 
                     sumCategoryE.getData().add(new XYChart.Data(key, Math.abs(value)));
-
+                    expenses += Math.abs(entries.getValue());
                 } else {
                     sumCategoryS.getData().add(new XYChart.Data(key, value));
+                    incomes += entries.getValue();
                 }
 
             }
+
+            barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+                    + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " (SALDO: "
+                    + (incomes - expenses) + " €)");
 
             sumByCategory.clear();
 

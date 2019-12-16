@@ -106,6 +106,7 @@ public class EntryController {
 
             if (order.containsKey(entry.getCategory().toString())) {
                 if (entry.getType() == false) {
+                    order.put(entry.getCategory().toString(), order.get(entry.getCategory().toString()) - (entry.getSum().doubleValue()));
                 } else {
                     order.put(entry.getCategory().toString(), order.get(entry.getCategory().toString()) + (entry.getSum().doubleValue()));
                 }
@@ -181,7 +182,6 @@ public class EntryController {
      * @return palauttaa annetun listan true-tyyppisten tapahtuma-olioiden
      * summan
      */
-
     public Double sumOfIncomes(List<Entry> entries) {
 
         Double sumIncomes = 0.00;
