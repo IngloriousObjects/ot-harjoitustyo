@@ -9,6 +9,7 @@ import massimatti.dao.DatabaseCategoryDao;
 import massimatti.dao.DatabaseUserDao;
 import java.io.FileInputStream;
 import java.util.Properties;
+import java.util.Set;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -20,7 +21,8 @@ public class MassiMattiUi extends Application {
     private CategoryController categoryController;
 
     public void init() throws Exception {
-
+        
+       
         Properties properties = new Properties();
         properties.load(new FileInputStream("config.properties"));
 
@@ -29,13 +31,14 @@ public class MassiMattiUi extends Application {
         String password = properties.getProperty("password");
 
         Properties categoryProperties = new Properties();
-        categoryProperties.load(new FileInputStream("categories.txt"));
+        categoryProperties.load(new FileInputStream("category.txt"));
 
+        /*
         String categoryA = categoryProperties.getProperty("categoryA");
         String categoryB = categoryProperties.getProperty("categoryB");
         String categoryC = categoryProperties.getProperty("categoryC");
         String categoryD = categoryProperties.getProperty("categoryD");
-
+         */
         DatabaseUserDao userDao = new DatabaseUserDao(path, user, password);
         DatabaseEntryDao entryDao = new DatabaseEntryDao(path, user, password);
         DatabaseCategoryDao categoryDao = new DatabaseCategoryDao(path, user, password);
@@ -46,11 +49,18 @@ public class MassiMattiUi extends Application {
         this.entryController = new EntryController(entryDao);
         this.categoryController = new CategoryController(categoryDao);
 
+        for (String key : categoryProperties.stringPropertyNames()) {
+            String value = categoryProperties.getProperty(key);
+            categoryController.addCategory(value);
+        }
+
+
+        /*
         categoryController.addCategory(categoryA);
         categoryController.addCategory(categoryB);
         categoryController.addCategory(categoryC);
         categoryController.addCategory(categoryD);
-
+         */
     }
 
     @Override

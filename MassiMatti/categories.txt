@@ -1,5 +1,20 @@
-categoryA=kirjat ja lehdet
-categoryB=ravintola
-categoryC=liikunta ja terveys
-categoryD=elintarvikkeet
+a=kirjat ja lehdet
+b=ravintola
+c=liikunta ja terveys 
+d=elintarvikkeet
+e=rv gurula
+f=alkoholi
+g=tupakka
+h=matkustus
+i=palkka
+j=veronpalautus
+k=lahjat
+l=lemmikkien hoito
+m=lemmikkien ruoka
+n=vitamiinit
+o=kosmetiikka
+p=vuokra
+q=lainanlyhennys
+r=opintotuki
+
 
