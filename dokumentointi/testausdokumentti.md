@@ -22,7 +22,7 @@ Sovellus on haettu ja sitä on testattu [käyttöohjeen](https://github.com/Ingl
 Sovellusta on testattu luomalla käyttäjiä ja niihin liittyviä tapahtumia, sekä erikseen kategorioita ja käyttöliitymän kautta tutkimalla sovelluslogiikkaa. Tilanteet ovat varioineet tyhjästä tietokannasta jo olemassaolevaan.
 
 ### Toiminnallisuudet
-Kaikki [vaatimusmäärittelydokumentissa](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)listatut toiminnalisuudet on käyty läpi. Kaikkien syötekenttien osalta on käytetty erilaisia syötteitä tyhjästä erkoismerkkeihin. 
+Kaikki [vaatimusmäärittelydokumentissa](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md) listatut toiminnalisuudet on käyty läpi. Kaikkien syötekenttien osalta on käytetty erilaisia syötteitä tyhjästä erkoismerkkeihin. 
 
 ## Sovellukseen jääneet laatuongelmat
 'Menot / Tulot kategorioittain'-näkymässä, kun valittu ajanjakso ei sisällä tapahtumia, kasvattaa 'valitulta ajanjaksolta'-painikkeen painaminen X-akselin arvoskaalaa. Tämä ongelma ilmenee vain, kun valittu ajanjakso ei sisällä tapahtumia.
