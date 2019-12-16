@@ -4,13 +4,16 @@ MassiMatti on henkilökohtaisen talouden seurantaan tarkoitettu sovellus, jonka 
 
 ## **Dokumentaatio**
 
+
+[Arkkitehtuurikuvaus](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
+
 [Käyttöohje](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kayttoohje.md)
 
-[Vaatimusmäärittely](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
+[Testausdokumentti](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/testausdokumentti.md)
 
 [Työaikakirjanpito](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/tuntikirjanpito.md)
 
-[Arkkitehtuurikuvaus](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
+[Vaatimusmäärittely](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
 ## **Releaset**
 [Viikko 5](https://github.com/InglouriousObjects/ot-harjoitustyo/releases/tag/Viikko5)
