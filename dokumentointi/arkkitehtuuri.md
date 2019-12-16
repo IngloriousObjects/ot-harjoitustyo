@@ -20,3 +20,5 @@ Daopakkauksen luokat DatabaseUserDao, DatabaseEntryDao ja DatabaseCategoryDao to
 ## Kirjautuminen
 ![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssi_loginMM.png)
 
+## Uuden käyttäjän luominen
+![](https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssi_register.png)
