@@ -11,4 +11,4 @@ Dao-luokkia on testatttu DatabaseUserDaoTest-, DatabaseEntryDaoTest ja DatabaseC
 ### Testauskattavuus
 Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 94% ja haarautumakattavuus 91%
 
-[]!(
+[]!(https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/testidokumenttiv2.png)
