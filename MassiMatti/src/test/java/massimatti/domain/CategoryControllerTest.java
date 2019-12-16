@@ -95,14 +95,13 @@ public class CategoryControllerTest {
 
         assertFalse(categoryController.checkFormality("us"));
     }
+
     @Test
-    public void CategoryIsNotSavedWhenTooManyCharacters(){
-        
+    public void CategoryIsNotSavedWhenTooManyCharacters() {
+
         assertFalse(categoryController.checkFormality("popopopopopopopopopopopopopopopopopopopopopopopoopopopopopoopopopo"));
     }
-    
-    
-    
+
     @After
     public void tearDown() {
         this.temp.delete();
