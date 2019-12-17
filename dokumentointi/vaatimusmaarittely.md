@@ -28,10 +28,10 @@ Järjestelmän päänäkymässä käyttäjä voi:
     * päänäkymästä avautuu 'Listaa tapahtumat' -painikkeella erillinen listausnäkymä. Käyttäjä voi valita listataanko kaikki tapahtumat vai tapahtumat halutulta ajanjaksolta. Tapahtumat listataan näkymään. Näkymästä voi poistua sulkemalla ikkunan.
     
   * tarkastella tapahtumia kategorioittain
-    * päänäkymästä avautuu painikkeella 'Menot / Tulot kategorioittain näkymään, jossa valitaan joko käyttäjän haluama ajanjakso tai kaikki tapahtumat, jonka perusteella uuteen näkymään piirretään pylväskaavio, jossa x-akselilla on kategoriat ja y-akselilla euromäärät. Kaavion otsikossa tulostettuna saldo, joka on valittujen tapahtumien tulojen ja menojen erotus. Näkymästä voi poistua sulkemalla ikkunan
+    * päänäkymästä avautuu painikkeella 'Menot / Tulot kategorioittain näkymään, jossa valitaan joko käyttäjän haluama ajanjakso tai kaikki tapahtumat, jonka perusteella uuteen näkymään piirretään pylväskaavio, jossa x-akselilla on kategoriat ja y-akselilla euromäärät. Kaavion otsikossa on tulostettuna kokonaisluvuksi pyöristetty saldo, joka on valittujen tapahtumien tulojen ja menojen erotus. Näkymästä voi poistua sulkemalla ikkunan
     
  * tarkastella tapahtumia menoja ja tuloja vertailemalla
-    * päänäkymästä avautuu 'Menot/Tulot vertailu'-painikkeella uusi näkymä, jossa valitaan joko käyttäjän haluama ajanjakso tai kaikki tapahtumat, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa menoja ja tuloja ja y-akseli euromäärää. Kaavion otsikossa on tulostettuna valittujen tapahtumien menojen ja tulojen erotus. Näkymästä voi poistua sulkemalla ikkunan
+    * päänäkymästä avautuu 'Menot/Tulot vertailu'-painikkeella uusi näkymä, jossa valitaan joko käyttäjän haluama ajanjakso tai kaikki tapahtumat, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa menoja ja tuloja ja y-akseli euromäärää. Kaavion otsikossa on tulostettuna kokonaisluvuksi pyöristetty saldo, joka on valittujen tapahtumien menojen ja tulojen erotus. Näkymästä voi poistua sulkemalla ikkunan
     
  * kirjautua ulos järjestelmästä
     
