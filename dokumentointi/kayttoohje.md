@@ -1,7 +1,7 @@
 
 # Käyttöohje
 
-Lataa tiedosto [MassiMatti_v0.1-alpha.jar](https://github.com/InglouriousObjects/ot-harjoitustyo/releases/tag/Viikko5) sekä siihen liittyvät tiedostot _config.properties_ ja _categories.txt_.
+Lataa tiedosto [MassiMattiV1.0.jar](https://github.com/InglouriousObjects/ot-harjoitustyo/releases/tag/V1.0) sekä siihen liittyvät tiedostot _config.properties_ ja _categories.txt_.
 
 ## Konfigurointi
 
