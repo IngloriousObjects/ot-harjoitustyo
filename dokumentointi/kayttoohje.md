@@ -7,7 +7,7 @@ Lataa tiedosto [MassiMatti_v0.1-alpha.jar](https://github.com/InglouriousObjects
 
 Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto _config.properties_, joka määrittää tietojen tallentamiseen liittyvän tietokannan. Käynnistettäessä sovellus, sovellus luo tietokannan, mikäli sitä ei ole jo aiemmin luotu, sen hetkiseen työkansioon nimellä massimatti.mv.db. Kun tietokantaan on tallennettu tietoa luodaan tietokannanhallintajärjestelmän toimesta työkansioon myös tiedosto nimellä massimatti.trace.db. 
 
-Lisäksi ohjelma odottaa käynnistyshakemistosta löytyvän tiedoston categories.txt, jonka avulla ohjelma luo tietokantaan valmiiksi kategorioita. 
+Lisäksi ohjelma odottaa käynnistyshakemistosta löytyvän tiedoston categories.txt, jonka avulla ohjelma tietokannan luodessaan luo myös kategorioita valmiiksi. 
 
 ## Ohjelman käynnistäminen
 
@@ -39,14 +39,15 @@ Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään. Mikäli kä
 Onnistuneen kirjautumisen jälkeen ohjelma avaa päänäkymän:
 
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/paanakyma.png" width="400">
-Päänäkymässä käyttäjä voi valita haluamansa tapahtumien lisäämiseen/poistamiseen/näyttämiseen liittyvän toiminnon painikkeista tai kirjautua ulos järjestelmästä painamalla _Kirjaudu ulos_. 
+
+Päänäkymässä käyttäjä voi valita haluamansa tapahtumien lisäämiseen, poistamiseen tai näyttämiseen liittyvän toiminnon painikkeista sekä kirjautua ulos järjestelmästä _Kirjaudu ulos_ painikkeella.
 
 # Lisää tapahtuma
 
 Painamalla päänäkymässä painiketta _Lisää tapahtuma_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/lisaatapahtuma.png" width="400">
 
-Näkymässä käyttäjä voi lisätä uuden tapahtuman valitsemalla päivämäärän, tapahtuman tyypin, tapahtuman summan ja kategorian. Sovelluksessa on valittu pienimmäksi syötettäväksi summaksi 0.1 ja suurimmaksi 10000. Tapahtuman lisääminen tapahtuu painikkeella _Lisää_. Käyttäjä voi jatkaa tapahtumien lisäämistä tai poistua näkymästä sulkemalla ikkunan.
+Näkymässä käyttäjä voi lisätä uuden tapahtuman valitsemalla päivämäärän, tapahtuman tyypin, tapahtuman summan ja kategorian. Sovelluksessa on valittu pienimmäksi syötettäväksi summaksi 0.1 ja suurimmaksi 10000. Desimaaliluvun erottimena käytetään pistettä. Tapahtuman lisääminen tapahtuu painikkeella _Lisää_. Käyttäjä voi jatkaa tapahtumien lisäämistä tai poistua näkymästä sulkemalla ikkunan.
 
 # Poista tapahtuma
 
@@ -67,7 +68,7 @@ Näkymässä käyttäjä voi lisätä ohjelmaan uusia kategorioita antamalla sy�
 Painamalla päänäkymässä painiketta _Lista tapahtumat_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/listaatapahtumat.png" width="400">
 
-Näkymässä käyttäjä voi listata tekstimuotoon tapahtumiaan. Käyttäjä voi valita haluamansa ajanjakson päivämäärävalikoista ja tulostaa valitun ajanjakson tapahtumat painamalla painiketta _Valitulta ajanjaksolta_ tai käyttäjä voi tulostaa kaikki tapahtumat painikkeella _Kaikki_. Tapahtumista näytetään päivämäärä, kategoria ja summa. Mikäli tapahtuma on meno, on summa negatiivinen, ja luonnollisesti tapahtuman ollessa tulo, on summa positiivinen. Käyttäjä voi poistua näkymästä sulkemalla ikkunan.
+Näkymässä käyttäjä voi listata tekstimuotoon tapahtumiaan. Käyttäjä voi valita haluamansa ajanjakson päivämäärävalikoista ja tulostaa valitun ajanjakson tapahtumat painamalla painiketta _Valitulta ajanjaksolta_ tai käyttäjä voi tulostaa kaikki tapahtumat painikkeella _Kaikki_. Tapahtumista näytetään päivämäärä, kategoria ja summa. Mikäli tapahtuma on meno, on summa negatiivinen, ja tapahtuman ollessa tulo, on summa positiivinen. Käyttäjä voi poistua näkymästä sulkemalla ikkunan.
 
 # Menot / Tulot kategorioittain
 
