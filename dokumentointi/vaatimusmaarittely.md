@@ -32,7 +32,7 @@ Järjestelmän päänäkymässä käyttäjä voi:
     
  * tarkastella tapahtumia menoja ja tuloja vertailemalla
     * päänäkymästä avautuu 'Menot/Tulot vertailu'-painikkeella uusi näkymä, jossa valitaan joko käyttäjän haluama ajanjakso tai kaikki tapahtumat, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa menoja ja tuloja ja y-akseli euromäärää. Kaavion otsikossa on tulostettuna valittujen tapahtumien menojen ja tulojen erotus. Näkymästä voi poistua sulkemalla ikkunan
-    * paluu päänäkymään
+    
  * kirjautua ulos järjestelmästä
     
  ## Jatkokehitysmahdollisuudet
