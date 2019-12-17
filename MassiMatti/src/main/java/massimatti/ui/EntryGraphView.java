@@ -91,7 +91,7 @@ public class EntryGraphView {
             Double sumOfExpenses = entryController.sumOfExpenses(entriesByUser);
             Double sumOfIncomes = entryController.sumOfIncomes(entriesByUser);
 
-            barchart.setTitle("KAIKKI MENOT JA TULOT (SALDO: " + (sumOfIncomes - sumOfExpenses) + " €)");
+            barchart.setTitle("KAIKKI MENOT JA TULOT (SALDO: " + Math.round(sumOfIncomes - sumOfExpenses) + " €)");
 
             XYChart.Series sumExpenses = new XYChart.Series();
             sumExpenses.setName("Menot");
@@ -127,7 +127,7 @@ public class EntryGraphView {
             Double sumOfIncomesS = entryController.sumOfIncomes(entriesPicked);
 
             barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " – "
-                    + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " (SALDO: " + (sumOfIncomesS - sumOfExpensesS) + " €)");
+                    + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " (SALDO: " + Math.round(sumOfIncomesS - sumOfExpensesS) + " €)");
             XYChart.Series sumExpensesS = new XYChart.Series();
 
             sumExpensesS.setName("Menot");

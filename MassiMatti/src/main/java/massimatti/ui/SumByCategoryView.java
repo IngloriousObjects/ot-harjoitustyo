@@ -115,7 +115,7 @@ public class SumByCategoryView {
                 }
 
             }
-            barchart.setTitle("KAIKKI MENOT JA TULOT KATEGORIOITTAIN (SALDO: " + (incomes - expenses) + " €)");
+            barchart.setTitle("KAIKKI MENOT JA TULOT KATEGORIOITTAIN (SALDO: " + (Math.round(incomes-expenses)) + " €)");
             sumByCategory.clear();
             barchart.getData().add(sumCategoryE);
             barchart.getData().add(sumCategoryS);
@@ -164,7 +164,7 @@ public class SumByCategoryView {
 
             barchart.setTitle("AJANJAKSO: " + dateS.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
                     + " – " + dateE.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " (SALDO: "
-                    + (incomes - expenses) + " €)");
+                    + Math.round(incomes - expenses) + " €)");
 
             sumByCategory.clear();
 
