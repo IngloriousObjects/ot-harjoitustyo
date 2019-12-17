@@ -81,7 +81,7 @@ Käyttäjä voi valita tarkasteltavat tapahtumat joko valitsemalla halutut päiv
 
 ## Menot / Tulot vertailu
 
-Painamalla päänäkymässä painiketta _Menot / Tulot vertailu_ käyttjälle avautuu päänäkymän rinnalle uusi näkymä:
+Painamalla päänäkymässä painiketta _Menot / Tulot vertailu_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/menottulotvertailu.png" width="400">
 
 Näkymässä käyttäjä voi vertailla tapahtumien yhteismenoja ja -tuloja pylväskaavion avulla. Pylväskaavioon tulostuu kaksi palkkia: Menot ja Tulot. Otsikkokenttään tulostuu summa (saldo), joka on tulojen ja menojen erotus pyöristettynä kokonaisluvuksi.
