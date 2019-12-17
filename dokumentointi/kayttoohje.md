@@ -42,35 +42,35 @@ Onnistuneen kirjautumisen jälkeen ohjelma avaa päänäkymän:
 
 Päänäkymässä käyttäjä voi valita haluamansa tapahtumien lisäämiseen, poistamiseen tai näyttämiseen liittyvän toiminnon painikkeista sekä kirjautua ulos järjestelmästä _Kirjaudu ulos_ painikkeella.
 
-# Lisää tapahtuma
+## Lisää tapahtuma
 
 Painamalla päänäkymässä painiketta _Lisää tapahtuma_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/lisaatapahtuma.png" width="400">
 
 Näkymässä käyttäjä voi lisätä uuden tapahtuman valitsemalla päivämäärän, tapahtuman tyypin, tapahtuman summan ja kategorian. Sovelluksessa on valittu pienimmäksi syötettäväksi summaksi 0.1 ja suurimmaksi 10000. Desimaaliluvun erottimena käytetään pistettä. Tapahtuman lisääminen tapahtuu painikkeella _Lisää_. Käyttäjä voi jatkaa tapahtumien lisäämistä tai poistua näkymästä sulkemalla ikkunan.
 
-# Poista tapahtuma
+## Poista tapahtuma
 
 Painamalla päänäkymässä painiketta _Poista tapahtuma_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/poistatapahtuma.png" width="400">
 
 Näkymässä käyttäjä voi poistaa tapahtumia yksi kerrallaan. Näkymään tulostuu listana kaikki tapahtumat ja tapahtuma poistetaan valitsemalla se listasta ja painamalla painiketta _Poista tapahtuma_. Toiminnon jälkeen ohjelma avaa vielä varmistusikkunan, jossa käyttäjä voi joko vahvistaa poiston tai peruuttaa sen. Käyttäjä voi jatkaa tapahtumien poistamista tai poistua näkymästä sulkemalla ikkunan.
 
-# Lisää kategoria
+## Lisää kategoria
 
 Painamalla päänäkymässä painiketta _Lisää kategoria_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/lisaakategoria.png" width="400">
 
 Näkymässä käyttäjä voi lisätä ohjelmaan uusia kategorioita antamalla syötekenttään kategorian nimen ja painamalla painiketta _Lisää_. Kategoria lisätään tietokantaan, mikäli se täyttää muotovaatimukset. Kategorian nimi muutetaan isoiksi kirjaimiksi. Käyttäjä voi jatkaa kategorioiden lisäämistä tai poistua näkymästä sulkemalla ikkunan.
 
-# Listaa tapahtumat
+## Listaa tapahtumat
 
-Painamalla päänäkymässä painiketta _Lista tapahtumat_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
+Painamalla päänäkymässä painiketta _Listaa tapahtumat_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/listaatapahtumat.png" width="400">
 
 Näkymässä käyttäjä voi listata tekstimuotoon tapahtumiaan. Käyttäjä voi valita haluamansa ajanjakson päivämäärävalikoista ja tulostaa valitun ajanjakson tapahtumat painamalla painiketta _Valitulta ajanjaksolta_ tai käyttäjä voi tulostaa kaikki tapahtumat painikkeella _Kaikki_. Tapahtumista näytetään päivämäärä, kategoria ja summa. Mikäli tapahtuma on meno, on summa negatiivinen, ja tapahtuman ollessa tulo, on summa positiivinen. Käyttäjä voi poistua näkymästä sulkemalla ikkunan.
 
-# Menot / Tulot kategorioittain
+## Menot / Tulot kategorioittain
 
 Painamalla päänäkymässä painiketta _Menot / Tulot kategorioittain_ käyttäjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/menottulotkategorioittain.png" width="400">
@@ -79,7 +79,7 @@ Näkymässä käyttäjä voi tarkastella tapahtumiaan pylväskaaviossa jaoteltui
 
 Käyttäjä voi valita tarkasteltavat tapahtumat joko valitsemalla halutut päivät päivämäärävalikoista ja painamalla painiketta _Valitulta ajanjaksolta_ tai tarkastella kaikkia tapahtumiaan painamalla painiketta _Kaikki_. Käyttäjä voi poistua näkymästä sulkemalla ikkunan.
 
-# Menot / Tulot vertailu
+## Menot / Tulot vertailu
 
 Painamalla päänäkymässä painiketta _Menot / Tulot vertailu_ käyttjälle avautuu päänäkymän rinnalle uusi näkymä:
 <img src="https://github.com/InglouriousObjects/ot-harjoitustyo/blob/master/dokumentointi/kuvat/menottulotvertailu.png" width="400">
