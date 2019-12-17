@@ -7,7 +7,7 @@ Lataa tiedosto [MassiMatti_v0.1-alpha.jar](https://github.com/InglouriousObjects
 
 Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto _config.properties_, joka määrittää tietojen tallentamiseen liittyvän tietokannan. Käynnistettäessä sovellus, sovellus luo tietokannan, mikäli sitä ei ole jo aiemmin luotu, sen hetkiseen työkansioon nimellä massimatti.mv.db. Kun tietokantaan on tallennettu tietoa luodaan tietokannanhallintajärjestelmän toimesta työkansioon myös tiedosto nimellä massimatti.trace.db. 
 
-Lisäksi ohjelma odottaa käynnistyshakemistosta löytyvän tiedoston categories.txt, jonka avulla ohjelma tietokannan luodessaan luo myös kategorioita valmiiksi. 
+Lisäksi ohjelma odottaa käynnistyshakemistosta löytyvän tiedoston categories.txt, jonka avulla ohjelma tietokannan luodessaan luo tietokantaan myös kategorioita valmiiksi.
 
 ## Ohjelman käynnistäminen
 
