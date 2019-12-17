@@ -31,15 +31,17 @@ Järjestelmän päänäkymässä käyttäjä voi:
     * päänäkymästä avautuu painikkeella 'Menot / Tulot kategorioittain näkymään, jossa valitaan joko käyttäjän haluama ajanjakso tai kaikki tapahtumat, jonka perusteella uuteen näkymään piirretään pylväskaavio, jossa x-akselilla on kategoriat ja y-akselilla euromäärät. Kaavion otsikossa on tulostettuna kokonaisluvuksi pyöristetty saldo, joka on valittujen tapahtumien tulojen ja menojen erotus. Näkymästä voi poistua sulkemalla ikkunan
     
  * tarkastella tapahtumia menoja ja tuloja vertailemalla
-    * päänäkymästä avautuu 'Menot/Tulot vertailu'-painikkeella uusi näkymä, jossa valitaan joko käyttäjän haluama ajanjakso tai kaikki tapahtumat, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa menoja ja tuloja ja y-akseli euromäärää. Kaavion otsikossa on tulostettuna kokonaisluvuksi pyöristetty saldo, joka on valittujen tapahtumien menojen ja tulojen erotus. Näkymästä voi poistua sulkemalla ikkunan
+    * päänäkymästä avautuu 'Menot / Tulot vertailu'-painikkeella uusi näkymä, jossa valitaan joko käyttäjän haluama ajanjakso tai kaikki tapahtumat, jonka peruteella uuteen näkymään piirretään ryhmitelty pylväskaavio tulot ja menot palkein, jossa x-akseli kuvaa menoja ja tuloja ja y-akseli euromäärää. Kaavion otsikossa on tulostettuna kokonaisluvuksi pyöristetty saldo, joka on valittujen tapahtumien menojen ja tulojen erotus. Näkymästä voi poistua sulkemalla ikkunan
     
  * kirjautua ulos järjestelmästä
     
  ## Jatkokehitysmahdollisuudet
     
    * Pääkäyttäjän, joka voi mm. hallita ja siivota tietokantaa laajemmilla oikeuksilla, lisääminen
-   * Sisäänkirjautumisen tietoturvan parantaminen. Nyt kirjautuminen on tarkoitus toteuttaa vain kosmeettisesti
-   * Dataa voidaan esittää monipuolisemmin
+   * Erillinen käyttjävalikko, jossa käyttäjä voi vaihtaa käyttäjätunnustaan tai salasanaansa
+   * Sisäänkirjautumisen tietoturvan parantaminen. Nyt kirjautuminen on toteutettu vain kosmeettisesti
+   * Dataa voidaan esittää monipuolisemmin. Esitystapoja on valtavsti, joten tässä ei niitä aleta erittelemään
+   * Sovellukseen voisi lisätä mahdollisuuden luoda käyttäjälle useita tilejä
    * Käyttäjälle mahdollisuus asettaa sovellukseen taloudellisia tavoitteita, jolloin sovellus on muokattavissa enemmän budjettisovellusta vastaavaksi pelkän taloudellisen seurannan sijaan.
    * Tietokannan monipuolistaminen, sillä nyt esim. käyttäjät lisäävät ja käyttävät yhteisiä kategorioita
    * Käyttöliittymää voi vielä muokata elegantimmaksi - tässä kurssissa käyttöliittymän koodi sai vähäisemmän roolin
