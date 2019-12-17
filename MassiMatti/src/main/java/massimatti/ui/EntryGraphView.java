@@ -104,7 +104,7 @@ public class EntryGraphView {
             barchart.getData().add(sumExpenses);
             barchart.getData().add(sumIncomes);
 
-            return;
+            
         });
 
         selected.setOnAction((event) -> {
@@ -139,7 +139,7 @@ public class EntryGraphView {
 
             barchart.getData().add(sumExpensesS);
             barchart.getData().add(sumIncomesS);
-            return;
+            
         });
 
         categoryPane.getChildren().addAll(mainLabel, dateLabelStart, datePickerStart, dateLabelEnd, datePickerEnd, selected, allTime, noticeLabel, barchart);

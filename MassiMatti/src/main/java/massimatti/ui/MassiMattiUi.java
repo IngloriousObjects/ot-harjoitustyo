@@ -9,7 +9,6 @@ import massimatti.dao.DatabaseCategoryDao;
 import massimatti.dao.DatabaseUserDao;
 import java.io.FileInputStream;
 import java.util.Properties;
-import java.util.Set;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
