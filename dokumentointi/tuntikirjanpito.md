@@ -27,4 +27,5 @@
 | 14.12. | 4    | Ominaisuuksien lisäämistä ja hiomista sekä sovelluslogiikan että UI:n osalta|
 | 15.12. | 2    | Koodin siistimistä välivaiheessa ja viimeisen täysin keskeneräisen luokan valmiiksi saattaminen|
 | 16.12. | 5    | JavaDocsin ja testien loppuunsaattaminen. Lisäksi hiottu sekä sovelluslogiikkaa että käyttöliittymää|
-| yht    |94    | | 
+| 17.12. | 3    | Käyttöohjeen luominen, final releasen paketointi ja pientä hoonausta koodiin|
+| yht    |97    | | 
