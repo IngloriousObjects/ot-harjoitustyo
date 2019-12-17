@@ -44,5 +44,5 @@ Järjestelmän päänäkymässä käyttäjä voi:
    * Sovellukseen voisi lisätä mahdollisuuden luoda käyttäjälle useita tilejä
    * Käyttäjälle mahdollisuus asettaa sovellukseen taloudellisia tavoitteita, jolloin sovellus on muokattavissa enemmän budjettisovellusta vastaavaksi pelkän taloudellisen seurannan sijaan.
    * Tietokannan monipuolistaminen, sillä nyt esim. käyttäjät lisäävät ja käyttävät yhteisiä kategorioita
-   * Käyttöliittymää voi vielä muokata elegantimmaksi - tässä kurssissa käyttöliittymän koodi sai vähäisemmän roolin
+   * Käyttöliittymää voi vielä muokata elegantimmaksi. Sovelluksessa olisi voinut käyttää mm. css:ää, liittymän ulkoasua voi parantaa roimasti, vaikkakin nykyinen askeettinen ote on asiansa ajava, sekä koodia, luokkia ja pakkausta säätä koherentimmaksi - tällä kurssilla ei käyttöliittymän osa kuitenkaan ollut niin suuressa osassa, joten tästä syystä sen painoarvo on ollut vähäisempi
    
