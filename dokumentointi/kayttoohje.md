@@ -14,7 +14,7 @@ Lisäksi ohjelma odottaa käynnistyshakemistosta löytyvän tiedoston categories
 Ohjelma käynnistetään komennolla 
 
 ```
-java -jar MassiMatti_v0.1-alpha.jar
+java -jar MassiMattiV1.0.jar
 ```
 ## Kirjautuminen
 
