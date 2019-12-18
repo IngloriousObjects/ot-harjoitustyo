@@ -5,7 +5,7 @@ Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakka
 Pakkaus massimatti.ui sisältää JavaFX:llä toteutetun käyttöliittymän massimatti.domain sovelluslogiikan ja massimatti.dao tietojen pysyväistallennuksesta vastaavan koodin.
 
 # Käyttöliittymä
-Käyttöliittymä on toteutettu käyttäen 7 näkymää:
+Käyttöliittymä on toteutettu käyttäen 8 näkymää:
 * kirjatuminen / rekisteröinti
 * päänäkymä
 * lisää tapahtuma
